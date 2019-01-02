@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Canvas 绘图 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="初始 Canvas canvas - 定义   HTML5 元素用于图形的绘制，通过脚本 (通常是 JavaScript) 来完成.   canvas 标签只是图形容器，必须使用脚本来绘制图形。通过多种方法使用 canvas 绘制路径,盒、圆、字符以及添加图像。  Canvas - Can i use     Canvas - 坐标   canvas 默认左上角为原点 (0,0)，横向 x，纵向">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Canvas 绘图">
+<meta property="og:url" content="http://yoursite.com/2018/12/08/Canvas/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="初始 Canvas canvas - 定义   HTML5 元素用于图形的绘制，通过脚本 (通常是 JavaScript) 来完成.   canvas 标签只是图形容器，必须使用脚本来绘制图形。通过多种方法使用 canvas 绘制路径,盒、圆、字符以及添加图像。  Canvas - Can i use     Canvas - 坐标   canvas 默认左上角为原点 (0,0)，横向 x，纵向">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2018/12/08/Canvas/assets/Can%20i%20use.png">
+<meta property="og:updated_time" content="2019-01-02T06:21:37.428Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Canvas 绘图">
+<meta name="twitter:description" content="初始 Canvas canvas - 定义   HTML5 元素用于图形的绘制，通过脚本 (通常是 JavaScript) 来完成.   canvas 标签只是图形容器，必须使用脚本来绘制图形。通过多种方法使用 canvas 绘制路径,盒、圆、字符以及添加图像。  Canvas - Can i use     Canvas - 坐标   canvas 默认左上角为原点 (0,0)，横向 x，纵向">
+<meta name="twitter:image" content="http://yoursite.com/2018/12/08/Canvas/assets/Can%20i%20use.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Canvas" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/08/Canvas/" class="article-date">
+  <time datetime="2018-12-07T16:00:00.000Z" itemprop="datePublished">2018-12-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Canvas 绘图
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="初始-Canvas"><a href="#初始-Canvas" class="headerlink" title="初始 Canvas"></a>初始 Canvas</h2><ul>
+<li><p>canvas - 定义</p>
+<p>  HTML5 元素用于图形的绘制，通过脚本 (通常是 JavaScript) 来完成.</p>
+<p>  canvas 标签只是图形容器，必须使用脚本来绘制图形。通过多种方法使用 canvas 绘制路径,盒、圆、字符以及添加图像。</p>
+</li>
+<li><p>Canvas - Can i use</p>
+<p>  <img src="./assets/Can i use.png" alt=""></p>
+</li>
+<li><p>Canvas - 坐标</p>
+<p>  canvas 默认左上角为原点 (0,0)，横向 x，纵向 y</p>
+</li>
+<li><p>Canvas - 路径</p>
+<ul>
+<li><p>在 Canvas 上画线，我们将使用以下两种方法：</p>
+<p>  moveTo(x, y) 定义线条开始坐标</p>
+<p>  lineTo(x, y) 定义线条结束坐标</p>
+<p>  定义开始坐标(0,0), 和结束坐标 (200, 100)。然后使用 stroke() 方法来绘制线条</p>
+</li>
+<li><p>在canvas中绘制圆形, 我们将使用以下方法，并使用 stroke() 或者 fill() 绘制线条或填充</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">beginPath() // 开始路线</span><br><span class="line">arc(x, y, r, start, stop) // 绘制圆形</span><br><span class="line">stroke() || fill() // 描边 或 填充</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Canvas - 文本</p>
+<p>  使用 canvas 绘制文本，重要的属性和方法如下：</p>
+<pre><code>font - 定义字体
+
+fillText(text,x,y) - 在 canvas 上绘制实心的文本
+
+strokeText(text,x,y) - 在 canvas 上绘制空心的文本
+</code></pre></li>
+<li><p>Canvas - 渐变</p>
+<p>  渐变可以填充在矩形, 圆形, 线条, 文本等等, 各种形状可以自己定义不同的颜色。</p>
+<p>  以下有两种不同的方式来设置 Canvas 渐变：</p>
+<pre><code>createLinearGradient(x, y, x1, y1) - 创建线条渐变
+
+createRadialGradient(x, y, r, x1, y1, r1) - 创建一个径向/圆渐变
+</code></pre><p>  注意：</p>
+<pre><code>当我们使用渐变对象，必须使用两种或两种以上的停止颜色。
+
+addColorStop() 方法指定颜色停止，参数使用坐标来描述，可以是 0 至 1.
+
+使用渐变，设置 fillStyle 或 strokeStyle 的值为 渐变，然后绘制形状，如矩形，文本，或一条线。
+</code></pre></li>
+<li><p>Canvas - 图像</p>
+<p>  把一幅图像放置到画布上, 使用以下方法: drawImage(image,x,y)</p>
+</li>
+<li><p>javascript 实例</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">&lt;img id=&quot;scream&quot; src=&quot;./assets/scream.png&quot; alt=&quot;The Scream&quot; width=&quot;220&quot; height=&quot;277&quot; style=&quot;display:none&quot;&gt;</span><br><span class="line">&lt;canvas id=&quot;myCanvas&quot; width=&quot;200&quot; height=&quot;100&quot; style=&quot;border:1px solid #000000;&quot;&gt;&lt;/canvas&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var c = document.getElementById(&quot;myCanvas&quot;);  // 获取画布</span><br><span class="line">    var ctx = c.getContext(&quot;2d&quot;); // 创建 context 对象</span><br><span class="line"></span><br><span class="line">    &lt;!-- Canvas - 坐标 --&gt;</span><br><span class="line">    ctx.fillStyle = &quot;#FF0000&quot;; // 填充画布背景色，默认#000000</span><br><span class="line">    ctx.fillRect(0, 0, 150, 75); // 填充区域（x, y, width, height）</span><br><span class="line"></span><br><span class="line">    &lt;!-- Canvas - 路径 线 --&gt;</span><br><span class="line">    ctx.moveTo(0, 0);</span><br><span class="line">    ctx.lineTo(200, 100);</span><br><span class="line">    ctx.stroke();</span><br><span class="line"></span><br><span class="line">    &lt;!-- Canvas - 坐标 圆形 --&gt;</span><br><span class="line">    ctx.beginPath();</span><br><span class="line">    ctx.arc(95, 50, 40, 0, 2*Math.PI);</span><br><span class="line">    ctx.stroke();</span><br><span class="line"></span><br><span class="line">    &lt;!-- Canvas - 文本 --&gt;</span><br><span class="line">    ctx.font = &apos;30px Arial&apos;;</span><br><span class="line">    ctx.fillText(&apos;Hello World&apos;, 10, 50); // 实心文本</span><br><span class="line">    ctx.strokeText(&quot;Hello World&quot;,10,50); // 空心文本</span><br><span class="line"></span><br><span class="line">    &lt;!-- Canvas - 渐变 --&gt;</span><br><span class="line">    // 创建渐变</span><br><span class="line">    var grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100); // 径向渐变</span><br><span class="line">    var grd = ctx.createLinearGradient(0, 0 , 200, 0); // 线性渐变</span><br><span class="line">    grd.addColorStop(0, &quot;red&quot;);</span><br><span class="line">    grd.addColorStop(1, &quot;white&quot;);</span><br><span class="line">    </span><br><span class="line">    // 填充渐变</span><br><span class="line">    ctx.fillStyle = grd;</span><br><span class="line">    ctx.fillRect(10, 10, 150, 80);</span><br><span class="line"></span><br><span class="line">    &lt;!-- Canvas - 图像 --&gt;</span><br><span class="line">    var img = document.getElementById(&apos;scream&apos;);</span><br><span class="line">    img.onload = function() &#123;</span><br><span class="line">        ctx.drawImage(img, 10, 10);</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="深入-Canvas"><a href="#深入-Canvas" class="headerlink" title="深入 Canvas"></a>深入 Canvas</h2><ul>
+<li><p>颜色、样式和阴影</p>
+<ul>
+<li><p>属性</p>
+<p>  fillStyle    设置或返回用于填充绘画的颜色、渐变或模式。</p>
+<p>  strokeStyle    设置或返回用于笔触的颜色、渐变或模式。</p>
+<p>  shadowColor    设置或返回用于阴影的颜色。</p>
+<p>  shadowBlur    设置或返回用于阴影的模糊级别。</p>
+<p>  shadowOffsetX    设置或返回阴影与形状的水平距离。</p>
+<p>  shadowOffsetY    设置或返回阴影与形状的垂直距离。</p>
+</li>
+<li><p>方法</p>
+<p>  createLinearGradient()    创建线性渐变（用在画布内容上）。</p>
+<p>  createPattern()    在指定的方向上重复指定的元素。</p>
+<p>  createRadialGradient()    创建放射状/环形的渐变（用在画布内容上）。</p>
+<p>  addColorStop()    规定渐变对象中的颜色和停止位置。</p>
+</li>
+</ul>
+</li>
+<li><p>线条样式 - 属性</p>
+<p>  lineCap    设置或返回线条的结束端点样式。</p>
+<p>  lineJoin    设置或返回两条线相交时，所创建的拐角类型。</p>
+<p>  lineWidth    设置或返回当前的线条宽度。</p>
+<p>  miterLimit    设置或返回最大斜接长度。</p>
+</li>
+<li><p>矩形 - 方法</p>
+<p>  rect()    创建矩形。</p>
+<p>  fillRect()    绘制”被填充”的矩形。</p>
+<p>  strokeRect()    绘制矩形（无填充）。</p>
+<p>  clearRect()    在给定的矩形内清除指定的像素。</p>
+</li>
+<li><p>路径 - 方法</p>
+<p>  fill()    填充当前绘图（路径）。</p>
+<p>  stroke()    绘制已定义的路径。</p>
+<p>  beginPath()    起始一条路径，或重置当前路径。</p>
+<p>  moveTo()    把路径移动到画布中的指定点，不创建线条。</p>
+<p>  closePath()    创建从当前点回到起始点的路径。</p>
+<p>  lineTo()    添加一个新点，然后在画布中创建从该点到最后指定点的线条。</p>
+<p>  clip()    从原始画布剪切任意形状和尺寸的区域。</p>
+<p>  quadraticCurveTo()    创建二次贝塞尔曲线。</p>
+<p>  bezierCurveTo()    创建三次贝塞尔曲线。</p>
+<p>  arc()    创建弧/曲线（用于创建圆形或部分圆）。</p>
+<p>  arcTo()    创建两切线之间的弧/曲线。</p>
+<p>  isPointInPath()    如果指定的点位于当前路径中，则返回 true，否则返回 false。</p>
+</li>
+<li><p>转换 - 方法</p>
+<p>  scale()    缩放当前绘图至更大或更小。</p>
+<p>  rotate()    旋转当前绘图。</p>
+<p>  translate()    重新映射画布上的 (0,0) 位置。</p>
+<p>  transform()    替换绘图的当前转换矩阵。</p>
+<p>  setTransform()    将当前转换重置为单位矩阵。然后运行 transform()。</p>
+</li>
+<li><p>文本</p>
+<ul>
+<li><p>属性</p>
+<p>  font    设置或返回文本内容的当前字体属性。</p>
+<p>  textAlign    设置或返回文本内容的当前对齐方式。</p>
+<p>  textBaseline    设置或返回在绘制文本时使用的当前文本基线。</p>
+</li>
+<li><p>方法</p>
+<p>  fillText()    在画布上绘制”被填充的”文本。</p>
+<p>  strokeText()    在画布上绘制文本（无填充）。</p>
+<p>  measureText()    返回包含指定文本宽度的对象。</p>
+</li>
+</ul>
+</li>
+<li><p>图像绘制 - 方法</p>
+<p>  drawImage()    向画布上绘制图像、画布或视频。</p>
+</li>
+<li><p>像素操作</p>
+<ul>
+<li><p>属性</p>
+<p>  width    返回 ImageData 对象的宽度。</p>
+<p>  height    返回 ImageData 对象的高度。</p>
+<p>  data    返回一个对象，其包含指定的 ImageData 对象的图像数据。</p>
+</li>
+<li><p>方法</p>
+<p>  createImageData()    创建新的、空白的 ImageData 对象。</p>
+<p>  getImageData()    返回 ImageData 对象，该对象为画布上指定的矩形复制像素数据。</p>
+<p>  putImageData()    把图像数据（从指定的 ImageData 对象）放回画布上。</p>
+</li>
+</ul>
+</li>
+<li><p>合成 -属性</p>
+<p>  globalAlpha    设置或返回绘图的当前 alpha 或透明值。</p>
+<p>  globalCompositeOperation    设置或返回新图像如何绘制到已有的图像上。</p>
+</li>
+<li><p>其他 - 方法</p>
+<p>  save()    保存当前环境的状态。</p>
+<p>  restore()    返回之前保存过的路径状态和属性。</p>
+<p>  createEvent()</p>
+<p>  getContext()</p>
+<p>  toDataURL()</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/08/Canvas/" data-id="cjqewdmgl0000qcoza5ia7jfj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/12/08/Git/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Git 原理分析总结
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/11/24/WebStorage/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Web Storage</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/01/02/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/02/js-symbol/">Js 对象及数据类型</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/27/console/">console 用法</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/08/Npm/">创建/发布/撤销 npm 包</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/08/Compare/">前端代码对比</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

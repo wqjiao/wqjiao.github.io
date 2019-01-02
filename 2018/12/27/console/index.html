@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>console 用法 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1、console.log用于输出普通信息 使用占位符 %c 自定义打印标题的样式，一眼看出自己打印的日志： console.log(&amp;quot;%c 车300&amp;quot;, &amp;apos;color: red; background: #000&amp;apos;); 2、console.info用于输出提示性信息 3、console.error用于输出错误信息 4、console.warn用于输出警示信">
+<meta property="og:type" content="article">
+<meta property="og:title" content="console 用法">
+<meta property="og:url" content="http://yoursite.com/2018/12/27/console/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1、console.log用于输出普通信息 使用占位符 %c 自定义打印标题的样式，一眼看出自己打印的日志： console.log(&amp;quot;%c 车300&amp;quot;, &amp;apos;color: red; background: #000&amp;apos;); 2、console.info用于输出提示性信息 3、console.error用于输出错误信息 4、console.warn用于输出警示信">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-02T06:21:37.436Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="console 用法">
+<meta name="twitter:description" content="1、console.log用于输出普通信息 使用占位符 %c 自定义打印标题的样式，一眼看出自己打印的日志： console.log(&amp;quot;%c 车300&amp;quot;, &amp;apos;color: red; background: #000&amp;apos;); 2、console.info用于输出提示性信息 3、console.error用于输出错误信息 4、console.warn用于输出警示信">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-console" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/27/console/" class="article-date">
+  <time datetime="2018-12-26T16:00:00.000Z" itemprop="datePublished">2018-12-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      console 用法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1、console-log"><a href="#1、console-log" class="headerlink" title="1、console.log"></a>1、console.log</h2><p>用于输出普通信息</p>
+<p>使用占位符 %c 自定义打印标题的样式，一眼看出自己打印的日志：</p>
+<pre><code>console.log(&quot;%c 车300&quot;, &apos;color: red; background: #000&apos;);
+</code></pre><h2 id="2、console-info"><a href="#2、console-info" class="headerlink" title="2、console.info"></a>2、console.info</h2><p>用于输出提示性信息</p>
+<h2 id="3、console-error"><a href="#3、console-error" class="headerlink" title="3、console.error"></a>3、console.error</h2><p>用于输出错误信息</p>
+<h2 id="4、console-warn"><a href="#4、console-warn" class="headerlink" title="4、console.warn"></a>4、console.warn</h2><p>用于输出警示信息</p>
+<h2 id="5、console-group-和-console-groupEnd"><a href="#5、console-group-和-console-groupEnd" class="headerlink" title="5、console.group 和 console.groupEnd"></a>5、console.group 和 console.groupEnd</h2><p>输出一组信息的开头<br>    console.group</p>
+<p>输出一组信息的结束<br>    console.groupEnd</p>
+<h2 id="6、console-table"><a href="#6、console-table" class="headerlink" title="6、console.table"></a>6、console.table</h2><p>将表格数据显示为表格</p>
+<h2 id="7、console-assert"><a href="#7、console-assert" class="headerlink" title="7、console.assert"></a>7、console.assert</h2><p>对输入的表达式进行断言，只有表达式为false时，才输出相应的信息到控制台</p>
+<h2 id="8、console-count"><a href="#8、console-count" class="headerlink" title="8、console.count"></a>8、console.count</h2><p>统计代码被执行的次数</p>
+<h2 id="9、console-dir"><a href="#9、console-dir" class="headerlink" title="9、console.dir"></a>9、console.dir</h2><p>直接将该DOM结点以DOM树的结构进行输出，可以详细查对象的方法发展等等(比for in方便) </p>
+<h2 id="10、console-time-和-console-timeEnd"><a href="#10、console-time-和-console-timeEnd" class="headerlink" title="10、console.time 和 console.timeEnd"></a>10、console.time 和 console.timeEnd</h2><p>计时开始<br>    console.time</p>
+<p>计时结束<br>    console.timeEnd </p>
+<h2 id="11、console-profile-和-console-profileEnd"><a href="#11、console-profile-和-console-profileEnd" class="headerlink" title="11、console.profile 和 console.profileEnd"></a>11、console.profile 和 console.profileEnd</h2><p>配合一起使用来查看CPU使用相关信息<br>在 Profiles 面板里面查看就可以看到 cpu 相关使用信息</p>
+<h2 id="12、console-timeLine-和-console-timeLineEnd"><a href="#12、console-timeLine-和-console-timeLineEnd" class="headerlink" title="12、console.timeLine 和 console.timeLineEnd"></a>12、console.timeLine 和 console.timeLineEnd</h2><p>配合一起记录一段时间轴</p>
+<h2 id="13、console-trace"><a href="#13、console-trace" class="headerlink" title="13、console.trace"></a>13、console.trace</h2><p>堆栈跟踪相关的调试</p>
+<h2 id="14、console-clear"><a href="#14、console-clear" class="headerlink" title="14、console.clear"></a>14、console.clear</h2><p>清除控制台</p>
+<h2 id="15、console-debug"><a href="#15、console-debug" class="headerlink" title="15、console.debug"></a>15、console.debug</h2><p>使用日志级别向控制台输出消息”debug”</p>
+<h2 id="16、console-timeLog"><a href="#16、console-timeLog" class="headerlink" title="16、console.timeLog"></a>16、console.timeLog</h2><p>将指定计时器的值记录到控制台。</p>
+<h2 id="17、console-timeStamp"><a href="#17、console-timeStamp" class="headerlink" title="17、console.timeStamp"></a>17、console.timeStamp</h2><p>在浏览器的时间轴或瀑布工具中添加标记</p>
+<h2 id="18、-命令"><a href="#18、-命令" class="headerlink" title="18、$_ 命令"></a>18、$_ 命令</h2><p>返回最近一次表达式执行的结果，功能跟按向上的方向键再回车是一样的</p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/API/console" target="_blank" rel="noopener">Web/API/console</a></p>
+</li>
+<li><p><a href="https://developer.chrome.com/devtools/docs/console-api" target="_blank" rel="noopener">console-api</a></p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/27/console/" data-id="cjqewdmh00006qcozov0lcs8e" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/01/02/js-symbol/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Js 对象及数据类型
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/12/08/Npm/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">创建/发布/撤销 npm 包</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/01/02/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/02/js-symbol/">Js 对象及数据类型</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/27/console/">console 用法</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/08/Npm/">创建/发布/撤销 npm 包</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/08/Compare/">前端代码对比</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Web Storage | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="概述 Web Storage 实际上由两部分组成：sessionStorage 与 localStorage。  什么是 localStorage、sessionStorage   在HTML5中，新加入了一个localStorage特性，这个特性主要是用来作为本地存储来使用的，   解决了cookie存储空间不足的问题(cookie中每条cookie的存储空间为4k)，   localStora">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web Storage">
+<meta property="og:url" content="http://yoursite.com/2018/11/24/WebStorage/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="概述 Web Storage 实际上由两部分组成：sessionStorage 与 localStorage。  什么是 localStorage、sessionStorage   在HTML5中，新加入了一个localStorage特性，这个特性主要是用来作为本地存储来使用的，   解决了cookie存储空间不足的问题(cookie中每条cookie的存储空间为4k)，   localStora">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-02T06:21:37.435Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Web Storage">
+<meta name="twitter:description" content="概述 Web Storage 实际上由两部分组成：sessionStorage 与 localStorage。  什么是 localStorage、sessionStorage   在HTML5中，新加入了一个localStorage特性，这个特性主要是用来作为本地存储来使用的，   解决了cookie存储空间不足的问题(cookie中每条cookie的存储空间为4k)，   localStora">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-WebStorage" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/24/WebStorage/" class="article-date">
+  <time datetime="2018-11-23T16:00:00.000Z" itemprop="datePublished">2018-11-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Web Storage
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
+<li><p>Web Storage 实际上由两部分组成：sessionStorage 与 localStorage。</p>
+</li>
+<li><p>什么是 localStorage、sessionStorage</p>
+<p>  在HTML5中，新加入了一个localStorage特性，这个特性主要是用来作为本地存储来使用的，</p>
+<p>  解决了cookie存储空间不足的问题(cookie中每条cookie的存储空间为4k)，</p>
+<p>  localStorage中一般浏览器支持的是5M大小，这个在不同的浏览器中localStorage会有所不同。</p>
+</li>
+<li><p>localStorage 的优势与局限</p>
+<ul>
+<li><p>localStorage的优势</p>
+<p>  1、localStorage拓展了cookie的4K限制</p>
+<p>  2、localStorage会可以将第一次请求的数据直接存储到本地，这个相当于一个5M大小的针对于前端页面的数据库，相比于cookie可以节约带宽，但是这个却是只有在高版本的浏览器中才支持的</p>
+</li>
+<li><p>localStorage的局限</p>
+<p>  1、浏览器的大小不统一，并且在IE8以上的IE版本才支持localStorage这个属性</p>
+<p>  2、目前所有的浏览器中都会把localStorage的值类型限定为string类型，这个在对我们日常比较常见的JSON对象类型需要一些转换</p>
+<p>  3、localStorage在浏览器的隐私模式下面是不可读取的</p>
+<p>  4、localStorage本质上是对字符串的读取，如果存储内容多的话会消耗内存空间，会导致页面变卡</p>
+<p>  5、localStorage不能被爬虫抓取到</p>
+</li>
+<li><p>localStorage与sessionStorage的唯一一点区别:</p>
+<p>  localStorage属于永久性存储，而sessionStorage属于当会话结束的时候，sessionStorage中的键值对会被清空</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="userData"><a href="#userData" class="headerlink" title="userData"></a>userData</h2><ul>
+<li><p>语法：</p>
+<p>  XML  &lt;Prefix: CustomTag ID=sID STYLE=”behavior:url(‘#default#userData’)” /&gt;</p>
+<p>  HTML  <element style="behavior:url('#default#userData')" id="sID"></element></p>
+<p>  Scripting  object .style.behavior = “url(‘#default#userData’)”</p>
+<p>  object .addBehavior (“#default#userData”)</p>
+</li>
+<li><p>属性:</p>
+<p>  expires 设置或者获取 userData behavior 保存数据的失效日期。</p>
+<p>  XMLDocument 获取 XML 的引用。</p>
+</li>
+<li><p>方法:</p>
+<p>  getAttribute() 获取指定的属性值。</p>
+<p>  load(object) 从 userData 存储区载入存储的对象数据。</p>
+<p>  removeAttribute() 移除对象的指定属性。</p>
+<p>  save(object) 将对象数据存储到一个 userData 存储区。</p>
+<p>  setAttribute() 设置指定的属性值。</p>
+</li>
+</ul>
+<h2 id="sessionStorage"><a href="#sessionStorage" class="headerlink" title="sessionStorage"></a>sessionStorage</h2><ul>
+<li><p>作用</p>
+<p>  用于本地存储一个会话（session）中的数据，</p>
+<p>  这些数据只有在同一个会话中的页面才能访问并且当会话结束后数据也随之销毁。</p>
+<p>  因此sessionStorage不是一种持久化的本地存储，仅仅是会话级别的存储。</p>
+</li>
+<li><p>方法</p>
+<p>  sessionStorage.getItem(key):获取指定key本地存储的值</p>
+<p>  sessionStorage.setItem(key,value)：将value存储到key字段</p>
+<p>  sessionStorage.clear():删除所有sessionStorage的数据</p>
+<p>  sessionStorage.removeItem(key):删除指定key本地存储的值</p>
+</li>
+<li><p>使用</p>
+<p>  sessionStorage 在使用上与 localStorage 的类似。</p>
+</li>
+</ul>
+<h2 id="localStorage"><a href="#localStorage" class="headerlink" title="localStorage"></a>localStorage</h2><ul>
+<li><p>作用</p>
+<p>  用于持久化的本地存储，除非主动删除数据，否则数据是永远不会过期的。</p>
+</li>
+<li><p>方法</p>
+<p>  localStorage.getItem(key):获取指定key本地存储的值</p>
+<p>  localStorage.setItem(key,value)：将value存储到key字段</p>
+<p>  localStorage.clear():删除所有的localStorage的数据</p>
+<p>  localStorage.removeItem(key):删除指定key本地存储的值</p>
+</li>
+<li><p>使用</p>
+<ul>
+<li><p>localStorage 的三种 写入/读取 数据的方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">if (！window.localStorage) &#123;</span><br><span class="line">        alert(&quot;浏览器支持localstorage&quot;);</span><br><span class="line">        return false;</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    var storage=window.localStorage;</span><br><span class="line">    //写入a字段</span><br><span class="line">    storage[&quot;a&quot;] = 1;</span><br><span class="line">    //写入b字段</span><br><span class="line">    storage.a = 1;</span><br><span class="line">    //写入c字段</span><br><span class="line">    storage.setItem(&quot;c&quot;, 3);</span><br><span class="line">    console.log(typeof storage[&quot;a&quot;]);</span><br><span class="line">    console.log(typeof storage[&quot;b&quot;]);</span><br><span class="line">    console.log(typeof storage[&quot;c&quot;]);</span><br><span class="line">    //第一种方法读取</span><br><span class="line">    var a=storage.a;</span><br><span class="line">    console.log(a);</span><br><span class="line">    //第二种方法读取</span><br><span class="line">    var b=storage[&quot;b&quot;];</span><br><span class="line">    console.log(b);</span><br><span class="line">    //第三种方法读取</span><br><span class="line">    var c=storage.getItem(&quot;c&quot;);</span><br><span class="line">    console.log(c);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>localStorage 的删除</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var storage = window.localStorage;</span><br><span class="line">    storage.a = 1;</span><br><span class="line">    storage.setItem(&quot;c&quot;, 3);</span><br><span class="line">    console.log(storage);</span><br><span class="line">    storage.removeItem(&quot;a&quot;); // 删除localStorage的某个键值对</span><br><span class="line">    storage.clear(); // 删除localStorage的所有内容</span><br><span class="line">    console.log(storage);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>localStorage 的键获取<br>  使用key()方法，向其中出入索引即可获取对应的键</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var storage = window.localStorage;</span><br><span class="line">    storage.a = 1;</span><br><span class="line">    storage.setItem(&quot;c&quot;, 3);</span><br><span class="line">    for(var i = 0; i &lt; storage.length; i ++) &#123;</span><br><span class="line">        var key=storage.key(i);</span><br><span class="line">        console.log(key);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>特点</p>
+<ul>
+<li><p>localStorage 只支持 string 类型的存储，不管写入的是整形还是数组或者对象，最终都是 string 类型的数据</p>
+</li>
+<li><p>一般我们会将 JSON 存入 localStorage 中，但是在 localStorage 会自动将 localStorage 转换成为字符串形式<br>这个时候我们可以使用 JSON.stringify() 这个方法，来将 JSON 转换成为 JSON 字符串<br>读取之后要将JSON字符串转换成为JSON对象，使用JSON.parse()方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">if (!window.localStorage) &#123;</span><br><span class="line">        alert(&quot;浏览器支持localstorage&quot;);</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    var storage = window.localStorage;</span><br><span class="line">    var data = &#123;</span><br><span class="line">        name: &apos;xiecanyong&apos;,</span><br><span class="line">        sex: &apos;man&apos;,</span><br><span class="line">        hobby: &apos;program&apos;</span><br><span class="line">    &#125;;</span><br><span class="line">    var dataArr = [</span><br><span class="line">        &#123;</span><br><span class="line">            name: &apos;jjj&apos;,</span><br><span class="line">            sex: &apos;man&apos;,</span><br><span class="line">            hobby: &apos;program&apos;</span><br><span class="line">        &#125;, &#123;</span><br><span class="line">            name: &apos;qqq&apos;,</span><br><span class="line">            sex: &apos;man&apos;,</span><br><span class="line">            hobby: &apos;program&apos;</span><br><span class="line">        &#125;, &#123;</span><br><span class="line">            name: &apos;www&apos;,</span><br><span class="line">            sex: &apos;man&apos;,</span><br><span class="line">            hobby: &apos;program&apos;</span><br><span class="line">        &#125;</span><br><span class="line">    ];</span><br><span class="line">    var d = JSON.stringify(data);</span><br><span class="line">    var dA = JSON.stringify(dataArr);</span><br><span class="line"></span><br><span class="line">    storage.setItem(&quot;data&quot;, d);</span><br><span class="line">    storage.setItem(&quot;dataArr&quot;, dA);</span><br><span class="line"></span><br><span class="line">    // 将JSON字符串转换成为JSON对象输出</span><br><span class="line">    var json = storage.getItem(&quot;data&quot;);</span><br><span class="line">    var jsonA = storage.getItem(&quot;dataArr&quot;);</span><br><span class="line">    var jsonObj = JSON.parse(json);</span><br><span class="line">    var jsonObjA = JSON.parse(jsonA);</span><br><span class="line">    console.log(typeof jsonObj);</span><br><span class="line">    console.log(typeof jsonObjA);</span><br><span class="line"></span><br><span class="line">    me.state.data.push(jsonObj); // 将对象push到数组中方便使用</span><br><span class="line">    this.setState(&#123;</span><br><span class="line">        data: me.state.data</span><br><span class="line">        dataA: jsonObjA // 数组类型直接遍历</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/11/24/WebStorage/" data-id="cjqewdmgz0005qcozgphz3bko" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/12/08/Canvas/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Canvas 绘图
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/11/24/VueMultiple/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Vue-cli工程的多页面开发配置步骤</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/01/02/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/02/js-symbol/">Js 对象及数据类型</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/27/console/">console 用法</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/08/Npm/">创建/发布/撤销 npm 包</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/08/Compare/">前端代码对比</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
