@@ -65,7 +65,7 @@
     <article id="post-hello-world" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/01/02/hello-world/" class="article-date">
-  <time datetime="2019-01-02T06:06:07.219Z" itemprop="datePublished">2019-01-02</time>
+  <time datetime="2019-01-02T06:21:37.438Z" itemprop="datePublished">2019-01-02</time>
 </a>
     
   </div>
@@ -97,7 +97,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/02/hello-world/" data-id="cjqeslp750008skozbzyj353y" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/02/hello-world/" data-id="cjqet0wh70008zsozligcnt6x" class="article-share-link">Share</a>
       
       
     </footer>
@@ -319,7 +319,7 @@ Object 对象
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/02/js-symbol/" data-id="cjqeslp77000askozfpxzi9iq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/02/js-symbol/" data-id="cjqet0wha000bzsozgkyby2e1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -383,7 +383,7 @@ Object 对象
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/27/console/" data-id="cjqeslp720005skoz86kt5kzj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/27/console/" data-id="cjqet0wh50006zsoz3bzvo1r1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -684,7 +684,7 @@ array 可选的
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/08/Compare/" data-id="cjqeslp6s0000skozv9tf3d09" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/08/Compare/" data-id="cjqet0wh20003zsozlx042x60" class="article-share-link">Share</a>
       
       
     </footer>
@@ -754,189 +754,7 @@ array 可选的
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/08/Npm/" data-id="cjqeslp6y0002skozpzq5uddq" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Canvas" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/12/08/Canvas/" class="article-date">
-  <time datetime="2018-12-07T16:00:00.000Z" itemprop="datePublished">2018-12-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/08/Canvas/">Canvas 绘图</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="初始-Canvas"><a href="#初始-Canvas" class="headerlink" title="初始 Canvas"></a>初始 Canvas</h2><ul>
-<li><p>canvas - 定义</p>
-<p>  HTML5 元素用于图形的绘制，通过脚本 (通常是 JavaScript) 来完成.</p>
-<p>  canvas 标签只是图形容器，必须使用脚本来绘制图形。通过多种方法使用 canvas 绘制路径,盒、圆、字符以及添加图像。</p>
-</li>
-<li><p>Canvas - Can i use</p>
-<p>  <img src="./assets/Can i use.png" alt=""></p>
-</li>
-<li><p>Canvas - 坐标</p>
-<p>  canvas 默认左上角为原点 (0,0)，横向 x，纵向 y</p>
-</li>
-<li><p>Canvas - 路径</p>
-<ul>
-<li><p>在 Canvas 上画线，我们将使用以下两种方法：</p>
-<p>  moveTo(x, y) 定义线条开始坐标</p>
-<p>  lineTo(x, y) 定义线条结束坐标</p>
-<p>  定义开始坐标(0,0), 和结束坐标 (200, 100)。然后使用 stroke() 方法来绘制线条</p>
-</li>
-<li><p>在canvas中绘制圆形, 我们将使用以下方法，并使用 stroke() 或者 fill() 绘制线条或填充</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">beginPath() // 开始路线</span><br><span class="line">arc(x, y, r, start, stop) // 绘制圆形</span><br><span class="line">stroke() || fill() // 描边 或 填充</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>Canvas - 文本</p>
-<p>  使用 canvas 绘制文本，重要的属性和方法如下：</p>
-<pre><code>font - 定义字体
-
-fillText(text,x,y) - 在 canvas 上绘制实心的文本
-
-strokeText(text,x,y) - 在 canvas 上绘制空心的文本
-</code></pre></li>
-<li><p>Canvas - 渐变</p>
-<p>  渐变可以填充在矩形, 圆形, 线条, 文本等等, 各种形状可以自己定义不同的颜色。</p>
-<p>  以下有两种不同的方式来设置 Canvas 渐变：</p>
-<pre><code>createLinearGradient(x, y, x1, y1) - 创建线条渐变
-
-createRadialGradient(x, y, r, x1, y1, r1) - 创建一个径向/圆渐变
-</code></pre><p>  注意：</p>
-<pre><code>当我们使用渐变对象，必须使用两种或两种以上的停止颜色。
-
-addColorStop() 方法指定颜色停止，参数使用坐标来描述，可以是 0 至 1.
-
-使用渐变，设置 fillStyle 或 strokeStyle 的值为 渐变，然后绘制形状，如矩形，文本，或一条线。
-</code></pre></li>
-<li><p>Canvas - 图像</p>
-<p>  把一幅图像放置到画布上, 使用以下方法: drawImage(image,x,y)</p>
-</li>
-<li><p>javascript 实例</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">&lt;img id=&quot;scream&quot; src=&quot;./assets/scream.png&quot; alt=&quot;The Scream&quot; width=&quot;220&quot; height=&quot;277&quot; style=&quot;display:none&quot;&gt;</span><br><span class="line">&lt;canvas id=&quot;myCanvas&quot; width=&quot;200&quot; height=&quot;100&quot; style=&quot;border:1px solid #000000;&quot;&gt;&lt;/canvas&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var c = document.getElementById(&quot;myCanvas&quot;);  // 获取画布</span><br><span class="line">    var ctx = c.getContext(&quot;2d&quot;); // 创建 context 对象</span><br><span class="line"></span><br><span class="line">    &lt;!-- Canvas - 坐标 --&gt;</span><br><span class="line">    ctx.fillStyle = &quot;#FF0000&quot;; // 填充画布背景色，默认#000000</span><br><span class="line">    ctx.fillRect(0, 0, 150, 75); // 填充区域（x, y, width, height）</span><br><span class="line"></span><br><span class="line">    &lt;!-- Canvas - 路径 线 --&gt;</span><br><span class="line">    ctx.moveTo(0, 0);</span><br><span class="line">    ctx.lineTo(200, 100);</span><br><span class="line">    ctx.stroke();</span><br><span class="line"></span><br><span class="line">    &lt;!-- Canvas - 坐标 圆形 --&gt;</span><br><span class="line">    ctx.beginPath();</span><br><span class="line">    ctx.arc(95, 50, 40, 0, 2*Math.PI);</span><br><span class="line">    ctx.stroke();</span><br><span class="line"></span><br><span class="line">    &lt;!-- Canvas - 文本 --&gt;</span><br><span class="line">    ctx.font = &apos;30px Arial&apos;;</span><br><span class="line">    ctx.fillText(&apos;Hello World&apos;, 10, 50); // 实心文本</span><br><span class="line">    ctx.strokeText(&quot;Hello World&quot;,10,50); // 空心文本</span><br><span class="line"></span><br><span class="line">    &lt;!-- Canvas - 渐变 --&gt;</span><br><span class="line">    // 创建渐变</span><br><span class="line">    var grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100); // 径向渐变</span><br><span class="line">    var grd = ctx.createLinearGradient(0, 0 , 200, 0); // 线性渐变</span><br><span class="line">    grd.addColorStop(0, &quot;red&quot;);</span><br><span class="line">    grd.addColorStop(1, &quot;white&quot;);</span><br><span class="line">    </span><br><span class="line">    // 填充渐变</span><br><span class="line">    ctx.fillStyle = grd;</span><br><span class="line">    ctx.fillRect(10, 10, 150, 80);</span><br><span class="line"></span><br><span class="line">    &lt;!-- Canvas - 图像 --&gt;</span><br><span class="line">    var img = document.getElementById(&apos;scream&apos;);</span><br><span class="line">    img.onload = function() &#123;</span><br><span class="line">        ctx.drawImage(img, 10, 10);</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="深入-Canvas"><a href="#深入-Canvas" class="headerlink" title="深入 Canvas"></a>深入 Canvas</h2><ul>
-<li><p>颜色、样式和阴影</p>
-<ul>
-<li><p>属性</p>
-<p>  fillStyle    设置或返回用于填充绘画的颜色、渐变或模式。</p>
-<p>  strokeStyle    设置或返回用于笔触的颜色、渐变或模式。</p>
-<p>  shadowColor    设置或返回用于阴影的颜色。</p>
-<p>  shadowBlur    设置或返回用于阴影的模糊级别。</p>
-<p>  shadowOffsetX    设置或返回阴影与形状的水平距离。</p>
-<p>  shadowOffsetY    设置或返回阴影与形状的垂直距离。</p>
-</li>
-<li><p>方法</p>
-<p>  createLinearGradient()    创建线性渐变（用在画布内容上）。</p>
-<p>  createPattern()    在指定的方向上重复指定的元素。</p>
-<p>  createRadialGradient()    创建放射状/环形的渐变（用在画布内容上）。</p>
-<p>  addColorStop()    规定渐变对象中的颜色和停止位置。</p>
-</li>
-</ul>
-</li>
-<li><p>线条样式 - 属性</p>
-<p>  lineCap    设置或返回线条的结束端点样式。</p>
-<p>  lineJoin    设置或返回两条线相交时，所创建的拐角类型。</p>
-<p>  lineWidth    设置或返回当前的线条宽度。</p>
-<p>  miterLimit    设置或返回最大斜接长度。</p>
-</li>
-<li><p>矩形 - 方法</p>
-<p>  rect()    创建矩形。</p>
-<p>  fillRect()    绘制”被填充”的矩形。</p>
-<p>  strokeRect()    绘制矩形（无填充）。</p>
-<p>  clearRect()    在给定的矩形内清除指定的像素。</p>
-</li>
-<li><p>路径 - 方法</p>
-<p>  fill()    填充当前绘图（路径）。</p>
-<p>  stroke()    绘制已定义的路径。</p>
-<p>  beginPath()    起始一条路径，或重置当前路径。</p>
-<p>  moveTo()    把路径移动到画布中的指定点，不创建线条。</p>
-<p>  closePath()    创建从当前点回到起始点的路径。</p>
-<p>  lineTo()    添加一个新点，然后在画布中创建从该点到最后指定点的线条。</p>
-<p>  clip()    从原始画布剪切任意形状和尺寸的区域。</p>
-<p>  quadraticCurveTo()    创建二次贝塞尔曲线。</p>
-<p>  bezierCurveTo()    创建三次贝塞尔曲线。</p>
-<p>  arc()    创建弧/曲线（用于创建圆形或部分圆）。</p>
-<p>  arcTo()    创建两切线之间的弧/曲线。</p>
-<p>  isPointInPath()    如果指定的点位于当前路径中，则返回 true，否则返回 false。</p>
-</li>
-<li><p>转换 - 方法</p>
-<p>  scale()    缩放当前绘图至更大或更小。</p>
-<p>  rotate()    旋转当前绘图。</p>
-<p>  translate()    重新映射画布上的 (0,0) 位置。</p>
-<p>  transform()    替换绘图的当前转换矩阵。</p>
-<p>  setTransform()    将当前转换重置为单位矩阵。然后运行 transform()。</p>
-</li>
-<li><p>文本</p>
-<ul>
-<li><p>属性</p>
-<p>  font    设置或返回文本内容的当前字体属性。</p>
-<p>  textAlign    设置或返回文本内容的当前对齐方式。</p>
-<p>  textBaseline    设置或返回在绘制文本时使用的当前文本基线。</p>
-</li>
-<li><p>方法</p>
-<p>  fillText()    在画布上绘制”被填充的”文本。</p>
-<p>  strokeText()    在画布上绘制文本（无填充）。</p>
-<p>  measureText()    返回包含指定文本宽度的对象。</p>
-</li>
-</ul>
-</li>
-<li><p>图像绘制 - 方法</p>
-<p>  drawImage()    向画布上绘制图像、画布或视频。</p>
-</li>
-<li><p>像素操作</p>
-<ul>
-<li><p>属性</p>
-<p>  width    返回 ImageData 对象的宽度。</p>
-<p>  height    返回 ImageData 对象的高度。</p>
-<p>  data    返回一个对象，其包含指定的 ImageData 对象的图像数据。</p>
-</li>
-<li><p>方法</p>
-<p>  createImageData()    创建新的、空白的 ImageData 对象。</p>
-<p>  getImageData()    返回 ImageData 对象，该对象为画布上指定的矩形复制像素数据。</p>
-<p>  putImageData()    把图像数据（从指定的 ImageData 对象）放回画布上。</p>
-</li>
-</ul>
-</li>
-<li><p>合成 -属性</p>
-<p>  globalAlpha    设置或返回绘图的当前 alpha 或透明值。</p>
-<p>  globalCompositeOperation    设置或返回新图像如何绘制到已有的图像上。</p>
-</li>
-<li><p>其他 - 方法</p>
-<p>  save()    保存当前环境的状态。</p>
-<p>  restore()    返回之前保存过的路径状态和属性。</p>
-<p>  createEvent()</p>
-<p>  getContext()</p>
-<p>  toDataURL()</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/08/Canvas/" data-id="cjqeslp700003skozaap3v676" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/08/Npm/" data-id="cjqet0wgv0001zsozp8y317r9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1141,7 +959,268 @@ Git 提供了 git add 命令简化操作。
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/08/Git/" data-id="cjqeslp6w0001skoz0msrztd7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/08/Git/" data-id="cjqet0wh10002zsozbokn9x0q" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Canvas" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/08/Canvas/" class="article-date">
+  <time datetime="2018-12-07T16:00:00.000Z" itemprop="datePublished">2018-12-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/08/Canvas/">Canvas 绘图</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="初始-Canvas"><a href="#初始-Canvas" class="headerlink" title="初始 Canvas"></a>初始 Canvas</h2><ul>
+<li><p>canvas - 定义</p>
+<p>  HTML5 元素用于图形的绘制，通过脚本 (通常是 JavaScript) 来完成.</p>
+<p>  canvas 标签只是图形容器，必须使用脚本来绘制图形。通过多种方法使用 canvas 绘制路径,盒、圆、字符以及添加图像。</p>
+</li>
+<li><p>Canvas - Can i use</p>
+<p>  <img src="./assets/Can i use.png" alt=""></p>
+</li>
+<li><p>Canvas - 坐标</p>
+<p>  canvas 默认左上角为原点 (0,0)，横向 x，纵向 y</p>
+</li>
+<li><p>Canvas - 路径</p>
+<ul>
+<li><p>在 Canvas 上画线，我们将使用以下两种方法：</p>
+<p>  moveTo(x, y) 定义线条开始坐标</p>
+<p>  lineTo(x, y) 定义线条结束坐标</p>
+<p>  定义开始坐标(0,0), 和结束坐标 (200, 100)。然后使用 stroke() 方法来绘制线条</p>
+</li>
+<li><p>在canvas中绘制圆形, 我们将使用以下方法，并使用 stroke() 或者 fill() 绘制线条或填充</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">beginPath() // 开始路线</span><br><span class="line">arc(x, y, r, start, stop) // 绘制圆形</span><br><span class="line">stroke() || fill() // 描边 或 填充</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Canvas - 文本</p>
+<p>  使用 canvas 绘制文本，重要的属性和方法如下：</p>
+<pre><code>font - 定义字体
+
+fillText(text,x,y) - 在 canvas 上绘制实心的文本
+
+strokeText(text,x,y) - 在 canvas 上绘制空心的文本
+</code></pre></li>
+<li><p>Canvas - 渐变</p>
+<p>  渐变可以填充在矩形, 圆形, 线条, 文本等等, 各种形状可以自己定义不同的颜色。</p>
+<p>  以下有两种不同的方式来设置 Canvas 渐变：</p>
+<pre><code>createLinearGradient(x, y, x1, y1) - 创建线条渐变
+
+createRadialGradient(x, y, r, x1, y1, r1) - 创建一个径向/圆渐变
+</code></pre><p>  注意：</p>
+<pre><code>当我们使用渐变对象，必须使用两种或两种以上的停止颜色。
+
+addColorStop() 方法指定颜色停止，参数使用坐标来描述，可以是 0 至 1.
+
+使用渐变，设置 fillStyle 或 strokeStyle 的值为 渐变，然后绘制形状，如矩形，文本，或一条线。
+</code></pre></li>
+<li><p>Canvas - 图像</p>
+<p>  把一幅图像放置到画布上, 使用以下方法: drawImage(image,x,y)</p>
+</li>
+<li><p>javascript 实例</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">&lt;img id=&quot;scream&quot; src=&quot;./assets/scream.png&quot; alt=&quot;The Scream&quot; width=&quot;220&quot; height=&quot;277&quot; style=&quot;display:none&quot;&gt;</span><br><span class="line">&lt;canvas id=&quot;myCanvas&quot; width=&quot;200&quot; height=&quot;100&quot; style=&quot;border:1px solid #000000;&quot;&gt;&lt;/canvas&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var c = document.getElementById(&quot;myCanvas&quot;);  // 获取画布</span><br><span class="line">    var ctx = c.getContext(&quot;2d&quot;); // 创建 context 对象</span><br><span class="line"></span><br><span class="line">    &lt;!-- Canvas - 坐标 --&gt;</span><br><span class="line">    ctx.fillStyle = &quot;#FF0000&quot;; // 填充画布背景色，默认#000000</span><br><span class="line">    ctx.fillRect(0, 0, 150, 75); // 填充区域（x, y, width, height）</span><br><span class="line"></span><br><span class="line">    &lt;!-- Canvas - 路径 线 --&gt;</span><br><span class="line">    ctx.moveTo(0, 0);</span><br><span class="line">    ctx.lineTo(200, 100);</span><br><span class="line">    ctx.stroke();</span><br><span class="line"></span><br><span class="line">    &lt;!-- Canvas - 坐标 圆形 --&gt;</span><br><span class="line">    ctx.beginPath();</span><br><span class="line">    ctx.arc(95, 50, 40, 0, 2*Math.PI);</span><br><span class="line">    ctx.stroke();</span><br><span class="line"></span><br><span class="line">    &lt;!-- Canvas - 文本 --&gt;</span><br><span class="line">    ctx.font = &apos;30px Arial&apos;;</span><br><span class="line">    ctx.fillText(&apos;Hello World&apos;, 10, 50); // 实心文本</span><br><span class="line">    ctx.strokeText(&quot;Hello World&quot;,10,50); // 空心文本</span><br><span class="line"></span><br><span class="line">    &lt;!-- Canvas - 渐变 --&gt;</span><br><span class="line">    // 创建渐变</span><br><span class="line">    var grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100); // 径向渐变</span><br><span class="line">    var grd = ctx.createLinearGradient(0, 0 , 200, 0); // 线性渐变</span><br><span class="line">    grd.addColorStop(0, &quot;red&quot;);</span><br><span class="line">    grd.addColorStop(1, &quot;white&quot;);</span><br><span class="line">    </span><br><span class="line">    // 填充渐变</span><br><span class="line">    ctx.fillStyle = grd;</span><br><span class="line">    ctx.fillRect(10, 10, 150, 80);</span><br><span class="line"></span><br><span class="line">    &lt;!-- Canvas - 图像 --&gt;</span><br><span class="line">    var img = document.getElementById(&apos;scream&apos;);</span><br><span class="line">    img.onload = function() &#123;</span><br><span class="line">        ctx.drawImage(img, 10, 10);</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="深入-Canvas"><a href="#深入-Canvas" class="headerlink" title="深入 Canvas"></a>深入 Canvas</h2><ul>
+<li><p>颜色、样式和阴影</p>
+<ul>
+<li><p>属性</p>
+<p>  fillStyle    设置或返回用于填充绘画的颜色、渐变或模式。</p>
+<p>  strokeStyle    设置或返回用于笔触的颜色、渐变或模式。</p>
+<p>  shadowColor    设置或返回用于阴影的颜色。</p>
+<p>  shadowBlur    设置或返回用于阴影的模糊级别。</p>
+<p>  shadowOffsetX    设置或返回阴影与形状的水平距离。</p>
+<p>  shadowOffsetY    设置或返回阴影与形状的垂直距离。</p>
+</li>
+<li><p>方法</p>
+<p>  createLinearGradient()    创建线性渐变（用在画布内容上）。</p>
+<p>  createPattern()    在指定的方向上重复指定的元素。</p>
+<p>  createRadialGradient()    创建放射状/环形的渐变（用在画布内容上）。</p>
+<p>  addColorStop()    规定渐变对象中的颜色和停止位置。</p>
+</li>
+</ul>
+</li>
+<li><p>线条样式 - 属性</p>
+<p>  lineCap    设置或返回线条的结束端点样式。</p>
+<p>  lineJoin    设置或返回两条线相交时，所创建的拐角类型。</p>
+<p>  lineWidth    设置或返回当前的线条宽度。</p>
+<p>  miterLimit    设置或返回最大斜接长度。</p>
+</li>
+<li><p>矩形 - 方法</p>
+<p>  rect()    创建矩形。</p>
+<p>  fillRect()    绘制”被填充”的矩形。</p>
+<p>  strokeRect()    绘制矩形（无填充）。</p>
+<p>  clearRect()    在给定的矩形内清除指定的像素。</p>
+</li>
+<li><p>路径 - 方法</p>
+<p>  fill()    填充当前绘图（路径）。</p>
+<p>  stroke()    绘制已定义的路径。</p>
+<p>  beginPath()    起始一条路径，或重置当前路径。</p>
+<p>  moveTo()    把路径移动到画布中的指定点，不创建线条。</p>
+<p>  closePath()    创建从当前点回到起始点的路径。</p>
+<p>  lineTo()    添加一个新点，然后在画布中创建从该点到最后指定点的线条。</p>
+<p>  clip()    从原始画布剪切任意形状和尺寸的区域。</p>
+<p>  quadraticCurveTo()    创建二次贝塞尔曲线。</p>
+<p>  bezierCurveTo()    创建三次贝塞尔曲线。</p>
+<p>  arc()    创建弧/曲线（用于创建圆形或部分圆）。</p>
+<p>  arcTo()    创建两切线之间的弧/曲线。</p>
+<p>  isPointInPath()    如果指定的点位于当前路径中，则返回 true，否则返回 false。</p>
+</li>
+<li><p>转换 - 方法</p>
+<p>  scale()    缩放当前绘图至更大或更小。</p>
+<p>  rotate()    旋转当前绘图。</p>
+<p>  translate()    重新映射画布上的 (0,0) 位置。</p>
+<p>  transform()    替换绘图的当前转换矩阵。</p>
+<p>  setTransform()    将当前转换重置为单位矩阵。然后运行 transform()。</p>
+</li>
+<li><p>文本</p>
+<ul>
+<li><p>属性</p>
+<p>  font    设置或返回文本内容的当前字体属性。</p>
+<p>  textAlign    设置或返回文本内容的当前对齐方式。</p>
+<p>  textBaseline    设置或返回在绘制文本时使用的当前文本基线。</p>
+</li>
+<li><p>方法</p>
+<p>  fillText()    在画布上绘制”被填充的”文本。</p>
+<p>  strokeText()    在画布上绘制文本（无填充）。</p>
+<p>  measureText()    返回包含指定文本宽度的对象。</p>
+</li>
+</ul>
+</li>
+<li><p>图像绘制 - 方法</p>
+<p>  drawImage()    向画布上绘制图像、画布或视频。</p>
+</li>
+<li><p>像素操作</p>
+<ul>
+<li><p>属性</p>
+<p>  width    返回 ImageData 对象的宽度。</p>
+<p>  height    返回 ImageData 对象的高度。</p>
+<p>  data    返回一个对象，其包含指定的 ImageData 对象的图像数据。</p>
+</li>
+<li><p>方法</p>
+<p>  createImageData()    创建新的、空白的 ImageData 对象。</p>
+<p>  getImageData()    返回 ImageData 对象，该对象为画布上指定的矩形复制像素数据。</p>
+<p>  putImageData()    把图像数据（从指定的 ImageData 对象）放回画布上。</p>
+</li>
+</ul>
+</li>
+<li><p>合成 -属性</p>
+<p>  globalAlpha    设置或返回绘图的当前 alpha 或透明值。</p>
+<p>  globalCompositeOperation    设置或返回新图像如何绘制到已有的图像上。</p>
+</li>
+<li><p>其他 - 方法</p>
+<p>  save()    保存当前环境的状态。</p>
+<p>  restore()    返回之前保存过的路径状态和属性。</p>
+<p>  createEvent()</p>
+<p>  getContext()</p>
+<p>  toDataURL()</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/08/Canvas/" data-id="cjqet0wgq0000zsoz96hxrr4d" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-VueMultiple" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/24/VueMultiple/" class="article-date">
+  <time datetime="2018-11-23T16:00:00.000Z" itemprop="datePublished">2018-11-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/24/VueMultiple/">Vue-cli工程的多页面开发配置步骤</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="搭建vue-cli项目"><a href="#搭建vue-cli项目" class="headerlink" title="搭建vue-cli项目"></a>搭建vue-cli项目</h2><ul>
+<li><p>1、全局安装vue-cli</p>
+<p>  npm install -g vue-cli</p>
+</li>
+<li><p>2、搭建新项目</p>
+<p>  vue init webpack vue-multiple-pages</p>
+</li>
+<li><p>3、进入项目 </p>
+<p>  cd vue-multiple-pages</p>
+</li>
+<li><p>4、初始化安装依赖</p>
+<p>  npm install  </p>
+</li>
+<li><p>5、执行项目</p>
+<p>  npm run dev</p>
+</li>
+<li><p>6、项目打包</p>
+<p>  npm run build</p>
+</li>
+</ul>
+<h2 id="向-build-utils-js-添加两个函数"><a href="#向-build-utils-js-添加两个函数" class="headerlink" title="向 build/utils.js 添加两个函数"></a>向 build/utils.js 添加两个函数</h2><p>有两种方式</p>
+<ul>
+<li><p>1、使用package.json,配置地址信息</p>
+<p>  package.json文件</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 添加需要显示的页面路径名称</span><br><span class="line">&quot;buildDirs&quot;: [</span><br><span class="line">    &quot;demo/es-activity-list&quot;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<pre><code>build/utils.js文件
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">* @method 多页面配置</span><br><span class="line">*/</span><br><span class="line">const packageConfig = require(&apos;../package.json&apos;)</span><br><span class="line">const entry_prefix = &quot;./src/pages/&quot;</span><br><span class="line">const getEntry = () =&gt; &#123;</span><br><span class="line">    const buildDirs = packageConfig.buildDirs; </span><br><span class="line">    return buildDirs;</span><br><span class="line">&#125;;</span><br><span class="line">exports.getEntry = getEntry;</span><br><span class="line">exports.entries = function() &#123;</span><br><span class="line">    let entryObj = &#123;&#125;;</span><br><span class="line">    getEntry().forEach(item =&gt; &#123;</span><br><span class="line">        let paths = item.split(&apos;/&apos;);</span><br><span class="line">        // console.info(&apos;item: &apos;, item)</span><br><span class="line">        // console.info(&apos;path: &apos;, paths)</span><br><span class="line">        entryObj[item + &apos;/&apos; + paths[paths.length - 1]] = `$&#123;entry_prefix&#125;$&#123;item&#125;/main.js`;</span><br><span class="line">        paths = null;</span><br><span class="line">    &#125;);</span><br><span class="line">    // console.info(&apos;entryObj: &apos;, entryObj)</span><br><span class="line">    return entryObj;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">exports.htmlPlugin = function() &#123;</span><br><span class="line">    let arr = [];</span><br><span class="line">    getEntry().forEach(item =&gt; &#123;</span><br><span class="line">        let paths = item.split(&apos;/&apos;);</span><br><span class="line">        let tempItem = item + &apos;/&apos; + paths[paths.length - 1];</span><br><span class="line">        let templateFile = `$&#123;entry_prefix&#125;$&#123;item&#125;/index.html`;</span><br><span class="line">        let filename = `html/$&#123;item&#125;.html`;</span><br><span class="line">        let conf = &#123;</span><br><span class="line">            template: templateFile,</span><br><span class="line">            filename: filename,</span><br><span class="line">            chunks: [ item + &apos;/&apos; + &quot;manifest&quot;,  item + &apos;/&apos; + &quot;vendor&quot;, tempItem],</span><br><span class="line">            inject: true</span><br><span class="line">        &#125;;</span><br><span class="line">        // console.info(&apos;conf&apos;, conf)</span><br><span class="line">        if (process.env.NODE_ENV === &quot;production&quot;) &#123;</span><br><span class="line">            conf = merge(conf, &#123;</span><br><span class="line">                minify: &#123;</span><br><span class="line">                    removeComments: false,</span><br><span class="line">                    collapseWhitespace: false,</span><br><span class="line">                    removeAttributeQuotes: true</span><br><span class="line">                &#125;,</span><br><span class="line">                chunksSortMode: &quot;dependency&quot;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        arr.push(new HtmlWebpackPlugin(conf));</span><br><span class="line">    &#125;);</span><br><span class="line">    return arr;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</code></pre><ul>
+<li><p>2、通过glob第三方模块获取文件后缀名</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">const getEntry = () =&gt; &#123; </span><br><span class="line">    let entryFiles = glob.sync(PAGE_PATH + &apos;/*/*.js&apos;);</span><br><span class="line">    let buildDirs = [];</span><br><span class="line"></span><br><span class="line">    entryFiles.forEach((filePath) =&gt; &#123;</span><br><span class="line">        let item = filePath.substring(filePath.indexOf(&apos;/pages/&apos;) + 7, filePath.lastIndexOf(&apos;/&apos;));</span><br><span class="line">        buildDirs.push(item)</span><br><span class="line">    &#125;)</span><br><span class="line">    return buildDirs;</span><br><span class="line">&#125;;</span><br><span class="line">exports.getEntry = getEntry;</span><br><span class="line">/**</span><br><span class="line">* @method 多入口配置</span><br><span class="line">* @param 通过glob模块读取pages文件夹,(**) 表示查找文件夹, *.js表示查找.js文件</span><br><span class="line">*/</span><br><span class="line">exports.entries = function() &#123;</span><br><span class="line">    let entryFiles = glob.sync(PAGE_PATH + &apos;/*/*.js&apos;);</span><br><span class="line">    let entryObj = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    getEntry().forEach((item) =&gt; &#123;</span><br><span class="line">        let paths = item.split(&apos;/&apos;);</span><br><span class="line">        entryObj[item + &apos;/&apos; + paths[paths.length - 1]] = `$&#123;entry_prefix&#125;$&#123;item&#125;/$&#123;item&#125;.js`;</span><br><span class="line">        paths = null;</span><br><span class="line">    &#125;)</span><br><span class="line">    return entryObj;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">* @method 多页面输出配置</span><br><span class="line">* @ 与上面的多页面入口配置相同，读取pages文件夹下的对应的html后缀文件，然后放入数组中</span><br><span class="line">*/</span><br><span class="line">exports.htmlPlugin = function() &#123;</span><br><span class="line">    let arr = [];</span><br><span class="line">    getEntry().forEach(item =&gt; &#123;</span><br><span class="line">        let paths = item.split(&apos;/&apos;);</span><br><span class="line">        let tempItem = item + &apos;/&apos; + paths[paths.length - 1];</span><br><span class="line">        let templateFile = `$&#123;entry_prefix&#125;$&#123;item&#125;/index.html`;</span><br><span class="line">        let filename = `html/$&#123;item&#125;/index.html`;</span><br><span class="line">        let conf = &#123;</span><br><span class="line">            template: templateFile,</span><br><span class="line">            filename: filename,</span><br><span class="line">            chunks: [ item + &apos;/&apos; + &quot;manifest&quot;,  item + &apos;/&apos; + &quot;vendor&quot;, tempItem],</span><br><span class="line">            inject: true</span><br><span class="line">        &#125;;</span><br><span class="line">        console.info(&apos;conf&apos;, conf)</span><br><span class="line">        if (process.env.NODE_ENV === &quot;production&quot;) &#123;</span><br><span class="line">            conf = merge(conf, &#123;</span><br><span class="line">                minify: &#123;</span><br><span class="line">                    removeComments: false,</span><br><span class="line">                    collapseWhitespace: false,</span><br><span class="line">                    removeAttributeQuotes: true</span><br><span class="line">                &#125;,</span><br><span class="line">                chunksSortMode: &quot;dependency&quot;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        arr.push(new HtmlWebpackPlugin(conf));</span><br><span class="line">    &#125;);</span><br><span class="line">    return arr;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意</p>
+<p>  两者的区别在于获取页面名称及路径的方式不同，即入口文件的拼接。</p>
+</li>
+</ul>
+<h2 id="修改-webpack-base-conf-js-文件"><a href="#修改-webpack-base-conf-js-文件" class="headerlink" title="修改 webpack.base.conf.js 文件"></a>修改 webpack.base.conf.js 文件</h2><pre><code>修改入口文件的引入配置
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// entry: &#123;</span><br><span class="line">//   app: &apos;./src/main.js&apos;</span><br><span class="line">// &#125;,</span><br><span class="line">entry: utils.entries(),</span><br></pre></td></tr></table></figure>
+</code></pre><h2 id="修改-webpack-dev-conf-js-文件"><a href="#修改-webpack-dev-conf-js-文件" class="headerlink" title="修改 webpack.dev.conf.js 文件"></a>修改 webpack.dev.conf.js 文件</h2><pre><code>注释 new HtmlWebpackPlugin，添加concat内容,修改 module.export
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">plugins: [</span><br><span class="line">    。。。</span><br><span class="line">    // new HtmlWebpackPlugin(&#123;</span><br><span class="line">    //   filename: &apos;index.html&apos;,</span><br><span class="line">    //   template: &apos;index.html&apos;,</span><br><span class="line">    //   inject: true</span><br><span class="line">    // &#125;),</span><br><span class="line">    。。。</span><br><span class="line">].concat(utils.htmlPlugin())</span><br><span class="line"></span><br><span class="line">module.exports = new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">    。。。</span><br><span class="line">    portfinder.getPort((err, port) =&gt; &#123;</span><br><span class="line">    if (err) &#123;</span><br><span class="line">    reject(err)</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        // 遍历需要输出的页面url</span><br><span class="line">        const newsArr = [];</span><br><span class="line">        utils.getEntry().forEach(item =&gt; &#123;</span><br><span class="line">            let filename = `$&#123;item&#125;.html`;</span><br><span class="line">            //let filename = `$&#123;item&#125;/index.html`; // 使用 glob 模块时</span><br><span class="line">            let msg = `Your application is running here: </span><br><span class="line">                http://$&#123;devWebpackConfig.devServer.host&#125;:$&#123;port&#125;/html/$&#123;filename&#125;`;</span><br><span class="line">            newsArr.push(msg);</span><br><span class="line">        &#125;);</span><br><span class="line">        // Add FriendlyErrorsPlugin</span><br><span class="line">        devWebpackConfig.plugins.push(new FriendlyErrorsPlugin(&#123;</span><br><span class="line">            compilationSuccessInfo: &#123;</span><br><span class="line">                messages: [...newsArr]</span><br><span class="line">            &#125;,</span><br><span class="line">            。。。</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</code></pre><h2 id="修改-webpack-prod-conf-js-文件"><a href="#修改-webpack-prod-conf-js-文件" class="headerlink" title="修改 webpack.prod.conf.js 文件"></a>修改 webpack.prod.conf.js 文件</h2><pre><code>注释 new HtmlWebpackPlugin，添加concat内容
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">plugins: [</span><br><span class="line">    。。。</span><br><span class="line">    // new HtmlWebpackPlugin(&#123;</span><br><span class="line">    //   filename: config.build.index,</span><br><span class="line">    //   template: &apos;index.html&apos;,</span><br><span class="line">    //   inject: true,</span><br><span class="line">    //   minify: &#123;</span><br><span class="line">    //     removeComments: true,</span><br><span class="line">    //     collapseWhitespace: true,</span><br><span class="line">    //     removeAttributeQuotes: true</span><br><span class="line">    //     // more options:</span><br><span class="line">    //     // https://github.com/kangax/html-minifier#options-quick-reference</span><br><span class="line">    //   &#125;,</span><br><span class="line">    //   // necessary to consistently work with multiple chunks via CommonsChunkPlugin</span><br><span class="line">    //   chunksSortMode: &apos;dependency&apos;</span><br><span class="line">    // &#125;),</span><br><span class="line">    。。。</span><br><span class="line">].concat(utils.htmlPlugin())</span><br></pre></td></tr></table></figure>
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/11/24/VueMultiple/" data-id="cjqet0wh30004zsozj6pawfyj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1272,7 +1351,7 @@ Git 提供了 git add 命令简化操作。
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/24/WebStorage/" data-id="cjqeslp730006skoznj9jt7g5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/11/24/WebStorage/" data-id="cjqet0wh40005zsozxh8s9wpy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1282,88 +1361,9 @@ Git 提供了 git add 命令简化操作。
 
 
   
-    <article id="post-VueMultiple" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-css-attr" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/11/24/VueMultiple/" class="article-date">
-  <time datetime="2018-11-23T16:00:00.000Z" itemprop="datePublished">2018-11-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/24/VueMultiple/">Vue-cli工程的多页面开发配置步骤</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="搭建vue-cli项目"><a href="#搭建vue-cli项目" class="headerlink" title="搭建vue-cli项目"></a>搭建vue-cli项目</h2><ul>
-<li><p>1、全局安装vue-cli</p>
-<p>  npm install -g vue-cli</p>
-</li>
-<li><p>2、搭建新项目</p>
-<p>  vue init webpack vue-multiple-pages</p>
-</li>
-<li><p>3、进入项目 </p>
-<p>  cd vue-multiple-pages</p>
-</li>
-<li><p>4、初始化安装依赖</p>
-<p>  npm install  </p>
-</li>
-<li><p>5、执行项目</p>
-<p>  npm run dev</p>
-</li>
-<li><p>6、项目打包</p>
-<p>  npm run build</p>
-</li>
-</ul>
-<h2 id="向-build-utils-js-添加两个函数"><a href="#向-build-utils-js-添加两个函数" class="headerlink" title="向 build/utils.js 添加两个函数"></a>向 build/utils.js 添加两个函数</h2><p>有两种方式</p>
-<ul>
-<li><p>1、使用package.json,配置地址信息</p>
-<p>  package.json文件</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 添加需要显示的页面路径名称</span><br><span class="line">&quot;buildDirs&quot;: [</span><br><span class="line">    &quot;demo/es-activity-list&quot;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<pre><code>build/utils.js文件
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">* @method 多页面配置</span><br><span class="line">*/</span><br><span class="line">const packageConfig = require(&apos;../package.json&apos;)</span><br><span class="line">const entry_prefix = &quot;./src/pages/&quot;</span><br><span class="line">const getEntry = () =&gt; &#123;</span><br><span class="line">    const buildDirs = packageConfig.buildDirs; </span><br><span class="line">    return buildDirs;</span><br><span class="line">&#125;;</span><br><span class="line">exports.getEntry = getEntry;</span><br><span class="line">exports.entries = function() &#123;</span><br><span class="line">    let entryObj = &#123;&#125;;</span><br><span class="line">    getEntry().forEach(item =&gt; &#123;</span><br><span class="line">        let paths = item.split(&apos;/&apos;);</span><br><span class="line">        // console.info(&apos;item: &apos;, item)</span><br><span class="line">        // console.info(&apos;path: &apos;, paths)</span><br><span class="line">        entryObj[item + &apos;/&apos; + paths[paths.length - 1]] = `$&#123;entry_prefix&#125;$&#123;item&#125;/main.js`;</span><br><span class="line">        paths = null;</span><br><span class="line">    &#125;);</span><br><span class="line">    // console.info(&apos;entryObj: &apos;, entryObj)</span><br><span class="line">    return entryObj;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">exports.htmlPlugin = function() &#123;</span><br><span class="line">    let arr = [];</span><br><span class="line">    getEntry().forEach(item =&gt; &#123;</span><br><span class="line">        let paths = item.split(&apos;/&apos;);</span><br><span class="line">        let tempItem = item + &apos;/&apos; + paths[paths.length - 1];</span><br><span class="line">        let templateFile = `$&#123;entry_prefix&#125;$&#123;item&#125;/index.html`;</span><br><span class="line">        let filename = `html/$&#123;item&#125;.html`;</span><br><span class="line">        let conf = &#123;</span><br><span class="line">            template: templateFile,</span><br><span class="line">            filename: filename,</span><br><span class="line">            chunks: [ item + &apos;/&apos; + &quot;manifest&quot;,  item + &apos;/&apos; + &quot;vendor&quot;, tempItem],</span><br><span class="line">            inject: true</span><br><span class="line">        &#125;;</span><br><span class="line">        // console.info(&apos;conf&apos;, conf)</span><br><span class="line">        if (process.env.NODE_ENV === &quot;production&quot;) &#123;</span><br><span class="line">            conf = merge(conf, &#123;</span><br><span class="line">                minify: &#123;</span><br><span class="line">                    removeComments: false,</span><br><span class="line">                    collapseWhitespace: false,</span><br><span class="line">                    removeAttributeQuotes: true</span><br><span class="line">                &#125;,</span><br><span class="line">                chunksSortMode: &quot;dependency&quot;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        arr.push(new HtmlWebpackPlugin(conf));</span><br><span class="line">    &#125;);</span><br><span class="line">    return arr;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</code></pre><ul>
-<li><p>2、通过glob第三方模块获取文件后缀名</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">const getEntry = () =&gt; &#123; </span><br><span class="line">    let entryFiles = glob.sync(PAGE_PATH + &apos;/*/*.js&apos;);</span><br><span class="line">    let buildDirs = [];</span><br><span class="line"></span><br><span class="line">    entryFiles.forEach((filePath) =&gt; &#123;</span><br><span class="line">        let item = filePath.substring(filePath.indexOf(&apos;/pages/&apos;) + 7, filePath.lastIndexOf(&apos;/&apos;));</span><br><span class="line">        buildDirs.push(item)</span><br><span class="line">    &#125;)</span><br><span class="line">    return buildDirs;</span><br><span class="line">&#125;;</span><br><span class="line">exports.getEntry = getEntry;</span><br><span class="line">/**</span><br><span class="line">* @method 多入口配置</span><br><span class="line">* @param 通过glob模块读取pages文件夹,(**) 表示查找文件夹, *.js表示查找.js文件</span><br><span class="line">*/</span><br><span class="line">exports.entries = function() &#123;</span><br><span class="line">    let entryFiles = glob.sync(PAGE_PATH + &apos;/*/*.js&apos;);</span><br><span class="line">    let entryObj = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    getEntry().forEach((item) =&gt; &#123;</span><br><span class="line">        let paths = item.split(&apos;/&apos;);</span><br><span class="line">        entryObj[item + &apos;/&apos; + paths[paths.length - 1]] = `$&#123;entry_prefix&#125;$&#123;item&#125;/$&#123;item&#125;.js`;</span><br><span class="line">        paths = null;</span><br><span class="line">    &#125;)</span><br><span class="line">    return entryObj;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">* @method 多页面输出配置</span><br><span class="line">* @ 与上面的多页面入口配置相同，读取pages文件夹下的对应的html后缀文件，然后放入数组中</span><br><span class="line">*/</span><br><span class="line">exports.htmlPlugin = function() &#123;</span><br><span class="line">    let arr = [];</span><br><span class="line">    getEntry().forEach(item =&gt; &#123;</span><br><span class="line">        let paths = item.split(&apos;/&apos;);</span><br><span class="line">        let tempItem = item + &apos;/&apos; + paths[paths.length - 1];</span><br><span class="line">        let templateFile = `$&#123;entry_prefix&#125;$&#123;item&#125;/index.html`;</span><br><span class="line">        let filename = `html/$&#123;item&#125;/index.html`;</span><br><span class="line">        let conf = &#123;</span><br><span class="line">            template: templateFile,</span><br><span class="line">            filename: filename,</span><br><span class="line">            chunks: [ item + &apos;/&apos; + &quot;manifest&quot;,  item + &apos;/&apos; + &quot;vendor&quot;, tempItem],</span><br><span class="line">            inject: true</span><br><span class="line">        &#125;;</span><br><span class="line">        console.info(&apos;conf&apos;, conf)</span><br><span class="line">        if (process.env.NODE_ENV === &quot;production&quot;) &#123;</span><br><span class="line">            conf = merge(conf, &#123;</span><br><span class="line">                minify: &#123;</span><br><span class="line">                    removeComments: false,</span><br><span class="line">                    collapseWhitespace: false,</span><br><span class="line">                    removeAttributeQuotes: true</span><br><span class="line">                &#125;,</span><br><span class="line">                chunksSortMode: &quot;dependency&quot;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        arr.push(new HtmlWebpackPlugin(conf));</span><br><span class="line">    &#125;);</span><br><span class="line">    return arr;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>注意</p>
-<p>  两者的区别在于获取页面名称及路径的方式不同，即入口文件的拼接。</p>
-</li>
-</ul>
-<h2 id="修改-webpack-base-conf-js-文件"><a href="#修改-webpack-base-conf-js-文件" class="headerlink" title="修改 webpack.base.conf.js 文件"></a>修改 webpack.base.conf.js 文件</h2><pre><code>修改入口文件的引入配置
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// entry: &#123;</span><br><span class="line">//   app: &apos;./src/main.js&apos;</span><br><span class="line">// &#125;,</span><br><span class="line">entry: utils.entries(),</span><br></pre></td></tr></table></figure>
-</code></pre><h2 id="修改-webpack-dev-conf-js-文件"><a href="#修改-webpack-dev-conf-js-文件" class="headerlink" title="修改 webpack.dev.conf.js 文件"></a>修改 webpack.dev.conf.js 文件</h2><pre><code>注释 new HtmlWebpackPlugin，添加concat内容,修改 module.export
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">plugins: [</span><br><span class="line">    。。。</span><br><span class="line">    // new HtmlWebpackPlugin(&#123;</span><br><span class="line">    //   filename: &apos;index.html&apos;,</span><br><span class="line">    //   template: &apos;index.html&apos;,</span><br><span class="line">    //   inject: true</span><br><span class="line">    // &#125;),</span><br><span class="line">    。。。</span><br><span class="line">].concat(utils.htmlPlugin())</span><br><span class="line"></span><br><span class="line">module.exports = new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">    。。。</span><br><span class="line">    portfinder.getPort((err, port) =&gt; &#123;</span><br><span class="line">    if (err) &#123;</span><br><span class="line">    reject(err)</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        // 遍历需要输出的页面url</span><br><span class="line">        const newsArr = [];</span><br><span class="line">        utils.getEntry().forEach(item =&gt; &#123;</span><br><span class="line">            let filename = `$&#123;item&#125;.html`;</span><br><span class="line">            //let filename = `$&#123;item&#125;/index.html`; // 使用 glob 模块时</span><br><span class="line">            let msg = `Your application is running here: </span><br><span class="line">                http://$&#123;devWebpackConfig.devServer.host&#125;:$&#123;port&#125;/html/$&#123;filename&#125;`;</span><br><span class="line">            newsArr.push(msg);</span><br><span class="line">        &#125;);</span><br><span class="line">        // Add FriendlyErrorsPlugin</span><br><span class="line">        devWebpackConfig.plugins.push(new FriendlyErrorsPlugin(&#123;</span><br><span class="line">            compilationSuccessInfo: &#123;</span><br><span class="line">                messages: [...newsArr]</span><br><span class="line">            &#125;,</span><br><span class="line">            。。。</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</code></pre><h2 id="修改-webpack-prod-conf-js-文件"><a href="#修改-webpack-prod-conf-js-文件" class="headerlink" title="修改 webpack.prod.conf.js 文件"></a>修改 webpack.prod.conf.js 文件</h2><pre><code>注释 new HtmlWebpackPlugin，添加concat内容
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">plugins: [</span><br><span class="line">    。。。</span><br><span class="line">    // new HtmlWebpackPlugin(&#123;</span><br><span class="line">    //   filename: config.build.index,</span><br><span class="line">    //   template: &apos;index.html&apos;,</span><br><span class="line">    //   inject: true,</span><br><span class="line">    //   minify: &#123;</span><br><span class="line">    //     removeComments: true,</span><br><span class="line">    //     collapseWhitespace: true,</span><br><span class="line">    //     removeAttributeQuotes: true</span><br><span class="line">    //     // more options:</span><br><span class="line">    //     // https://github.com/kangax/html-minifier#options-quick-reference</span><br><span class="line">    //   &#125;,</span><br><span class="line">    //   // necessary to consistently work with multiple chunks via CommonsChunkPlugin</span><br><span class="line">    //   chunksSortMode: &apos;dependency&apos;</span><br><span class="line">    // &#125;),</span><br><span class="line">    。。。</span><br><span class="line">].concat(utils.htmlPlugin())</span><br></pre></td></tr></table></figure>
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/24/VueMultiple/" data-id="cjqeslp710004skozq1g5t6xt" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-history" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/10/11/history/" class="article-date">
+    <a href="/2018/10/11/css-attr/" class="article-date">
   <time datetime="2018-10-10T16:00:00.000Z" itemprop="datePublished">2018-10-11</time>
 </a>
     
@@ -1375,7 +1375,7 @@ Git 提供了 git add 命令简化操作。
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/11/history/">Route history</a>
+      <a class="article-title" href="/2018/10/11/css-attr/">css 属性</a>
     </h1>
   
 
@@ -1383,61 +1383,71 @@ Git 提供了 git add 命令简化操作。
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="URL-组成"><a href="#URL-组成" class="headerlink" title="URL 组成"></a>URL 组成</h2><ul>
-<li><p>protocol://hostname[:port]/path/[;parameter][?query]#fragment</p>
-<p>  protocol 协议，常用的协议是http</p>
-<p>  hostname 主机地址，可以是域名，也可以是IP地址</p>
-<p>  port 端口 http协议默认端口是：80端口，如果不写默认就是:80端口</p>
-<p>  path 路径 网络资源在服务器中的指定路径</p>
-<p>  parameter 参数 如果要向服务器传入参数，在这部分输入</p>
-<p>  query 查询字符串 如果需要从服务器那里查询内容，在这里编辑</p>
-<p>  fragment 片段 网页中可能会分为不同的片段，如果想访问网页后直接到达指定位置，可以在这部分设置</p>
-</li>
-</ul>
-<h2 id="Route-history-常用的三种形式来实现路由"><a href="#Route-history-常用的三种形式来实现路由" class="headerlink" title="Route history 常用的三种形式来实现路由"></a>Route history 常用的三种形式来实现路由</h2><p>browserHistory、hashHistory、createMemoryHistory</p>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import &#123; browserHistory &#125; from &apos;react-router&apos;</span><br><span class="line">render(</span><br><span class="line">    &lt;Router history=&#123;browserHistory&#125; routes=&#123;routes&#125; /&gt;,</span><br><span class="line">    document.getElementById(&apos;app&apos;)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-</code></pre><ul>
-<li><p>1、Browser history </p>
-<p>  使用 React Router 的应用推荐的 history。</p>
-<p>  它使用浏览器中的 History API 用于处理 URL，创建一个像example.com/some/path这样真实的 URL。</p>
-<p>  需要server端支持，并向server发送request。</p>
-<p>  服务器需要做好处理 URL 的准备。</p>
-<p>  处理应用启动最初的 / 这样的请求应该没问题，但当用户来回跳转并在 /accounts/123 刷新时，</p>
-<p>  服务器就会收到来自 /accounts/123 的请求，这时你需要处理这个 URL 并在响应中包含 JavaScript 应用代码。</p>
-</li>
-<li><p>2、Hash history </p>
-<p>  使用 URL 中的 hash（#）部分去创建形如 example.com/#/some/path 的路由。</p>
-<p>  不需要想server发送request，根据url渲染相应的模块。</p>
-<p>  在 DOM API 中，这些 hash history 通过 window.location.hash = newHash 很简单地被用于跳转，且不用存储它们的location state。</p>
-<p>  但我们想全部的 history 都能够使用location state，因此我们要为每一个 location 创建一个唯一的 key，</p>
-<p>  并把它们的状态存储在 session storage 中。当访客点击“后退”和“前进”时，我们就会有一个机制去恢复这些 location state</p>
-<p>  路由跳转时，传递的 data 数据会临时存在 session storage 中，当点击 前进或后退时，该数据会被清空</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 切换路由 --&gt;</span><br><span class="line">hashHistory.push (&#123;</span><br><span class="line">    pathname: &apos;/after/audit-view&apos;,</span><br><span class="line">    state: data</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">&lt;!-- 返回上一页 --&gt;</span><br><span class="line">hashHistory.goBack()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>3、createMemoryHistory</p>
-<p>  Memory history 不会在地址栏被操作或读取。</p>
-<p>  这就解释了我们是如何实现服务器渲染的。同时它也非常适合测试和其他的渲染环境（像 React Native ）。</p>
-<p>  和另外两种history的一点不同是你必须创建它，这种方式便于测试。</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const history = createMemoryHistory(location);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>注意： </p>
-<p>  官方推荐使用browserHistory</p>
-<p>  使用browserHistory,浏览器的url是这样的：/user/liuna</p>
-<p>  使用hashHistory,浏览器的url是这样的：/#/user/liuna?_k=adseis</p>
-<p>  使用createMemoryHistory,浏览器的url是这样的：/</p>
-<p>  这样看起来当然是browerHistory更好一些，但是它需要server端支持。</p>
-<p>  使用hashHistory时，因为有 # 的存在，浏览器不会发送request,react-router 自己根据 url 去 render 相应的模块。</p>
-<p>  使用browserHistory时，从 / 到 /user/liuna, 浏览器会向server发送request，所以server要做特殊请求，比如用的 express 的话，</p>
-<p>  你需要 handle 所有的路由 app.get(‘*’, (req, res) =&gt; { … })，使用了 nginx 的话，nginx也要做相应的配置。</p>
-<p>  react-router-dom v4 版本已经做了以下修改：</p>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">        browserHistory 替换成 BrowserRouter</span><br><span class="line">        hashHistory 替换成 HashRouter</span><br><span class="line">        createMemoryHistory 替换成MemoryRouter</span><br><span class="line">        ``` </span><br><span class="line"></span><br><span class="line">* 参考网址：</span><br><span class="line"></span><br><span class="line">    http://react-guide.github.io/react-router-cn/docs/API.html</span><br><span class="line"></span><br><span class="line">    https://www.cnblogs.com/dudeyouth/p/6617059.html</span><br><span class="line"></span><br><span class="line">## 清空react-router（hashHistory）产生的多余的session</span><br><span class="line">``` </span><br><span class="line">    export default function() &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            let sessionLength = window.sessionStorage.length;</span><br><span class="line">            let sessionKeys = [];</span><br><span class="line">            // 遍历key中包含@@History的项</span><br><span class="line">            for(let i = 0; i &lt; sessionLength; i ++) &#123;</span><br><span class="line">                if (window.sessionStorage.key(i).match(&apos;@@History&apos;)) &#123;</span><br><span class="line">                    sessionKeys.push(window.sessionStorage.key(i));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            // 删除该项session</span><br><span class="line">            for(let j = 0; j &lt; sessionKeys.length; j ++) &#123;</span><br><span class="line">                window.sessionStorage.removeItem(sessionKeys[j]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; catch(err) &#123;</span><br><span class="line">            window.Raven &amp;&amp; window.Raven.captureException(err);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-</code></pre></li>
-</ul>
+        <h2 id="空格处理"><a href="#空格处理" class="headerlink" title="空格处理"></a>空格处理</h2><h3 id="一、空格规则"><a href="#一、空格规则" class="headerlink" title="一、空格规则"></a>一、空格规则</h3><pre><code>HTML 代码的空格通常会被浏览器忽略。
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;  hello  world  &lt;/p&gt;</span><br></pre></td></tr></table></figure>
 
+上面是一行 HTML 代码，文字的前部、内部和后部各有两个空格。
+浏览器的输出结果如下:
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">       hello world</span><br><span class="line">       ``` </span><br><span class="line">    可以看到，文字的前部和后部的空格都会忽略，内部的连续空格只会算作一个。这就是浏览器处理空格的基本规则。</span><br><span class="line">    如果希望空格原样输出，可以使用&lt;pre&gt;标签。</span><br><span class="line">    &lt;pre&gt;  hello  world  &lt;/pre&gt;</span><br><span class="line">    另一种方法是，改用 HTML 实体&amp;nbsp;表示空格。</span><br><span class="line">    &lt;p&gt;&amp;nbsp;&amp;nbsp;hello&amp;nbsp;&amp;nbsp;world&amp;nbsp;&amp;nbsp;&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">### 二、空格字符</span><br><span class="line">    HTML 处理空格的规则，适用于多种字符。除了普通的空格键，还包括制表符（\t）和换行符（\r和\n）。</span><br><span class="line">    浏览器会自动把这些符号转成普通的空格键。</span><br></pre></td></tr></table></figure>
+
+&lt;p&gt;hello
+world&lt;/p&gt;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">上面代码中，文本内部包含了一个换行符，浏览器视同为空格，输出结果如下。</span><br></pre></td></tr></table></figure>
+
+hello world
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">所以，文本内部的换行是无效的（除非文本放在&lt;pre&gt;标签内）。</span><br></pre></td></tr></table></figure>
+
+&lt;p&gt;hello&lt;br&gt;world&lt;/p&gt;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">    上面代码使用&lt;br&gt;标签显式表示换行</span><br><span class="line"></span><br><span class="line">### 三、CSS white-space 属性</span><br><span class="line"></span><br><span class="line">    HTML 语言的空格处理，基本上就是直接过滤。这样的处理过于粗糙，完全忽视了原始文本内部的空格可能是有意义的。</span><br><span class="line"></span><br><span class="line">    CSS 提供了一个white-space属性，可以提供更精确一点的空格处理方式。该属性共有六个值，除了一个通用的inherit（继承父元素），下面依次介绍剩下的五个值。</span><br><span class="line"></span><br><span class="line">    3.1 white-space: normal</span><br><span class="line"></span><br><span class="line">        white-space属性的默认值为normal，表示浏览器以正常方式处理空格。</span><br></pre></td></tr></table></figure>
+
+    html:
+        &lt;p&gt;  hellohellohello hello
+        world
+        &lt;/p&gt;
+    style:
+        p {
+            width: 100px;
+            background: red;
+        }
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">    上面代码中，文本前部有两个空格，内部有一个长单词和一个换行符。</span><br><span class="line"></span><br><span class="line">    文首的空格被忽略。由于容器太窄，第一个单词溢出容器，然后在后面一个空格处换行。文本内部的换行符自动转成了空格。</span><br><span class="line"></span><br><span class="line">3.2 white-space: nowrap</span><br><span class="line"></span><br><span class="line">    white-space属性为nowrap时，不会因为超出容器宽度而发生换行。</span><br></pre></td></tr></table></figure>
+
+    p {
+        white-space: nowrap;
+    }
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    所有文本显示为一行，不会换行。</span><br><span class="line"></span><br><span class="line">3.3 white-space: pre</span><br><span class="line"></span><br><span class="line">    white-space属性为pre时，就按照&lt;pre&gt;标签的方式处理。</span><br></pre></td></tr></table></figure>
+
+    p {
+        white-space: pre;
+    }
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    上面结果与原始文本完全一致，所有空格和换行符都保留了。</span><br><span class="line"></span><br><span class="line">3.4 white-space: pre-wrap</span><br><span class="line"></span><br><span class="line">    white-space属性为pre-wrap时，基本还是按照&lt;pre&gt;标签的方式处理，唯一区别是超出容器宽度时，会发生换行。</span><br></pre></td></tr></table></figure>
+
+    p {
+        white-space: pre-wrap;
+    }
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    文首的空格、内部的空格和换行符都保留了，超出容器的地方发生了折行。</span><br><span class="line"></span><br><span class="line">3.5 white-space: pre-line</span><br><span class="line"></span><br><span class="line">    white-space属性为pre-line时，意为保留换行符。除了换行符会原样输出，其他都与white-space:normal规则一致。</span><br></pre></td></tr></table></figure>
+
+    p {
+        white-space: pre-line;
+    }
+    ```
+    除了文本内部的换行符没有转成空格，其他都与normal的处理规则一致。这对于诗歌类型的文本很有用。
+</code></pre><h2 id="弹性布局-flex"><a href="#弹性布局-flex" class="headerlink" title="弹性布局 flex"></a>弹性布局 flex</h2><h3 id="align-content-父元素属性-纵向"><a href="#align-content-父元素属性-纵向" class="headerlink" title="align-content 父元素属性 - 纵向"></a>align-content 父元素属性 - 纵向</h3><pre><code>- flex-start
+- flex-end
+- center
+- space-between
+- space-around
+- stretch
+</code></pre><h3 id="align-self-子元素属性-纵向"><a href="#align-self-子元素属性-纵向" class="headerlink" title="align-self 子元素属性 - 纵向"></a>align-self 子元素属性 - 纵向</h3><pre><code>- flex-start  - 居上对齐
+- flex-end  - 居下对齐
+- center  - 居中对齐
+- baseline  - 基线对齐
+- stretch  - 填充容器（默认属性，仍保持自身的最大最小宽度）
+</code></pre><h3 id="四、参考链接"><a href="#四、参考链接" class="headerlink" title="四、参考链接"></a>四、参考链接</h3><pre><code>https://css-tricks.com/almanac/properties/w/whitespace/
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/11/history/" data-id="cjqeslp760009skoz38w6e94z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/11/css-attr/" data-id="cjqet0wh60007zsoztw0102p8" class="article-share-link">Share</a>
       
       
     </footer>
