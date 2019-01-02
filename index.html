@@ -97,7 +97,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/02/hello-world/" data-id="cjqet29gl000774ozkfhmpyzc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/02/hello-world/" data-id="cjqewdmh20009qcozueq6p1ee" class="article-share-link">Share</a>
       
       
     </footer>
@@ -319,7 +319,7 @@ Object 对象
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/02/js-symbol/" data-id="cjqet29gn000974oz8b8e6tw7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/02/js-symbol/" data-id="cjqewdmh5000bqcozkob2t0p1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -383,394 +383,7 @@ Object 对象
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/27/console/" data-id="cjqet29gp000b74ozp1kzq7ae" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Canvas" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/12/08/Canvas/" class="article-date">
-  <time datetime="2018-12-07T16:00:00.000Z" itemprop="datePublished">2018-12-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/08/Canvas/">Canvas 绘图</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="初始-Canvas"><a href="#初始-Canvas" class="headerlink" title="初始 Canvas"></a>初始 Canvas</h2><ul>
-<li><p>canvas - 定义</p>
-<p>  HTML5 元素用于图形的绘制，通过脚本 (通常是 JavaScript) 来完成.</p>
-<p>  canvas 标签只是图形容器，必须使用脚本来绘制图形。通过多种方法使用 canvas 绘制路径,盒、圆、字符以及添加图像。</p>
-</li>
-<li><p>Canvas - Can i use</p>
-<p>  <img src="./assets/Can i use.png" alt=""></p>
-</li>
-<li><p>Canvas - 坐标</p>
-<p>  canvas 默认左上角为原点 (0,0)，横向 x，纵向 y</p>
-</li>
-<li><p>Canvas - 路径</p>
-<ul>
-<li><p>在 Canvas 上画线，我们将使用以下两种方法：</p>
-<p>  moveTo(x, y) 定义线条开始坐标</p>
-<p>  lineTo(x, y) 定义线条结束坐标</p>
-<p>  定义开始坐标(0,0), 和结束坐标 (200, 100)。然后使用 stroke() 方法来绘制线条</p>
-</li>
-<li><p>在canvas中绘制圆形, 我们将使用以下方法，并使用 stroke() 或者 fill() 绘制线条或填充</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">beginPath() // 开始路线</span><br><span class="line">arc(x, y, r, start, stop) // 绘制圆形</span><br><span class="line">stroke() || fill() // 描边 或 填充</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>Canvas - 文本</p>
-<p>  使用 canvas 绘制文本，重要的属性和方法如下：</p>
-<pre><code>font - 定义字体
-
-fillText(text,x,y) - 在 canvas 上绘制实心的文本
-
-strokeText(text,x,y) - 在 canvas 上绘制空心的文本
-</code></pre></li>
-<li><p>Canvas - 渐变</p>
-<p>  渐变可以填充在矩形, 圆形, 线条, 文本等等, 各种形状可以自己定义不同的颜色。</p>
-<p>  以下有两种不同的方式来设置 Canvas 渐变：</p>
-<pre><code>createLinearGradient(x, y, x1, y1) - 创建线条渐变
-
-createRadialGradient(x, y, r, x1, y1, r1) - 创建一个径向/圆渐变
-</code></pre><p>  注意：</p>
-<pre><code>当我们使用渐变对象，必须使用两种或两种以上的停止颜色。
-
-addColorStop() 方法指定颜色停止，参数使用坐标来描述，可以是 0 至 1.
-
-使用渐变，设置 fillStyle 或 strokeStyle 的值为 渐变，然后绘制形状，如矩形，文本，或一条线。
-</code></pre></li>
-<li><p>Canvas - 图像</p>
-<p>  把一幅图像放置到画布上, 使用以下方法: drawImage(image,x,y)</p>
-</li>
-<li><p>javascript 实例</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">&lt;img id=&quot;scream&quot; src=&quot;./assets/scream.png&quot; alt=&quot;The Scream&quot; width=&quot;220&quot; height=&quot;277&quot; style=&quot;display:none&quot;&gt;</span><br><span class="line">&lt;canvas id=&quot;myCanvas&quot; width=&quot;200&quot; height=&quot;100&quot; style=&quot;border:1px solid #000000;&quot;&gt;&lt;/canvas&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var c = document.getElementById(&quot;myCanvas&quot;);  // 获取画布</span><br><span class="line">    var ctx = c.getContext(&quot;2d&quot;); // 创建 context 对象</span><br><span class="line"></span><br><span class="line">    &lt;!-- Canvas - 坐标 --&gt;</span><br><span class="line">    ctx.fillStyle = &quot;#FF0000&quot;; // 填充画布背景色，默认#000000</span><br><span class="line">    ctx.fillRect(0, 0, 150, 75); // 填充区域（x, y, width, height）</span><br><span class="line"></span><br><span class="line">    &lt;!-- Canvas - 路径 线 --&gt;</span><br><span class="line">    ctx.moveTo(0, 0);</span><br><span class="line">    ctx.lineTo(200, 100);</span><br><span class="line">    ctx.stroke();</span><br><span class="line"></span><br><span class="line">    &lt;!-- Canvas - 坐标 圆形 --&gt;</span><br><span class="line">    ctx.beginPath();</span><br><span class="line">    ctx.arc(95, 50, 40, 0, 2*Math.PI);</span><br><span class="line">    ctx.stroke();</span><br><span class="line"></span><br><span class="line">    &lt;!-- Canvas - 文本 --&gt;</span><br><span class="line">    ctx.font = &apos;30px Arial&apos;;</span><br><span class="line">    ctx.fillText(&apos;Hello World&apos;, 10, 50); // 实心文本</span><br><span class="line">    ctx.strokeText(&quot;Hello World&quot;,10,50); // 空心文本</span><br><span class="line"></span><br><span class="line">    &lt;!-- Canvas - 渐变 --&gt;</span><br><span class="line">    // 创建渐变</span><br><span class="line">    var grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100); // 径向渐变</span><br><span class="line">    var grd = ctx.createLinearGradient(0, 0 , 200, 0); // 线性渐变</span><br><span class="line">    grd.addColorStop(0, &quot;red&quot;);</span><br><span class="line">    grd.addColorStop(1, &quot;white&quot;);</span><br><span class="line">    </span><br><span class="line">    // 填充渐变</span><br><span class="line">    ctx.fillStyle = grd;</span><br><span class="line">    ctx.fillRect(10, 10, 150, 80);</span><br><span class="line"></span><br><span class="line">    &lt;!-- Canvas - 图像 --&gt;</span><br><span class="line">    var img = document.getElementById(&apos;scream&apos;);</span><br><span class="line">    img.onload = function() &#123;</span><br><span class="line">        ctx.drawImage(img, 10, 10);</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="深入-Canvas"><a href="#深入-Canvas" class="headerlink" title="深入 Canvas"></a>深入 Canvas</h2><ul>
-<li><p>颜色、样式和阴影</p>
-<ul>
-<li><p>属性</p>
-<p>  fillStyle    设置或返回用于填充绘画的颜色、渐变或模式。</p>
-<p>  strokeStyle    设置或返回用于笔触的颜色、渐变或模式。</p>
-<p>  shadowColor    设置或返回用于阴影的颜色。</p>
-<p>  shadowBlur    设置或返回用于阴影的模糊级别。</p>
-<p>  shadowOffsetX    设置或返回阴影与形状的水平距离。</p>
-<p>  shadowOffsetY    设置或返回阴影与形状的垂直距离。</p>
-</li>
-<li><p>方法</p>
-<p>  createLinearGradient()    创建线性渐变（用在画布内容上）。</p>
-<p>  createPattern()    在指定的方向上重复指定的元素。</p>
-<p>  createRadialGradient()    创建放射状/环形的渐变（用在画布内容上）。</p>
-<p>  addColorStop()    规定渐变对象中的颜色和停止位置。</p>
-</li>
-</ul>
-</li>
-<li><p>线条样式 - 属性</p>
-<p>  lineCap    设置或返回线条的结束端点样式。</p>
-<p>  lineJoin    设置或返回两条线相交时，所创建的拐角类型。</p>
-<p>  lineWidth    设置或返回当前的线条宽度。</p>
-<p>  miterLimit    设置或返回最大斜接长度。</p>
-</li>
-<li><p>矩形 - 方法</p>
-<p>  rect()    创建矩形。</p>
-<p>  fillRect()    绘制”被填充”的矩形。</p>
-<p>  strokeRect()    绘制矩形（无填充）。</p>
-<p>  clearRect()    在给定的矩形内清除指定的像素。</p>
-</li>
-<li><p>路径 - 方法</p>
-<p>  fill()    填充当前绘图（路径）。</p>
-<p>  stroke()    绘制已定义的路径。</p>
-<p>  beginPath()    起始一条路径，或重置当前路径。</p>
-<p>  moveTo()    把路径移动到画布中的指定点，不创建线条。</p>
-<p>  closePath()    创建从当前点回到起始点的路径。</p>
-<p>  lineTo()    添加一个新点，然后在画布中创建从该点到最后指定点的线条。</p>
-<p>  clip()    从原始画布剪切任意形状和尺寸的区域。</p>
-<p>  quadraticCurveTo()    创建二次贝塞尔曲线。</p>
-<p>  bezierCurveTo()    创建三次贝塞尔曲线。</p>
-<p>  arc()    创建弧/曲线（用于创建圆形或部分圆）。</p>
-<p>  arcTo()    创建两切线之间的弧/曲线。</p>
-<p>  isPointInPath()    如果指定的点位于当前路径中，则返回 true，否则返回 false。</p>
-</li>
-<li><p>转换 - 方法</p>
-<p>  scale()    缩放当前绘图至更大或更小。</p>
-<p>  rotate()    旋转当前绘图。</p>
-<p>  translate()    重新映射画布上的 (0,0) 位置。</p>
-<p>  transform()    替换绘图的当前转换矩阵。</p>
-<p>  setTransform()    将当前转换重置为单位矩阵。然后运行 transform()。</p>
-</li>
-<li><p>文本</p>
-<ul>
-<li><p>属性</p>
-<p>  font    设置或返回文本内容的当前字体属性。</p>
-<p>  textAlign    设置或返回文本内容的当前对齐方式。</p>
-<p>  textBaseline    设置或返回在绘制文本时使用的当前文本基线。</p>
-</li>
-<li><p>方法</p>
-<p>  fillText()    在画布上绘制”被填充的”文本。</p>
-<p>  strokeText()    在画布上绘制文本（无填充）。</p>
-<p>  measureText()    返回包含指定文本宽度的对象。</p>
-</li>
-</ul>
-</li>
-<li><p>图像绘制 - 方法</p>
-<p>  drawImage()    向画布上绘制图像、画布或视频。</p>
-</li>
-<li><p>像素操作</p>
-<ul>
-<li><p>属性</p>
-<p>  width    返回 ImageData 对象的宽度。</p>
-<p>  height    返回 ImageData 对象的高度。</p>
-<p>  data    返回一个对象，其包含指定的 ImageData 对象的图像数据。</p>
-</li>
-<li><p>方法</p>
-<p>  createImageData()    创建新的、空白的 ImageData 对象。</p>
-<p>  getImageData()    返回 ImageData 对象，该对象为画布上指定的矩形复制像素数据。</p>
-<p>  putImageData()    把图像数据（从指定的 ImageData 对象）放回画布上。</p>
-</li>
-</ul>
-</li>
-<li><p>合成 -属性</p>
-<p>  globalAlpha    设置或返回绘图的当前 alpha 或透明值。</p>
-<p>  globalCompositeOperation    设置或返回新图像如何绘制到已有的图像上。</p>
-</li>
-<li><p>其他 - 方法</p>
-<p>  save()    保存当前环境的状态。</p>
-<p>  restore()    返回之前保存过的路径状态和属性。</p>
-<p>  createEvent()</p>
-<p>  getContext()</p>
-<p>  toDataURL()</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/08/Canvas/" data-id="cjqet29g5000074oze7b0rxwc" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Git" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/12/08/Git/" class="article-date">
-  <time datetime="2018-12-07T16:00:00.000Z" itemprop="datePublished">2018-12-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/08/Git/">Git 原理分析总结</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、初始化"><a href="#一、初始化" class="headerlink" title="一、初始化"></a>一、初始化</h2><ul>
-<li><p>首先，让我们创建一个项目目录，并进入该目录。</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir git-demo-project</span><br><span class="line">$ cd git-demo-project</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>我们打算对该项目进行版本管理，第一件事就是使用git init命令，进行初始化</p>
-<p>  git init命令只做一件事，就是在项目根目录下创建一个.git子目录，用来保存版本信息</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>.git内部还有一些子目录</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ ls .git</span><br><span class="line"></span><br><span class="line">HEAD</span><br><span class="line">branches/</span><br><span class="line">config</span><br><span class="line">description</span><br><span class="line">hooks/</span><br><span class="line">index</span><br><span class="line">info/</span><br><span class="line">objects/</span><br><span class="line">refs/</span><br></pre></td></tr></table></figure>
-<p>  该目录下有可能还有其他文件，但这是一个全新的 git init 生成的库，所以默认情况下这些就是你能看到的结构。<br>  新版本的 Git 不再使用 branches 目录<br>  description 文件仅供 GitWeb 程序使用<br>  config 文件包含了项目特有的配置选项<br>  info 目录保存了一份不希望在 .gitignore 文件中管理的忽略模式 (ignored patterns) 的全局可执行文件。<br>  hooks 目录保存了第七章详细介绍了的客户端或服务端钩子脚本。<br>  HEAD 及 index 文件，objects 及 refs 目录，这些是 Git 的核心部分。</p>
-<pre><code>objects 目录存储所有数据内容
-refs 目录存储指向数据 (分支) 的提交对象的指针
-HEAD 文件指向当前分支，index 文件保存了暂存区域信息
-</code></pre></li>
-</ul>
-<h2 id="二、保存对象"><a href="#二、保存对象" class="headerlink" title="二、保存对象"></a>二、保存对象</h2><ul>
-<li><p>新建一个空文件test.txt。</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ touch test.txt</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>然后，把这个文件加入 Git 仓库，也就是为test.txt的当前内容创建一个副本。</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git hash-object -w test.txt</span><br><span class="line"></span><br><span class="line">e69de29bb2d1d6434b8b29ae775ad8c2e48c5391</span><br></pre></td></tr></table></figure>
-<p>  上面代码中，git hash-object 命令把 test.txt 的当前内容压缩成二进制文件，存入 Git。<br>  压缩后的二进制文件，称为一个 Git 对象，保存在.git/objects目录。</p>
-<p>  这个命令还会计算当前内容的 SHA1 哈希值（长度40的字符串），作为该对象的文件名。下面看一下这个新生成的 Git 对象文件。</p>
-</li>
-<li><p>.git/objects下面多了一个子目录，目录名是哈希值的前2个字符，该子目录下面有一个文件，文件名是哈希值的后38个字符。</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ ls -R .git/objects</span><br><span class="line"></span><br><span class="line">.git/objects/e6:</span><br><span class="line">9de29bb2d1d6434b8b29ae775ad8c2e48c5391</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>下面输出的文件内容，都是一些二进制字符。test.txt虽是一个空文件，但是由于二进制对象里面还保存一些元数据。</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat .git/objects/e6/9de29bb2d1d6434b8b29ae775ad8c2e48c5391</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果想看该文件原始的文本内容，要用git cat-file命令，因为原始文件是空文件，所以什么也看不到</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git cat-file -p e69de29bb2d1d6434b8b29ae775ad8c2e48c5391</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li><p>现在向test.txt写入一些内容。</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ echo &apos;hello world&apos; &gt; test.txt</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>因为文件内容已经改变，需要将它再次保存成 Git 对象。</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git hash-object -w test.txt</span><br><span class="line"></span><br><span class="line">3b18e512dba79e4c8300dd08aeb37f8e728b8dad</span><br></pre></td></tr></table></figure>
-<p>  上面代码可以看到，随着内容改变，test.txt的哈希值已经变了。同时，新文件.git/objects/3b/18e512dba79e4c8300dd08aeb37f8e728b8dad也已经生成了。现在可以看到文件内容了。</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git cat-file -p 3b18e512dba79e4c8300dd08aeb37f8e728b8dad</span><br><span class="line"></span><br><span class="line">hello world</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="三、暂存区"><a href="#三、暂存区" class="headerlink" title="三、暂存区"></a>三、暂存区</h2><pre><code>文件保存成二进制对象以后，还需要通知 Git 哪些文件发生了变动。
-所有变动的文件，Git 都记录在一个区域，叫做&quot;暂存区&quot;（英文叫做 index 或者 stage）。
-等到变动告一段落，再统一把暂存区里面的文件写入正式的版本历史。
-</code></pre><ul>
-<li><p>git update-index命令用于在暂存区记录一个发生变动的文件。</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git update-index --add --cacheinfo 100644 \</span><br><span class="line">3b18e512dba79e4c8300dd08aeb37f8e728b8dad test.txt</span><br></pre></td></tr></table></figure>
-<p> 上面命令向暂存区写入文件名test.txt、二进制对象名（哈希值）和文件权限。</p>
-</li>
-<li><p>git ls-files命令可以显示暂存区当前的内容。</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git ls-files --stage</span><br><span class="line"></span><br><span class="line">100644 3b18e512dba79e4c8300dd08aeb37f8e728b8dad 0   test.txt</span><br></pre></td></tr></table></figure>
-<p>  上面代码表示，暂存区现在只有一个文件test.txt，以及它的二进制对象名和权限。<br>  知道了二进制对象名，就可以在.git/objects子目录里面读出这个文件的内容。</p>
-</li>
-<li><p>git status命令会产生更可读的结果。</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line"></span><br><span class="line">要提交的变更：</span><br><span class="line">    新文件：   test.txt</span><br><span class="line">上面代码表示，暂存区里面只有一个新文件test.txt，等待写入历史。</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="四、git-add-命令"><a href="#四、git-add-命令" class="headerlink" title="四、git add 命令"></a>四、git add 命令</h2><pre><code>上面两步（保存对象和更新暂存区），如果每个文件都做一遍，那是很麻烦的。
-Git 提供了 git add 命令简化操作。
-</code></pre><ul>
-<li>$ git add –all(git add *)<br>上面命令相当于，对当前项目所有变动的文件，执行前面的两步操作。</li>
-</ul>
-<h2 id="五、commit-的概念"><a href="#五、commit-的概念" class="headerlink" title="五、commit 的概念"></a>五、commit 的概念</h2><pre><code>暂存区保留本次变动的文件信息，等到修改了差不多了，就要把这些信息写入历史，这就相当于生成了当前项目的一个快照（snapshot）。
-
-项目的历史就是由不同时点的快照构成。Git 可以将项目恢复到任意一个快照。快照在 Git 里面有一个专门名词，叫做 commit，生成快照又称为完成一次提交。
-
-下文所有提到&quot;快照&quot;的地方，指的就是 commit。
-</code></pre><h2 id="六、完成提交"><a href="#六、完成提交" class="headerlink" title="六、完成提交"></a>六、完成提交</h2><ul>
-<li><p>首先，设置一下用户名和 Email，保存快照的时候，会记录是谁提交的。</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config user.name &quot;用户名&quot; </span><br><span class="line">$ git config user.email &quot;Email 地址&quot;</span><br></pre></td></tr></table></figure>
-<p>  接下来，要保存当前的目录结构。前面保存对象的时候，只是保存单个文件，并没有记录文件之间的目录关系（哪个文件在哪里）。</p>
-</li>
-<li><p>git write-tree 命令用来将当前的目录结构，生成一个 Git 对象。</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git write-tree</span><br><span class="line"></span><br><span class="line">c3b8bb102afeca86037d5b5dd89ceeb0090eae9d</span><br></pre></td></tr></table></figure>
-<p>  上面代码中，目录结构也是作为二进制对象保存的，也保存在.git/objects目录里面，对象名就是哈希值。</p>
-<p>  让我们看一下这个文件的内容。</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git cat-file -p c3b8bb102afeca86037d5b5dd89ceeb0090eae9d</span><br><span class="line"></span><br><span class="line">100644 blob 3b18e512dba79e4c8300dd08aeb37f8e728b8dad    test.txt</span><br></pre></td></tr></table></figure>
-<p>  可以看到，当前的目录里面只有一个test.txt文件。</p>
-<p>  所谓快照，就是保存当前的目录结构，以及每个文件对应的二进制对象。<br>  上一个操作，目录结构已经保存好了，现在需要将这个目录结构与一些元数据一起写入版本历史。</p>
-<p>  git commit-tree 命令用于将目录树对象写入版本历史。</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ echo &quot;first commit&quot; | git commit-tree c3b8bb102afeca86037d5b5dd89ceeb0090eae9d</span><br><span class="line"></span><br><span class="line">c9053865e9dff393fd2f7a92a18f9bd7f2caa7fa</span><br></pre></td></tr></table></figure>
-<p>  上面代码中，提交的时候需要有提交说明，echo “first commit”就是给出提交说明。<br>  然后，git commit-tree命令将元数据和目录树，一起生成一个 Git 对象。</p>
-<p>  现在，看一下这个对象的内容。</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git cat-file -p c9053865e9dff393fd2f7a92a18f9bd7f2caa7fa</span><br><span class="line"></span><br><span class="line">tree c3b8bb102afeca86037d5b5dd89ceeb0090eae9d</span><br><span class="line">author ruanyf  1538889134 +0800</span><br><span class="line">committer ruanyf  1538889134 +0800</span><br><span class="line"></span><br><span class="line">first commit</span><br></pre></td></tr></table></figure>
-<p>  上面代码中，输出结果的第一行是本次快照对应的目录树对象（tree），第二行和第三行是作者和提交人信息，最后是提交说明。</p>
-</li>
-<li><p>git log 命令也可以用来查看某个快照信息。</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ git log --stat c9053865e9dff393fd2f7a92a18f9bd7f2caa7fa</span><br><span class="line"></span><br><span class="line">commit c9053865e9dff393fd2f7a92a18f9bd7f2caa7fa</span><br><span class="line">Author: ruanyf </span><br><span class="line">Date:   Sun Oct 7 13:12:14 2018 +0800</span><br><span class="line"></span><br><span class="line">    first commit</span><br><span class="line"></span><br><span class="line">test.txt | 1 +</span><br><span class="line">1 file changed, 1 insertion(+)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="七、git-commit-命令"><a href="#七、git-commit-命令" class="headerlink" title="七、git commit 命令"></a>七、git commit 命令</h2><ul>
-<li><p>Git 提供了git commit命令，简化提交操作。保存进暂存区以后，<br>  只要git commit一个命令，就同时提交目录结构和说明，生成快照。</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m &quot;first commit&quot;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li>此外，还有两个命令也很有用。</li>
-</ul>
-<ul>
-<li><p>git checkout 命令用于切换到某个快照。</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout c9053865e9dff393fd2f7a92a18f9bd7f2caa7fa</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>git show 命令用于展示某个快照的所有代码变动。</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git show c9053865e9dff393fd2f7a92a18f9bd7f2caa7fa</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="八、branch-的概念"><a href="#八、branch-的概念" class="headerlink" title="八、branch 的概念"></a>八、branch 的概念</h2><p>到了这一步，还没完。如果这时用git log命令查看整个版本历史，你看不到新生成的快照。<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git log</span><br></pre></td></tr></table></figure></p>
-<p>上面命令没有任何输出，这是为什么呢？快照明明已经写入历史了。</p>
-<p>原来git log命令只显示当前分支的变动，虽然我们前面已经提交了快照，但是还没有记录这个快照属于哪个分支。</p>
-<p>所谓分支（branch）就是指向某个快照的指针，分支名就是指针名。哈希值是无法记忆的，分支使得用户可以为快照起别名。而且，分支会自动更新，如果当前分支有新的快照，指针就会自动指向它。比如，master 分支就是有一个叫做 master 指针，它指向的快照就是 master 分支的当前快照。</p>
-<p>用户可以对任意快照新建指针。比如，新建一个 fix-typo 分支，就是创建一个叫做 fix-typo 的指针，指向某个快照。所以，Git 新建分支特别容易，成本极低。</p>
-<p>Git 有一个特殊指针HEAD， 总是指向当前分支的最近一次快照。另外，Git 还提供简写方式，HEAD^指向 HEAD的前一个快照（父节点），HEAD~6则是HEAD之前的第6个快照。</p>
-<p>每一个分支指针都是一个文本文件，保存在.git/refs/heads/目录，该文件的内容就是它所指向的快照的二进制对象名（哈希值）。</p>
-<h2 id="九、更新分支"><a href="#九、更新分支" class="headerlink" title="九、更新分支"></a>九、更新分支</h2><ul>
-<li><p>下面演示更新分支是怎么回事。首先，修改一下test.txt。</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ echo &quot;hello world again&quot; &gt; test.txt</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>然后，保存二进制对象。</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git hash-object -w test.txt</span><br><span class="line"></span><br><span class="line">c90c5155ccd6661aed956510f5bd57828eec9ddb</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>接着，将这个对象写入暂存区，并保存目录结构。</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git update-index test.txt</span><br><span class="line">$ git write-tree</span><br><span class="line"></span><br><span class="line">1552fd52bc14497c11313aa91547255c95728f37</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>最后，提交目录结构，生成一个快照。</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ echo &quot;second commit&quot; | git commit-tree 1552fd52bc14497c11313aa91547255c95728f37 -p c9053865e9dff393fd2f7a92a18f9bd7f2caa7fa</span><br><span class="line"></span><br><span class="line">785f188674ef3c6ddc5b516307884e1d551f53ca</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>上面代码中，git commit-tree的-p参数用来指定父节点，也就是本次快照所基于的快照。</p>
-<p>现在，我们把本次快照的哈希值，写入.git/refs/heads/master文件，这样就使得master指针指向这个快照。<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ echo 785f188674ef3c6ddc5b516307884e1d551f53ca &gt; .git/refs/heads/master</span><br></pre></td></tr></table></figure></p>
-<p>现在，git log就可以看到两个快照了。<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ git log</span><br><span class="line"></span><br><span class="line">commit 785f188674ef3c6ddc5b516307884e1d551f53ca (HEAD -&gt; master)</span><br><span class="line">Author: ruanyf </span><br><span class="line">Date:   Sun Oct 7 13:38:00 2018 +0800</span><br><span class="line"></span><br><span class="line">    second commit</span><br><span class="line"></span><br><span class="line">commit c9053865e9dff393fd2f7a92a18f9bd7f2caa7fa</span><br><span class="line">Author: ruanyf </span><br><span class="line">Date:   Sun Oct 7 13:12:14 2018 +0800</span><br><span class="line"></span><br><span class="line">    first commit</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li><p>git log的运行过程是这样的：</p>
-<ul>
-<li>查找HEAD指针对应的分支，本例是master</li>
-<li>找到master指针指向的快照，本例是785f188674ef3c6ddc5b516307884e1d551f53ca</li>
-<li>找到父节点（前一个快照）c9053865e9dff393fd2f7a92a18f9bd7f2caa7fa</li>
-<li>以此类推，显示当前分支的所有快照</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>最后，补充一点。前面说过，分支指针是动态的。原因在于，下面三个命令会自动改写分支指针。</p>
-<ul>
-<li>git commit：当前分支指针移向新创建的快照。</li>
-<li>git pull：当前分支与远程分支合并后，指针指向新创建的快照。</li>
-<li>git reset [commit_sha]：当前分支指针重置为指定快照。</li>
-</ul>
-</li>
-</ul>
-<h2 id="十、注意-–-解决命令行出错"><a href="#十、注意-–-解决命令行出错" class="headerlink" title="十、注意 – 解决命令行出错"></a>十、注意 – 解决命令行出错</h2><ul>
-<li><p>出错日志</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">warning: LF will be replaced by CRLF in test.txt.</span><br><span class="line">The file will have its original line endings in your working directory.</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li><p>出错原因</p>
-<p>  路径中存在 / 的符号转义问题，false 就是不转换符号,默认是true，<br>  相当于把路径的 / 符号进行转义</p>
-</li>
-<li><p>解决方法</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.autocrlf false</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="十一、参考链接"><a href="#十一、参考链接" class="headerlink" title="十一、参考链接"></a>十一、参考链接</h2><ul>
-<li><a href="http://www.ruanyifeng.com/blog/2018/10/git-internals.html" target="_blank" rel="noopener">阮一峰网站</a></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/08/Git/" data-id="cjqet29gg000274ozjloh5i4p" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/27/console/" data-id="cjqewdmh00006qcozov0lcs8e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -840,7 +453,7 @@ Git 提供了 git add 命令简化操作。
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/08/Npm/" data-id="cjqet29gj000574ozv7qwvn6w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/08/Npm/" data-id="cjqewdmgw0003qcozly2iwsji" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1141,7 +754,394 @@ array 可选的
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/08/Compare/" data-id="cjqet29ge000174ozrtqj3uc4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/08/Compare/" data-id="cjqewdmgy0004qcoz7pf7anr6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Git" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/08/Git/" class="article-date">
+  <time datetime="2018-12-07T16:00:00.000Z" itemprop="datePublished">2018-12-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/08/Git/">Git 原理分析总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、初始化"><a href="#一、初始化" class="headerlink" title="一、初始化"></a>一、初始化</h2><ul>
+<li><p>首先，让我们创建一个项目目录，并进入该目录。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir git-demo-project</span><br><span class="line">$ cd git-demo-project</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>我们打算对该项目进行版本管理，第一件事就是使用git init命令，进行初始化</p>
+<p>  git init命令只做一件事，就是在项目根目录下创建一个.git子目录，用来保存版本信息</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>.git内部还有一些子目录</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ ls .git</span><br><span class="line"></span><br><span class="line">HEAD</span><br><span class="line">branches/</span><br><span class="line">config</span><br><span class="line">description</span><br><span class="line">hooks/</span><br><span class="line">index</span><br><span class="line">info/</span><br><span class="line">objects/</span><br><span class="line">refs/</span><br></pre></td></tr></table></figure>
+<p>  该目录下有可能还有其他文件，但这是一个全新的 git init 生成的库，所以默认情况下这些就是你能看到的结构。<br>  新版本的 Git 不再使用 branches 目录<br>  description 文件仅供 GitWeb 程序使用<br>  config 文件包含了项目特有的配置选项<br>  info 目录保存了一份不希望在 .gitignore 文件中管理的忽略模式 (ignored patterns) 的全局可执行文件。<br>  hooks 目录保存了第七章详细介绍了的客户端或服务端钩子脚本。<br>  HEAD 及 index 文件，objects 及 refs 目录，这些是 Git 的核心部分。</p>
+<pre><code>objects 目录存储所有数据内容
+refs 目录存储指向数据 (分支) 的提交对象的指针
+HEAD 文件指向当前分支，index 文件保存了暂存区域信息
+</code></pre></li>
+</ul>
+<h2 id="二、保存对象"><a href="#二、保存对象" class="headerlink" title="二、保存对象"></a>二、保存对象</h2><ul>
+<li><p>新建一个空文件test.txt。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ touch test.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>然后，把这个文件加入 Git 仓库，也就是为test.txt的当前内容创建一个副本。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git hash-object -w test.txt</span><br><span class="line"></span><br><span class="line">e69de29bb2d1d6434b8b29ae775ad8c2e48c5391</span><br></pre></td></tr></table></figure>
+<p>  上面代码中，git hash-object 命令把 test.txt 的当前内容压缩成二进制文件，存入 Git。<br>  压缩后的二进制文件，称为一个 Git 对象，保存在.git/objects目录。</p>
+<p>  这个命令还会计算当前内容的 SHA1 哈希值（长度40的字符串），作为该对象的文件名。下面看一下这个新生成的 Git 对象文件。</p>
+</li>
+<li><p>.git/objects下面多了一个子目录，目录名是哈希值的前2个字符，该子目录下面有一个文件，文件名是哈希值的后38个字符。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ ls -R .git/objects</span><br><span class="line"></span><br><span class="line">.git/objects/e6:</span><br><span class="line">9de29bb2d1d6434b8b29ae775ad8c2e48c5391</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>下面输出的文件内容，都是一些二进制字符。test.txt虽是一个空文件，但是由于二进制对象里面还保存一些元数据。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat .git/objects/e6/9de29bb2d1d6434b8b29ae775ad8c2e48c5391</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果想看该文件原始的文本内容，要用git cat-file命令，因为原始文件是空文件，所以什么也看不到</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git cat-file -p e69de29bb2d1d6434b8b29ae775ad8c2e48c5391</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>现在向test.txt写入一些内容。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ echo &apos;hello world&apos; &gt; test.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>因为文件内容已经改变，需要将它再次保存成 Git 对象。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git hash-object -w test.txt</span><br><span class="line"></span><br><span class="line">3b18e512dba79e4c8300dd08aeb37f8e728b8dad</span><br></pre></td></tr></table></figure>
+<p>  上面代码可以看到，随着内容改变，test.txt的哈希值已经变了。同时，新文件.git/objects/3b/18e512dba79e4c8300dd08aeb37f8e728b8dad也已经生成了。现在可以看到文件内容了。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git cat-file -p 3b18e512dba79e4c8300dd08aeb37f8e728b8dad</span><br><span class="line"></span><br><span class="line">hello world</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="三、暂存区"><a href="#三、暂存区" class="headerlink" title="三、暂存区"></a>三、暂存区</h2><pre><code>文件保存成二进制对象以后，还需要通知 Git 哪些文件发生了变动。
+所有变动的文件，Git 都记录在一个区域，叫做&quot;暂存区&quot;（英文叫做 index 或者 stage）。
+等到变动告一段落，再统一把暂存区里面的文件写入正式的版本历史。
+</code></pre><ul>
+<li><p>git update-index命令用于在暂存区记录一个发生变动的文件。</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git update-index --add --cacheinfo 100644 \</span><br><span class="line">3b18e512dba79e4c8300dd08aeb37f8e728b8dad test.txt</span><br></pre></td></tr></table></figure>
+<p> 上面命令向暂存区写入文件名test.txt、二进制对象名（哈希值）和文件权限。</p>
+</li>
+<li><p>git ls-files命令可以显示暂存区当前的内容。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git ls-files --stage</span><br><span class="line"></span><br><span class="line">100644 3b18e512dba79e4c8300dd08aeb37f8e728b8dad 0   test.txt</span><br></pre></td></tr></table></figure>
+<p>  上面代码表示，暂存区现在只有一个文件test.txt，以及它的二进制对象名和权限。<br>  知道了二进制对象名，就可以在.git/objects子目录里面读出这个文件的内容。</p>
+</li>
+<li><p>git status命令会产生更可读的结果。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line"></span><br><span class="line">要提交的变更：</span><br><span class="line">    新文件：   test.txt</span><br><span class="line">上面代码表示，暂存区里面只有一个新文件test.txt，等待写入历史。</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="四、git-add-命令"><a href="#四、git-add-命令" class="headerlink" title="四、git add 命令"></a>四、git add 命令</h2><pre><code>上面两步（保存对象和更新暂存区），如果每个文件都做一遍，那是很麻烦的。
+Git 提供了 git add 命令简化操作。
+</code></pre><ul>
+<li>$ git add –all(git add *)<br>上面命令相当于，对当前项目所有变动的文件，执行前面的两步操作。</li>
+</ul>
+<h2 id="五、commit-的概念"><a href="#五、commit-的概念" class="headerlink" title="五、commit 的概念"></a>五、commit 的概念</h2><pre><code>暂存区保留本次变动的文件信息，等到修改了差不多了，就要把这些信息写入历史，这就相当于生成了当前项目的一个快照（snapshot）。
+
+项目的历史就是由不同时点的快照构成。Git 可以将项目恢复到任意一个快照。快照在 Git 里面有一个专门名词，叫做 commit，生成快照又称为完成一次提交。
+
+下文所有提到&quot;快照&quot;的地方，指的就是 commit。
+</code></pre><h2 id="六、完成提交"><a href="#六、完成提交" class="headerlink" title="六、完成提交"></a>六、完成提交</h2><ul>
+<li><p>首先，设置一下用户名和 Email，保存快照的时候，会记录是谁提交的。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config user.name &quot;用户名&quot; </span><br><span class="line">$ git config user.email &quot;Email 地址&quot;</span><br></pre></td></tr></table></figure>
+<p>  接下来，要保存当前的目录结构。前面保存对象的时候，只是保存单个文件，并没有记录文件之间的目录关系（哪个文件在哪里）。</p>
+</li>
+<li><p>git write-tree 命令用来将当前的目录结构，生成一个 Git 对象。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git write-tree</span><br><span class="line"></span><br><span class="line">c3b8bb102afeca86037d5b5dd89ceeb0090eae9d</span><br></pre></td></tr></table></figure>
+<p>  上面代码中，目录结构也是作为二进制对象保存的，也保存在.git/objects目录里面，对象名就是哈希值。</p>
+<p>  让我们看一下这个文件的内容。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git cat-file -p c3b8bb102afeca86037d5b5dd89ceeb0090eae9d</span><br><span class="line"></span><br><span class="line">100644 blob 3b18e512dba79e4c8300dd08aeb37f8e728b8dad    test.txt</span><br></pre></td></tr></table></figure>
+<p>  可以看到，当前的目录里面只有一个test.txt文件。</p>
+<p>  所谓快照，就是保存当前的目录结构，以及每个文件对应的二进制对象。<br>  上一个操作，目录结构已经保存好了，现在需要将这个目录结构与一些元数据一起写入版本历史。</p>
+<p>  git commit-tree 命令用于将目录树对象写入版本历史。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ echo &quot;first commit&quot; | git commit-tree c3b8bb102afeca86037d5b5dd89ceeb0090eae9d</span><br><span class="line"></span><br><span class="line">c9053865e9dff393fd2f7a92a18f9bd7f2caa7fa</span><br></pre></td></tr></table></figure>
+<p>  上面代码中，提交的时候需要有提交说明，echo “first commit”就是给出提交说明。<br>  然后，git commit-tree命令将元数据和目录树，一起生成一个 Git 对象。</p>
+<p>  现在，看一下这个对象的内容。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git cat-file -p c9053865e9dff393fd2f7a92a18f9bd7f2caa7fa</span><br><span class="line"></span><br><span class="line">tree c3b8bb102afeca86037d5b5dd89ceeb0090eae9d</span><br><span class="line">author ruanyf  1538889134 +0800</span><br><span class="line">committer ruanyf  1538889134 +0800</span><br><span class="line"></span><br><span class="line">first commit</span><br></pre></td></tr></table></figure>
+<p>  上面代码中，输出结果的第一行是本次快照对应的目录树对象（tree），第二行和第三行是作者和提交人信息，最后是提交说明。</p>
+</li>
+<li><p>git log 命令也可以用来查看某个快照信息。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ git log --stat c9053865e9dff393fd2f7a92a18f9bd7f2caa7fa</span><br><span class="line"></span><br><span class="line">commit c9053865e9dff393fd2f7a92a18f9bd7f2caa7fa</span><br><span class="line">Author: ruanyf </span><br><span class="line">Date:   Sun Oct 7 13:12:14 2018 +0800</span><br><span class="line"></span><br><span class="line">    first commit</span><br><span class="line"></span><br><span class="line">test.txt | 1 +</span><br><span class="line">1 file changed, 1 insertion(+)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="七、git-commit-命令"><a href="#七、git-commit-命令" class="headerlink" title="七、git commit 命令"></a>七、git commit 命令</h2><ul>
+<li><p>Git 提供了git commit命令，简化提交操作。保存进暂存区以后，<br>  只要git commit一个命令，就同时提交目录结构和说明，生成快照。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m &quot;first commit&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>此外，还有两个命令也很有用。</li>
+</ul>
+<ul>
+<li><p>git checkout 命令用于切换到某个快照。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout c9053865e9dff393fd2f7a92a18f9bd7f2caa7fa</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git show 命令用于展示某个快照的所有代码变动。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git show c9053865e9dff393fd2f7a92a18f9bd7f2caa7fa</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="八、branch-的概念"><a href="#八、branch-的概念" class="headerlink" title="八、branch 的概念"></a>八、branch 的概念</h2><p>到了这一步，还没完。如果这时用git log命令查看整个版本历史，你看不到新生成的快照。<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git log</span><br></pre></td></tr></table></figure></p>
+<p>上面命令没有任何输出，这是为什么呢？快照明明已经写入历史了。</p>
+<p>原来git log命令只显示当前分支的变动，虽然我们前面已经提交了快照，但是还没有记录这个快照属于哪个分支。</p>
+<p>所谓分支（branch）就是指向某个快照的指针，分支名就是指针名。哈希值是无法记忆的，分支使得用户可以为快照起别名。而且，分支会自动更新，如果当前分支有新的快照，指针就会自动指向它。比如，master 分支就是有一个叫做 master 指针，它指向的快照就是 master 分支的当前快照。</p>
+<p>用户可以对任意快照新建指针。比如，新建一个 fix-typo 分支，就是创建一个叫做 fix-typo 的指针，指向某个快照。所以，Git 新建分支特别容易，成本极低。</p>
+<p>Git 有一个特殊指针HEAD， 总是指向当前分支的最近一次快照。另外，Git 还提供简写方式，HEAD^指向 HEAD的前一个快照（父节点），HEAD~6则是HEAD之前的第6个快照。</p>
+<p>每一个分支指针都是一个文本文件，保存在.git/refs/heads/目录，该文件的内容就是它所指向的快照的二进制对象名（哈希值）。</p>
+<h2 id="九、更新分支"><a href="#九、更新分支" class="headerlink" title="九、更新分支"></a>九、更新分支</h2><ul>
+<li><p>下面演示更新分支是怎么回事。首先，修改一下test.txt。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ echo &quot;hello world again&quot; &gt; test.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>然后，保存二进制对象。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git hash-object -w test.txt</span><br><span class="line"></span><br><span class="line">c90c5155ccd6661aed956510f5bd57828eec9ddb</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>接着，将这个对象写入暂存区，并保存目录结构。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git update-index test.txt</span><br><span class="line">$ git write-tree</span><br><span class="line"></span><br><span class="line">1552fd52bc14497c11313aa91547255c95728f37</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>最后，提交目录结构，生成一个快照。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ echo &quot;second commit&quot; | git commit-tree 1552fd52bc14497c11313aa91547255c95728f37 -p c9053865e9dff393fd2f7a92a18f9bd7f2caa7fa</span><br><span class="line"></span><br><span class="line">785f188674ef3c6ddc5b516307884e1d551f53ca</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>上面代码中，git commit-tree的-p参数用来指定父节点，也就是本次快照所基于的快照。</p>
+<p>现在，我们把本次快照的哈希值，写入.git/refs/heads/master文件，这样就使得master指针指向这个快照。<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ echo 785f188674ef3c6ddc5b516307884e1d551f53ca &gt; .git/refs/heads/master</span><br></pre></td></tr></table></figure></p>
+<p>现在，git log就可以看到两个快照了。<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ git log</span><br><span class="line"></span><br><span class="line">commit 785f188674ef3c6ddc5b516307884e1d551f53ca (HEAD -&gt; master)</span><br><span class="line">Author: ruanyf </span><br><span class="line">Date:   Sun Oct 7 13:38:00 2018 +0800</span><br><span class="line"></span><br><span class="line">    second commit</span><br><span class="line"></span><br><span class="line">commit c9053865e9dff393fd2f7a92a18f9bd7f2caa7fa</span><br><span class="line">Author: ruanyf </span><br><span class="line">Date:   Sun Oct 7 13:12:14 2018 +0800</span><br><span class="line"></span><br><span class="line">    first commit</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>git log的运行过程是这样的：</p>
+<ul>
+<li>查找HEAD指针对应的分支，本例是master</li>
+<li>找到master指针指向的快照，本例是785f188674ef3c6ddc5b516307884e1d551f53ca</li>
+<li>找到父节点（前一个快照）c9053865e9dff393fd2f7a92a18f9bd7f2caa7fa</li>
+<li>以此类推，显示当前分支的所有快照</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>最后，补充一点。前面说过，分支指针是动态的。原因在于，下面三个命令会自动改写分支指针。</p>
+<ul>
+<li>git commit：当前分支指针移向新创建的快照。</li>
+<li>git pull：当前分支与远程分支合并后，指针指向新创建的快照。</li>
+<li>git reset [commit_sha]：当前分支指针重置为指定快照。</li>
+</ul>
+</li>
+</ul>
+<h2 id="十、注意-–-解决命令行出错"><a href="#十、注意-–-解决命令行出错" class="headerlink" title="十、注意 – 解决命令行出错"></a>十、注意 – 解决命令行出错</h2><ul>
+<li><p>出错日志</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">warning: LF will be replaced by CRLF in test.txt.</span><br><span class="line">The file will have its original line endings in your working directory.</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>出错原因</p>
+<p>  路径中存在 / 的符号转义问题，false 就是不转换符号,默认是true，<br>  相当于把路径的 / 符号进行转义</p>
+</li>
+<li><p>解决方法</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.autocrlf false</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="十一、参考链接"><a href="#十一、参考链接" class="headerlink" title="十一、参考链接"></a>十一、参考链接</h2><ul>
+<li><a href="http://www.ruanyifeng.com/blog/2018/10/git-internals.html" target="_blank" rel="noopener">阮一峰网站</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/08/Git/" data-id="cjqewdmgt0001qcozd8awk0s2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Canvas" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/08/Canvas/" class="article-date">
+  <time datetime="2018-12-07T16:00:00.000Z" itemprop="datePublished">2018-12-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/08/Canvas/">Canvas 绘图</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="初始-Canvas"><a href="#初始-Canvas" class="headerlink" title="初始 Canvas"></a>初始 Canvas</h2><ul>
+<li><p>canvas - 定义</p>
+<p>  HTML5 元素用于图形的绘制，通过脚本 (通常是 JavaScript) 来完成.</p>
+<p>  canvas 标签只是图形容器，必须使用脚本来绘制图形。通过多种方法使用 canvas 绘制路径,盒、圆、字符以及添加图像。</p>
+</li>
+<li><p>Canvas - Can i use</p>
+<p>  <img src="./assets/Can i use.png" alt=""></p>
+</li>
+<li><p>Canvas - 坐标</p>
+<p>  canvas 默认左上角为原点 (0,0)，横向 x，纵向 y</p>
+</li>
+<li><p>Canvas - 路径</p>
+<ul>
+<li><p>在 Canvas 上画线，我们将使用以下两种方法：</p>
+<p>  moveTo(x, y) 定义线条开始坐标</p>
+<p>  lineTo(x, y) 定义线条结束坐标</p>
+<p>  定义开始坐标(0,0), 和结束坐标 (200, 100)。然后使用 stroke() 方法来绘制线条</p>
+</li>
+<li><p>在canvas中绘制圆形, 我们将使用以下方法，并使用 stroke() 或者 fill() 绘制线条或填充</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">beginPath() // 开始路线</span><br><span class="line">arc(x, y, r, start, stop) // 绘制圆形</span><br><span class="line">stroke() || fill() // 描边 或 填充</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Canvas - 文本</p>
+<p>  使用 canvas 绘制文本，重要的属性和方法如下：</p>
+<pre><code>font - 定义字体
+
+fillText(text,x,y) - 在 canvas 上绘制实心的文本
+
+strokeText(text,x,y) - 在 canvas 上绘制空心的文本
+</code></pre></li>
+<li><p>Canvas - 渐变</p>
+<p>  渐变可以填充在矩形, 圆形, 线条, 文本等等, 各种形状可以自己定义不同的颜色。</p>
+<p>  以下有两种不同的方式来设置 Canvas 渐变：</p>
+<pre><code>createLinearGradient(x, y, x1, y1) - 创建线条渐变
+
+createRadialGradient(x, y, r, x1, y1, r1) - 创建一个径向/圆渐变
+</code></pre><p>  注意：</p>
+<pre><code>当我们使用渐变对象，必须使用两种或两种以上的停止颜色。
+
+addColorStop() 方法指定颜色停止，参数使用坐标来描述，可以是 0 至 1.
+
+使用渐变，设置 fillStyle 或 strokeStyle 的值为 渐变，然后绘制形状，如矩形，文本，或一条线。
+</code></pre></li>
+<li><p>Canvas - 图像</p>
+<p>  把一幅图像放置到画布上, 使用以下方法: drawImage(image,x,y)</p>
+</li>
+<li><p>javascript 实例</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">&lt;img id=&quot;scream&quot; src=&quot;./assets/scream.png&quot; alt=&quot;The Scream&quot; width=&quot;220&quot; height=&quot;277&quot; style=&quot;display:none&quot;&gt;</span><br><span class="line">&lt;canvas id=&quot;myCanvas&quot; width=&quot;200&quot; height=&quot;100&quot; style=&quot;border:1px solid #000000;&quot;&gt;&lt;/canvas&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var c = document.getElementById(&quot;myCanvas&quot;);  // 获取画布</span><br><span class="line">    var ctx = c.getContext(&quot;2d&quot;); // 创建 context 对象</span><br><span class="line"></span><br><span class="line">    &lt;!-- Canvas - 坐标 --&gt;</span><br><span class="line">    ctx.fillStyle = &quot;#FF0000&quot;; // 填充画布背景色，默认#000000</span><br><span class="line">    ctx.fillRect(0, 0, 150, 75); // 填充区域（x, y, width, height）</span><br><span class="line"></span><br><span class="line">    &lt;!-- Canvas - 路径 线 --&gt;</span><br><span class="line">    ctx.moveTo(0, 0);</span><br><span class="line">    ctx.lineTo(200, 100);</span><br><span class="line">    ctx.stroke();</span><br><span class="line"></span><br><span class="line">    &lt;!-- Canvas - 坐标 圆形 --&gt;</span><br><span class="line">    ctx.beginPath();</span><br><span class="line">    ctx.arc(95, 50, 40, 0, 2*Math.PI);</span><br><span class="line">    ctx.stroke();</span><br><span class="line"></span><br><span class="line">    &lt;!-- Canvas - 文本 --&gt;</span><br><span class="line">    ctx.font = &apos;30px Arial&apos;;</span><br><span class="line">    ctx.fillText(&apos;Hello World&apos;, 10, 50); // 实心文本</span><br><span class="line">    ctx.strokeText(&quot;Hello World&quot;,10,50); // 空心文本</span><br><span class="line"></span><br><span class="line">    &lt;!-- Canvas - 渐变 --&gt;</span><br><span class="line">    // 创建渐变</span><br><span class="line">    var grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100); // 径向渐变</span><br><span class="line">    var grd = ctx.createLinearGradient(0, 0 , 200, 0); // 线性渐变</span><br><span class="line">    grd.addColorStop(0, &quot;red&quot;);</span><br><span class="line">    grd.addColorStop(1, &quot;white&quot;);</span><br><span class="line">    </span><br><span class="line">    // 填充渐变</span><br><span class="line">    ctx.fillStyle = grd;</span><br><span class="line">    ctx.fillRect(10, 10, 150, 80);</span><br><span class="line"></span><br><span class="line">    &lt;!-- Canvas - 图像 --&gt;</span><br><span class="line">    var img = document.getElementById(&apos;scream&apos;);</span><br><span class="line">    img.onload = function() &#123;</span><br><span class="line">        ctx.drawImage(img, 10, 10);</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="深入-Canvas"><a href="#深入-Canvas" class="headerlink" title="深入 Canvas"></a>深入 Canvas</h2><ul>
+<li><p>颜色、样式和阴影</p>
+<ul>
+<li><p>属性</p>
+<p>  fillStyle    设置或返回用于填充绘画的颜色、渐变或模式。</p>
+<p>  strokeStyle    设置或返回用于笔触的颜色、渐变或模式。</p>
+<p>  shadowColor    设置或返回用于阴影的颜色。</p>
+<p>  shadowBlur    设置或返回用于阴影的模糊级别。</p>
+<p>  shadowOffsetX    设置或返回阴影与形状的水平距离。</p>
+<p>  shadowOffsetY    设置或返回阴影与形状的垂直距离。</p>
+</li>
+<li><p>方法</p>
+<p>  createLinearGradient()    创建线性渐变（用在画布内容上）。</p>
+<p>  createPattern()    在指定的方向上重复指定的元素。</p>
+<p>  createRadialGradient()    创建放射状/环形的渐变（用在画布内容上）。</p>
+<p>  addColorStop()    规定渐变对象中的颜色和停止位置。</p>
+</li>
+</ul>
+</li>
+<li><p>线条样式 - 属性</p>
+<p>  lineCap    设置或返回线条的结束端点样式。</p>
+<p>  lineJoin    设置或返回两条线相交时，所创建的拐角类型。</p>
+<p>  lineWidth    设置或返回当前的线条宽度。</p>
+<p>  miterLimit    设置或返回最大斜接长度。</p>
+</li>
+<li><p>矩形 - 方法</p>
+<p>  rect()    创建矩形。</p>
+<p>  fillRect()    绘制”被填充”的矩形。</p>
+<p>  strokeRect()    绘制矩形（无填充）。</p>
+<p>  clearRect()    在给定的矩形内清除指定的像素。</p>
+</li>
+<li><p>路径 - 方法</p>
+<p>  fill()    填充当前绘图（路径）。</p>
+<p>  stroke()    绘制已定义的路径。</p>
+<p>  beginPath()    起始一条路径，或重置当前路径。</p>
+<p>  moveTo()    把路径移动到画布中的指定点，不创建线条。</p>
+<p>  closePath()    创建从当前点回到起始点的路径。</p>
+<p>  lineTo()    添加一个新点，然后在画布中创建从该点到最后指定点的线条。</p>
+<p>  clip()    从原始画布剪切任意形状和尺寸的区域。</p>
+<p>  quadraticCurveTo()    创建二次贝塞尔曲线。</p>
+<p>  bezierCurveTo()    创建三次贝塞尔曲线。</p>
+<p>  arc()    创建弧/曲线（用于创建圆形或部分圆）。</p>
+<p>  arcTo()    创建两切线之间的弧/曲线。</p>
+<p>  isPointInPath()    如果指定的点位于当前路径中，则返回 true，否则返回 false。</p>
+</li>
+<li><p>转换 - 方法</p>
+<p>  scale()    缩放当前绘图至更大或更小。</p>
+<p>  rotate()    旋转当前绘图。</p>
+<p>  translate()    重新映射画布上的 (0,0) 位置。</p>
+<p>  transform()    替换绘图的当前转换矩阵。</p>
+<p>  setTransform()    将当前转换重置为单位矩阵。然后运行 transform()。</p>
+</li>
+<li><p>文本</p>
+<ul>
+<li><p>属性</p>
+<p>  font    设置或返回文本内容的当前字体属性。</p>
+<p>  textAlign    设置或返回文本内容的当前对齐方式。</p>
+<p>  textBaseline    设置或返回在绘制文本时使用的当前文本基线。</p>
+</li>
+<li><p>方法</p>
+<p>  fillText()    在画布上绘制”被填充的”文本。</p>
+<p>  strokeText()    在画布上绘制文本（无填充）。</p>
+<p>  measureText()    返回包含指定文本宽度的对象。</p>
+</li>
+</ul>
+</li>
+<li><p>图像绘制 - 方法</p>
+<p>  drawImage()    向画布上绘制图像、画布或视频。</p>
+</li>
+<li><p>像素操作</p>
+<ul>
+<li><p>属性</p>
+<p>  width    返回 ImageData 对象的宽度。</p>
+<p>  height    返回 ImageData 对象的高度。</p>
+<p>  data    返回一个对象，其包含指定的 ImageData 对象的图像数据。</p>
+</li>
+<li><p>方法</p>
+<p>  createImageData()    创建新的、空白的 ImageData 对象。</p>
+<p>  getImageData()    返回 ImageData 对象，该对象为画布上指定的矩形复制像素数据。</p>
+<p>  putImageData()    把图像数据（从指定的 ImageData 对象）放回画布上。</p>
+</li>
+</ul>
+</li>
+<li><p>合成 -属性</p>
+<p>  globalAlpha    设置或返回绘图的当前 alpha 或透明值。</p>
+<p>  globalCompositeOperation    设置或返回新图像如何绘制到已有的图像上。</p>
+</li>
+<li><p>其他 - 方法</p>
+<p>  save()    保存当前环境的状态。</p>
+<p>  restore()    返回之前保存过的路径状态和属性。</p>
+<p>  createEvent()</p>
+<p>  getContext()</p>
+<p>  toDataURL()</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/08/Canvas/" data-id="cjqewdmgl0000qcoza5ia7jfj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1272,7 +1272,7 @@ array 可选的
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/24/WebStorage/" data-id="cjqet29gi000474oz1s3t6fc5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/11/24/WebStorage/" data-id="cjqewdmgz0005qcozgphz3bko" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1351,7 +1351,7 @@ array 可选的
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/24/VueMultiple/" data-id="cjqet29gh000374ozn1fzgv90" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/11/24/VueMultiple/" data-id="cjqewdmgv0002qcoz34ikmqod" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1361,9 +1361,9 @@ array 可选的
 
 
   
-    <article id="post-history" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-optimize" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/10/11/history/" class="article-date">
+    <a href="/2018/10/11/optimize/" class="article-date">
   <time datetime="2018-10-10T16:00:00.000Z" itemprop="datePublished">2018-10-11</time>
 </a>
     
@@ -1375,7 +1375,7 @@ array 可选的
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/11/history/">Route history</a>
+      <a class="article-title" href="/2018/10/11/optimize/">React 项目性能优化</a>
     </h1>
   
 
@@ -1383,61 +1383,166 @@ array 可选的
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="URL-组成"><a href="#URL-组成" class="headerlink" title="URL 组成"></a>URL 组成</h2><ul>
-<li><p>protocol://hostname[:port]/path/[;parameter][?query]#fragment</p>
-<p>  protocol 协议，常用的协议是http</p>
-<p>  hostname 主机地址，可以是域名，也可以是IP地址</p>
-<p>  port 端口 http协议默认端口是：80端口，如果不写默认就是:80端口</p>
-<p>  path 路径 网络资源在服务器中的指定路径</p>
-<p>  parameter 参数 如果要向服务器传入参数，在这部分输入</p>
-<p>  query 查询字符串 如果需要从服务器那里查询内容，在这里编辑</p>
-<p>  fragment 片段 网页中可能会分为不同的片段，如果想访问网页后直接到达指定位置，可以在这部分设置</p>
+        <h2 id="一、避免重复渲染"><a href="#一、避免重复渲染" class="headerlink" title="一、避免重复渲染"></a>一、避免重复渲染</h2><ul>
+<li><p>描述：</p>
+<p>  shouldComponentUpdate函数 返回Boolean类型的值，默认返回true，判断组件更新与否，</p>
+<p>  可以通过重写对应组件的生命周期函数shouldComponentUpdate来提升速度（重新渲染过程开始前触发）。</p>
+</li>
+<li><p>前提：</p>
+<p>  在已知某些情况下不需要更新该组件，可以在shouldComponentUpdate内返回false来跳过整个渲染进程（包括对该组件及之后的内容调用render()指令）。</p>
+</li>
+<li><p>写法：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">shouldComponentUpdate(nextProps, nextState) &#123;</span><br><span class="line">    for (let prop in nextProps) &#123;</span><br><span class="line">        if (nextProps[prop] !== this.props[prop]) &#123;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    for (let prop in nextState) &#123;</span><br><span class="line">        if (nextState[prop] !== this.state[prop]) &#123;</span><br><span class="line">            console.log(</span><br><span class="line">               &apos;nextState[prop] !== this.state[prop]: &apos; +</span><br><span class="line">                nextState[prop] !== this.state[prop]</span><br><span class="line">            );</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>优点：</p>
+<p>  避免组件重新渲染，在未更改组件数据的情况下可以不更新该组件</p>
+</li>
+<li><p>缺点：维护比较困难</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1、每新增state或props都需要在相应组件中的shouldComponentUpdate 方法中添加判断新旧值是否发生变化</span><br><span class="line">2、在判断传入的props值是否变化时，需指定相应的props变量，若仅判断this.props与nextProps，</span><br><span class="line">    即使props值并未改变，shouldComponentUpdate也会判断其发生了改变</span><br><span class="line">3、遇到使用值可能会突变的属性或状态(详情见React.PureComponent)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="Route-history-常用的三种形式来实现路由"><a href="#Route-history-常用的三种形式来实现路由" class="headerlink" title="Route history 常用的三种形式来实现路由"></a>Route history 常用的三种形式来实现路由</h2><p>browserHistory、hashHistory、createMemoryHistory</p>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import &#123; browserHistory &#125; from &apos;react-router&apos;</span><br><span class="line">render(</span><br><span class="line">    &lt;Router history=&#123;browserHistory&#125; routes=&#123;routes&#125; /&gt;,</span><br><span class="line">    document.getElementById(&apos;app&apos;)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-</code></pre><ul>
-<li><p>1、Browser history </p>
-<p>  使用 React Router 的应用推荐的 history。</p>
-<p>  它使用浏览器中的 History API 用于处理 URL，创建一个像example.com/some/path这样真实的 URL。</p>
-<p>  需要server端支持，并向server发送request。</p>
-<p>  服务器需要做好处理 URL 的准备。</p>
-<p>  处理应用启动最初的 / 这样的请求应该没问题，但当用户来回跳转并在 /accounts/123 刷新时，</p>
-<p>  服务器就会收到来自 /accounts/123 的请求，这时你需要处理这个 URL 并在响应中包含 JavaScript 应用代码。</p>
+<h2 id="二、React-PureComponent"><a href="#二、React-PureComponent" class="headerlink" title="二、React.PureComponent"></a>二、React.PureComponent</h2><ul>
+<li><p>描述：</p>
+<p>  PureComponent 属于浅比较(shadow comparison)，浅比较会忽略属性或状态突变的情况，改变组件内部的props或者state，</p>
+<p>  它将不会发挥作用，但是如果state或props指向同一个对象，即使值发生了改变也不会产生重新渲染，除非修改其引用的对象地址。</p>
+<p>  原理就是重写shouldComponentUpdate方法</p>
 </li>
-<li><p>2、Hash history </p>
-<p>  使用 URL 中的 hash（#）部分去创建形如 example.com/#/some/path 的路由。</p>
-<p>  不需要想server发送request，根据url渲染相应的模块。</p>
-<p>  在 DOM API 中，这些 hash history 通过 window.location.hash = newHash 很简单地被用于跳转，且不用存储它们的location state。</p>
-<p>  但我们想全部的 history 都能够使用location state，因此我们要为每一个 location 创建一个唯一的 key，</p>
-<p>  并把它们的状态存储在 session storage 中。当访客点击“后退”和“前进”时，我们就会有一个机制去恢复这些 location state</p>
-<p>  路由跳转时，传递的 data 数据会临时存在 session storage 中，当点击 前进或后退时，该数据会被清空</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 切换路由 --&gt;</span><br><span class="line">hashHistory.push (&#123;</span><br><span class="line">    pathname: &apos;/after/audit-view&apos;,</span><br><span class="line">    state: data</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">&lt;!-- 返回上一页 --&gt;</span><br><span class="line">hashHistory.goBack()</span><br></pre></td></tr></table></figure>
+<li><p>问题：</p>
+<p>  PureComponent将会在this.props.words的新旧值之间做一个简单的比较。</p>
+<p>  由于代码中words数组在父组件中的handleClick方法中被改变了，尽管数组中的实际单词已经改变，</p>
+<p>  this.props.words的新旧值还是相等的，因此即便子组件中具有应该被渲染的新单词，它还是不会更新。</p>
+<p>  因为老的数组push一个words，然后赋值给新的数组。再拿老的数组和新数组比较。比较结果必然相等啊(两个相同地址的对象必然相等)。</p>
+<p>  所以只能判断为相等，不能使组件更新</p>
 </li>
-<li><p>3、createMemoryHistory</p>
-<p>  Memory history 不会在地址栏被操作或读取。</p>
-<p>  这就解释了我们是如何实现服务器渲染的。同时它也非常适合测试和其他的渲染环境（像 React Native ）。</p>
-<p>  和另外两种history的一点不同是你必须创建它，这种方式便于测试。</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const history = createMemoryHistory(location);</span><br></pre></td></tr></table></figure>
+<li><p>解决：避免使用值可能会突变的属性或状态</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">1、例如：使用ES6的spread语法或者Object.assign</span><br><span class="line"></span><br><span class="line">    [...words, &apos;world&apos;] || Object.assign(&#123;&#125;, words, &apos;world&apos;)</span><br><span class="line"></span><br><span class="line">2、Immutable.js，通过结构共享提供不可突变的，持久的集合：</span><br><span class="line"></span><br><span class="line">    不可突变:一旦创建，集合就不能在另一个时间点改变。</span><br><span class="line"></span><br><span class="line">    持久性:可以使用原始集合和一个突变来创建新的集合。原始集合在新集合创建后仍然可用。</span><br><span class="line"></span><br><span class="line">    结构共享:新集合尽可能多的使用原始集合的结构来创建，以便将复制操作降至最少从而提升性能。</span><br><span class="line"></span><br><span class="line">    使用：</span><br><span class="line">        import &#123; List &#125; from &apos;immutable&apos;;</span><br><span class="line">        handleClick = () =&gt; &#123;</span><br><span class="line">            let todo = this.todo.value;</span><br><span class="line">            let todos = List(this.state.todos);//将老的对象变为immutable对象</span><br><span class="line">            todos = todos.push(todo);</span><br><span class="line">            this.setState(&#123; todos &#125;);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>注意： </p>
-<p>  官方推荐使用browserHistory</p>
-<p>  使用browserHistory,浏览器的url是这样的：/user/liuna</p>
-<p>  使用hashHistory,浏览器的url是这样的：/#/user/liuna?_k=adseis</p>
-<p>  使用createMemoryHistory,浏览器的url是这样的：/</p>
-<p>  这样看起来当然是browerHistory更好一些，但是它需要server端支持。</p>
-<p>  使用hashHistory时，因为有 # 的存在，浏览器不会发送request,react-router 自己根据 url 去 render 相应的模块。</p>
-<p>  使用browserHistory时，从 / 到 /user/liuna, 浏览器会向server发送request，所以server要做特殊请求，比如用的 express 的话，</p>
-<p>  你需要 handle 所有的路由 app.get(‘*’, (req, res) =&gt; { … })，使用了 nginx 的话，nginx也要做相应的配置。</p>
-<p>  react-router-dom v4 版本已经做了以下修改：</p>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">        browserHistory 替换成 BrowserRouter</span><br><span class="line">        hashHistory 替换成 HashRouter</span><br><span class="line">        createMemoryHistory 替换成MemoryRouter</span><br><span class="line">        ``` </span><br><span class="line"></span><br><span class="line">* 参考网址：</span><br><span class="line"></span><br><span class="line">    http://react-guide.github.io/react-router-cn/docs/API.html</span><br><span class="line"></span><br><span class="line">    https://www.cnblogs.com/dudeyouth/p/6617059.html</span><br><span class="line"></span><br><span class="line">## 清空react-router（hashHistory）产生的多余的session</span><br><span class="line">``` </span><br><span class="line">    export default function() &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            let sessionLength = window.sessionStorage.length;</span><br><span class="line">            let sessionKeys = [];</span><br><span class="line">            // 遍历key中包含@@History的项</span><br><span class="line">            for(let i = 0; i &lt; sessionLength; i ++) &#123;</span><br><span class="line">                if (window.sessionStorage.key(i).match(&apos;@@History&apos;)) &#123;</span><br><span class="line">                    sessionKeys.push(window.sessionStorage.key(i));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            // 删除该项session</span><br><span class="line">            for(let j = 0; j &lt; sessionKeys.length; j ++) &#123;</span><br><span class="line">                window.sessionStorage.removeItem(sessionKeys[j]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; catch(err) &#123;</span><br><span class="line">            window.Raven &amp;&amp; window.Raven.captureException(err);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<li><p>场景：使用PureComponent的最佳情况就是展示组件，它既没有子组件，也没有依赖应用的全局状态</p>
+</li>
+</ul>
+<h2 id="三、Immutable"><a href="#三、Immutable" class="headerlink" title="三、Immutable"></a>三、Immutable</h2><ul>
+<li><p>实则解决了一个问题：</p>
+<p>  Shared mutable state is the root of all evil（共享的可变状态是万恶之源）</p>
+</li>
+<li><p>React性能优化时最常用的就是shouldComponentUpdate 方法</p>
+<p>  但是他默认返回 true，即始终会执行 render() 方法，然后需要做 Virtual DOM 比较，并得出是否需要做真实 DOM 更新，这里往往会带来很多无必要的渲染并成为性能瓶颈。</p>
+<p>  当然我们也可以在 shouldComponentUpdate() 中使用使用 deepCopy 和 deepCompare 来避免无必要的 render()，但 深拷贝 和 深比较 一般都是非常耗性能的。</p>
+</li>
+<li><p>Immutable 则提供了简洁高效的判断数据是否变化的方法，只需 === 和 is 比较就能知道是否需要执行 render()，而这个操作几乎 0 成本，所以可以极大提高性能。修改后的 shouldComponentUpdate 是这样的：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">import &#123; is &#125; from &apos;immutable&apos;;</span><br><span class="line"></span><br><span class="line">shouldComponentUpdate: (nextProps = &#123;&#125;, nextState = &#123;&#125;) =&gt; &#123;</span><br><span class="line">    const thisProps = this.props || &#123;&#125;, thisState = this.state || &#123;&#125;;</span><br><span class="line">    </span><br><span class="line">    if (Object.keys(thisProps).length !== Object.keys(nextProps).length ||</span><br><span class="line">        Object.keys(thisState).length !== Object.keys(nextState).length) &#123;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    for (const key in nextProps) &#123;</span><br><span class="line">        if (!is(thisProps[key], nextProps[key])) &#123;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    for (const key in nextState) &#123;</span><br><span class="line">        if (thisState[key] !== nextState[key] || !is(thisState[key], nextState[key])) &#123;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意：</p>
+<p>  1、React 中规定 state 和 props 只能是一个普通对象，所以比较时要比较对象的 key;</p>
+<p>  2、Immutable 可以给应用代打极大的性能提升，但是否使用还得看项目情况，由于入侵性较强，新项目引入比较容易，</p>
+<pre><code>老项目迁移需要谨慎的评估迁移成本，对于一些提供给外部使用的公共组件，
+最好不要把Immutable对象直接暴露在对外的接口中。
+</code></pre><p>  3、与 Redux 搭配使用</p>
+<pre><code>Redux 是目前流行的 Flux 衍生库。它简化了 Flux 中多个 Store 的概念，只有一个 Store，
+数据操作通过 Reducer 中实现；同时它提供更简洁和清晰的单向数据流
+(View -&gt; Action -&gt; Middleware -&gt; Reducer)，也更易于开发同构应用。
+目前已经在我们项目中大规模使用。
+由于 Redux 中内置的 combineReducers 和 reducer 中的 initialState 都为原生的 Object 对象，
+所以不能和 Immutable 原生搭配使用。幸运的是，Redux 并不排斥使用 Immutable，
+可以自己重写 combineReducers 或使用 redux-immutablejs来提供支持。
 </code></pre></li>
+<li><p>参考网址：</p>
+<p>  <a href="https://facebook.github.io/immutable-js/docs/#/" target="_blank" rel="noopener">https://facebook.github.io/immutable-js/docs/#/</a></p>
+<p>  <a href="https://www.manster.me/?p=656" target="_blank" rel="noopener">https://www.manster.me/?p=656</a></p>
+<p>  <a href="https://react.docschina.org/docs/optimizing-performance.html#%E6%A1%88%E4%BE%8B" target="_blank" rel="noopener">https://react.docschina.org/docs/optimizing-performance.html#%E6%A1%88%E4%BE%8B</a></p>
+<p>  <a href="https://segmentfault.com/a/1190000007811296" target="_blank" rel="noopener">https://segmentfault.com/a/1190000007811296</a></p>
+<p>  <a href="https://juejin.im/post/5ac34810f265da23870f0748" target="_blank" rel="noopener">https://juejin.im/post/5ac34810f265da23870f0748</a></p>
+</li>
 </ul>
+<h2 id="组件按需加载"><a href="#组件按需加载" class="headerlink" title="组件按需加载"></a>组件按需加载</h2><h3 id="一、angular-router"><a href="#一、angular-router" class="headerlink" title="一、angular-router"></a>一、angular-router</h3><pre><code>angular-router配合懒加载实现路由的按需加载，模块划分，从根模块中分离出来，减轻根模块负重
+angular.module(&apos;app&apos;, [&apos;ngRoute&apos;, &apos;oc.lazyLoad&apos;])
+    .config([&apos;$routeProvider&apos;, function($routeProvider) {
+        $routeProvider
+            .when(&apos;/user&apos;, {
+                templateUrl: &apos;page1.html&apos;,
+                resolve: [&apos;$ocLazyLoad&apos;, function($ocLazyLoad) {
+                        return $ocLazyLoad.load(&apos;js/page1.js&apos;); // 按需加载目标 js file
+                    }]
+            })
+            .when(&apos;/people&apos;, {
+                templateUrl: &apos;page2.html&apos;,
+                resolve: [&apos;$ocLazyLoad&apos;, function($ocLazyLoad) {
+                        return $ocLazyLoad.load(&apos;js/page2.js&apos;); // 按需加载目标 js file
+                    }]
+            })
+            .otherwise({
+                redirectTo: &apos;/&apos;
+            });
+    }]);
+</code></pre><h3 id="二、vue-router"><a href="#二、vue-router" class="headerlink" title="二、vue-router"></a>二、vue-router</h3><pre><code>vue-router懒加载，即路由的按需加载
+// 1、第一种 按需加载方式
+const Home = () =&gt; import(&apos;../pages/home.vue&apos;)
+{
+    path: &apos;/_home&apos;,
+    component: Home
+    // 2、另外一种按需加载的方式
+    // component: resolve =&gt; require([&apos;../pages/home.vue&apos;], resolve)
+}
+</code></pre><h3 id="react-组件按需加载"><a href="#react-组件按需加载" class="headerlink" title="react 组件按需加载"></a>react 组件按需加载</h3><ul>
+<li><p>(一)、在使用webpack require.ensure([], function(require) {}, path)</p>
+<p>  我们看到react-router的按需加载，作用主要表现在可以减少首页请求的文件的大小。<br>  注意事项：</p>
+<pre><code>1、require(‘components/Index’).default中require方法的参数不能使用变量，只能使用字符串！
+2、如果你的组件是使用es5的module.exports导出的话，那么只需要require(‘components/Index’)即可。
+    而如果你的组件是使用es6的export default导出的话，那么需要加上default！
+    例如：require(&apos;components/Index&apos;).default
+3、如果在路由页面使用了按需加载（require.ensure）加载路由级组件的方式，那么在其他地方（包括本页面）就不要再import了，
+    否则不会打包生成chunk文件。
+    简而言之，需要按需加载的路由级组件require(&apos;components/Index&apos;).default中require方法的参数不能使用变量，
+    只能使用字符串！也不能直接将require(&apos;components/Index&apos;).default当成一个变量传入，
+    否则就直接加载组件了，起不到按需加载的作用必须在路由页面进行加载。
 
+特别是第3点，因为这个原因导致按需加载失败，特别注意import不能在任何地方引入按需加载的组件
+代码如下：
+    /*
+    * require.ensure(dependencies: String[], callback: function(require), chunkName: String)\
+    */
+    &lt;IndexRoute getComponent = {(location, cb) =&gt; {
+        require.ensure([], require =&gt; {
+            cb(null, require(&apos;../components/Welcome&apos;).default)
+        },&apos;Welcome&apos;);
+    }} /&gt;
+</code></pre></li>
+<li><p>(二)、react-router 4.x 中的按需加载</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">方式一：</span><br><span class="line">    Bundle文件：</span><br><span class="line">    import &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line"></span><br><span class="line">    export default class Bundle extends Component &#123;</span><br><span class="line">        constructor(props) &#123;</span><br><span class="line">            super(props);</span><br><span class="line">            this.state = &#123;</span><br><span class="line">                mod: null</span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        componentWillMount() &#123;</span><br><span class="line">            this.load(this.props)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        componentWillReceiveProps(nextProps) &#123;</span><br><span class="line">            if (nextProps.load !== this.props.load) &#123;</span><br><span class="line">                this.load(nextProps)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        load(props) &#123;</span><br><span class="line">            this.setState(&#123;</span><br><span class="line">                mod: null</span><br><span class="line">            &#125;);</span><br><span class="line">            //注意这里，使用Promise对象; mod.default导出默认</span><br><span class="line">            props.load().then((mod) =&gt; &#123;</span><br><span class="line">                this.setState(&#123;</span><br><span class="line">                    mod: mod.default ? mod.default : mod</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        render() &#123;</span><br><span class="line">            return this.state.mod ? this.props.children(this.state.mod) : null;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    路由文件：</span><br><span class="line">    import Bundle from &apos;../Bundle&apos;;</span><br><span class="line"></span><br><span class="line">    // 加载组件 公共函数</span><br><span class="line">    function BundleComponent (ComItem) &#123;</span><br><span class="line">        return (props) =&gt; (</span><br><span class="line">            &lt;Bundle load=&#123;() =&gt; import(&apos;../components/&apos; + ComItem)&#125;&gt;</span><br><span class="line">                &#123;(ComItem) =&gt; &lt;ComItem &#123;...props&#125;/&gt;&#125;</span><br><span class="line">            &lt;/Bundle&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &lt;Route exact path=&quot;/&quot; component=&#123; BundleComponent(&apos;HomePage&apos;) &#125; /&gt; &#123;/* exact 严格匹配&apos;/&apos;路由 */&#125;</span><br><span class="line">    &lt;Route path=&quot;/inbox&quot; component=&#123;BundleComponent(&apos;Inbox&apos;)&#125; /&gt;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">方式二：</span><br><span class="line">    asyncComponent文件：</span><br><span class="line">    import React, &#123; Component &#125; from &quot;react&quot;;</span><br><span class="line"></span><br><span class="line">    export default function asyncComponent(importComponent) &#123;</span><br><span class="line">        class AsyncComponent extends Component &#123;</span><br><span class="line">            constructor(props) &#123;</span><br><span class="line">                super(props);</span><br><span class="line"></span><br><span class="line">                this.state = &#123;</span><br><span class="line">                    component: null</span><br><span class="line">                &#125;;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            async componentDidMount() &#123;</span><br><span class="line">                const &#123; default: component &#125; = await importComponent();</span><br><span class="line"></span><br><span class="line">                this.setState(&#123;</span><br><span class="line">                    component: component</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            render() &#123;</span><br><span class="line">                const C = this.state.component;</span><br><span class="line">                return C ? &lt;C &#123;...this.props&#125; /&gt; : null;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return AsyncComponent;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    路由文件：</span><br><span class="line">    import asyncComponent from &apos;../components/AsyncComponent&apos;;</span><br><span class="line">    const AsyncHomePage = asyncComponent(() =&gt; import(&apos;../components/HomePage&apos;));</span><br><span class="line">    const routes = [</span><br><span class="line">        &#123;</span><br><span class="line">            name: &apos;Inbox&apos;,</span><br><span class="line">            path: &apos;/inbox&apos;</span><br><span class="line">        &#125;,</span><br><span class="line">        ...</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">    &lt;Route exact path=&quot;/&quot; component=&#123;AsyncHomePage&#125; /&gt; &#123;/* exact 严格匹配&apos;/&apos;路由 */&#125;</span><br><span class="line">    &#123;</span><br><span class="line">        routes.map((item, index) =&gt; &#123;</span><br><span class="line">            return (</span><br><span class="line">                &lt;Route</span><br><span class="line">                    path=&#123; item.path &#125;</span><br><span class="line">                    component=&#123;asyncComponent(() =&gt; import(&apos;../components/&apos; + item.name))&#125; key=&#123; index &#125;</span><br><span class="line">                /&gt;</span><br><span class="line">            )</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<pre><code>这个asyncComponent 函数接受一个importComponent 的参数，importComponent 调用时候将动态引入给定的组件。
+
+在componentDidMount 我们只是简单地调用importComponent 函数，并将动态加载的组件保存在状态中。
+
+最后，如果完成渲染，我们有条件地提供组件。在这里我们如果不写null的话，也可提供一个Loading图，代表着组件正在渲染。
+</code></pre><h2 id="优化思路"><a href="#优化思路" class="headerlink" title="优化思路"></a>优化思路</h2><ul>
+<li><p>构建优化</p>
+<ul>
+<li>1、减少编译体积 ContextReplacementPugin、IgnorePlugin、babel-plugin-import、babel-plugin-transform-runtime。</li>
+<li>2、并行编译 happypack、thread-loader、uglifyjsWebpackPlugin开启并行</li>
+<li>3、缓存 cache-loader、hard-source-webpack-plugin、uglifyjsWebpackPlugin开启缓存、babel-loader开启缓存</li>
+<li>4、预编译 dllWebpackPlugin &amp;&amp; DllReferencePlugin、auto-dll-webapck-plugin</li>
+</ul>
+</li>
+<li><p>性能优化</p>
+<ul>
+<li>1、减少编译体积 Tree-shaking、Scope Hositing。</li>
+<li>2、hash缓存 webpack-md5-plugin</li>
+<li>3、拆包 splitChunksPlugin、import()、require.ensure</li>
+</ul>
+</li>
+</ul>
+<h2 id="参考网址："><a href="#参考网址：" class="headerlink" title="参考网址："></a>参考网址：</h2><pre><code>[CSDN](https://blog.csdn.net/liwusen/article/details/53944321)
+
+[webpack1.13.3以下版本github](https://github.com/love-fay/fay-webpack-redux-code-splitting/tree/master/react)
+
+[不同webpack版本对应链接](https://blog.csdn.net/valada/article/details/79909786)
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/11/history/" data-id="cjqet29gm000874ozydy9lw9n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/11/optimize/" data-id="cjqewdmh10007qcozke8klb2w" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1495,11 +1600,11 @@ array 可选的
           </li>
         
           <li>
-            <a href="/2018/12/08/Canvas/">Canvas 绘图</a>
+            <a href="/2018/12/08/Npm/">创建/发布/撤销 npm 包</a>
           </li>
         
           <li>
-            <a href="/2018/12/08/Git/">Git 原理分析总结</a>
+            <a href="/2018/12/08/Compare/">前端代码对比</a>
           </li>
         
       </ul>
