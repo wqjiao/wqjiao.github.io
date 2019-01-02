@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="Js 对象及数据类型">
+  <meta property="og:description" content="">
+  <meta property="og:site_name" content="Hexo">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="http://yoursite.com">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>Hexo</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">Js 对象及数据类型</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/<your-github-username>">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:<your-email-address>">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By John Doe</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2019-01-02</span>
+            <span class="time">18:34:02</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/web-前端/">web 前端</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/Javascript/">#Javascript</a> <a class="tag" href="/tags/Symbol/">#Symbol</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <p>总结 Js 对象及数据类型：1、js 判断对象是否为空的 5 种方式；2、js遍历对象的  4 种方式；3、js 遍历数组的 5 种方式；4、原始数据类型及ES6 Symbol 数据类型…<br><a id="more"></a></p>
+<h2 id="一、js-判断对象是否为空"><a href="#一、js-判断对象是否为空" class="headerlink" title="一、js 判断对象是否为空"></a>一、js 判断对象是否为空</h2><h3 id="1、将-json-对象转化为-json-字符串，再判断该字符串是否为-“-”"><a href="#1、将-json-对象转化为-json-字符串，再判断该字符串是否为-“-”" class="headerlink" title="1、将 json 对象转化为 json 字符串，再判断该字符串是否为 “{}”"></a>1、将 json 对象转化为 json 字符串，再判断该字符串是否为 “{}”</h3><pre><code>var data = {};
+var b = (JSON.stringify(data) == &quot;{}&quot;);
+alert(b); // true
+</code></pre><p>注意： 忽略转换 undefined、function、Symbol 属性</p>
+<pre><code>JSON.stringify({[Symbol(&quot;key&quot;)]: &quot;foo&quot;}); // {}
+</code></pre><h3 id="2、for-in-循环判断"><a href="#2、for-in-循环判断" class="headerlink" title="2、for in 循环判断"></a>2、for in 循环判断</h3><pre><code>var obj = {};
+var b = function() {
+    for(var key in obj) {
+        return false;
+    }
+    return true;
+}
+alert(b()); // true
+</code></pre><h3 id="3、jquery-的-isEmptyObject"><a href="#3、jquery-的-isEmptyObject" class="headerlink" title="3、jquery 的 isEmptyObject()"></a>3、jquery 的 isEmptyObject()</h3><p>此方法是 jquery 将 2 方法 (for in) 进行封装，使用时需要依赖 jquery</p>
+<pre><code>var data = {};
+var b = $.isEmptyObject(data);
+alert(b); // true
+</code></pre><h3 id="4、Object-getOwnPropertyNames"><a href="#4、Object-getOwnPropertyNames" class="headerlink" title="4、Object.getOwnPropertyNames()"></a>4、Object.getOwnPropertyNames()</h3><p>获取到对象中的属性名，存到一个数组中，返回数组对象，我们可以通过判断数组的 length 来判断此对象是否为空</p>
+<pre><code>var data = {};
+var arr = Object.getOwnPropertyNames(data);
+alert(arr.length === 0); // true
+</code></pre><p>注意：此方法不兼容 IE8</p>
+<h3 id="5、使用-ES6-的-Object-keys"><a href="#5、使用-ES6-的-Object-keys" class="headerlink" title="5、使用 ES6 的 Object.keys()"></a>5、使用 ES6 的 Object.keys()</h3><p>与 4 方法类似，是 ES6 的新方法, 返回值也是对象中属性名组成的数组</p>
+<pre><code>var data = {};
+var arr = Object.keys(data);
+alert(arr.length === 0); // true
+</code></pre><h2 id="二、js-遍历对象"><a href="#二、js-遍历对象" class="headerlink" title="二、js 遍历对象"></a>二、js 遍历对象</h2><h3 id="1、for-in"><a href="#1、for-in" class="headerlink" title="1、for in"></a>1、for in</h3><p>循环遍历对象自身的和继承的可枚举属性(不含 Symbol 属性)</p>
+<pre><code>var obj = {&apos;0&apos;: &apos;a&apos;, &apos;1&apos;: &apos;b&apos;, &apos;2&apos;: &apos;c&apos;};
+
+for (var i in obj) {
+    console.log(i, obj[i]);
+}
+</code></pre><h3 id="2、Object-getOwnPropertyNames"><a href="#2、Object-getOwnPropertyNames" class="headerlink" title="2、Object.getOwnPropertyNames()"></a>2、Object.getOwnPropertyNames()</h3><p>返回一个数组,包含对象自身的所有属性(不含 Symbol 属性,但是包括不可枚举属性).</p>
+<pre><code>var obj = {&apos;0&apos;: &apos;a&apos;, &apos;1&apos;: &apos;b&apos;, &apos;2&apos;: &apos;c&apos;};
+
+Object.getOwnPropertyNames(obj).forEach((key) =&gt; {
+    console.log(key, obj[key]);
+});
+</code></pre><h3 id="3、Object-keys"><a href="#3、Object-keys" class="headerlink" title="3、Object.keys()"></a>3、Object.keys()</h3><p>返回一个数组,包括对象自身的(不含继承的)所有可枚举属性(不含 Symbol 属性)</p>
+<pre><code>var obj = {&apos;0&apos;: &apos;a&apos;, &apos;1&apos;: &apos;b&apos;, &apos;2&apos;: &apos;c&apos;};
+
+Object.keys(obj).forEach((key) =&gt; {
+    console.log(key, obj[key]);
+});
+</code></pre><h3 id="4、Reflect-ownKeys"><a href="#4、Reflect-ownKeys" class="headerlink" title="4、Reflect.ownKeys()"></a>4、Reflect.ownKeys()</h3><p>返回一个数组,包含对象自身的所有属性,不管属性名是 Symbol 或字符串,也不管是否可枚举</p>
+<pre><code>var obj = {&apos;0&apos;: &apos;a&apos;, &apos;1&apos;: &apos;b&apos;, &apos;2&apos;: &apos;c&apos;};
+
+Reflect.ownKeys(obj).forEach(function(key) {
+    console.log(key, obj[key]);
+});
+</code></pre><h2 id="三、js-遍历数组"><a href="#三、js-遍历数组" class="headerlink" title="三、js 遍历数组"></a>三、js 遍历数组</h2><h3 id="1、for"><a href="#1、for" class="headerlink" title="1、for"></a>1、for</h3><pre><code>var arr = [1, 2, 3];
+
+for (var i = 0; i &lt; arr.length; i ++) {
+    console.log(i, arr[i]);
+}
+</code></pre><h3 id="2、forEach"><a href="#2、forEach" class="headerlink" title="2、forEach"></a>2、forEach</h3><pre><code>var arr = [1, 2, 3];
+
+arr.forEach(function(val, index) {
+    console.log(val, index);
+});
+</code></pre><h3 id="3、for-in"><a href="#3、for-in" class="headerlink" title="3、for in"></a>3、for in</h3><pre><code>var arr = [1, 2, 3];
+
+for (var i in arr) {
+    console.log(i, arr[i]);
+}
+</code></pre><h3 id="4、for-of"><a href="#4、for-of" class="headerlink" title="4、for of"></a>4、for of</h3><p>不仅支持数组，还支持大多数类数组对象</p>
+<p>也支持字符串遍历，它将字符串视为一系列的 Unicode 字符来进行遍历</p>
+<pre><code>var arr = [1, 2, 3];
+
+for (var value of arr) {
+    console.log(value);
+}
+</code></pre><h3 id="5、数组-对象数组中获取-id"><a href="#5、数组-对象数组中获取-id" class="headerlink" title="5、数组/对象数组中获取 id"></a>5、数组/对象数组中获取 id</h3><pre><code>let arr = [{
+    id: 0,
+    text: &apos;a&apos;
+}, {
+    id: 1,
+    text: &apos;b&apos;
+}];
+
+let str = arr.map( (item) =&gt; {
+    return [item.id]; // 字符串、数组、对象
+});
+</code></pre><h2 id="四、数据类型"><a href="#四、数据类型" class="headerlink" title="四、数据类型"></a>四、数据类型</h2><h3 id="1、原始数据类型"><a href="#1、原始数据类型" class="headerlink" title="1、原始数据类型"></a>1、原始数据类型</h3><pre><code>null 空值
+
+undefined 变量未初始化
+
+Number 数字类型
+
+String 字符串
+
+boolean 布尔型
+
+Object 对象
+</code></pre><h3 id="2、ES6-Symbol"><a href="#2、ES6-Symbol" class="headerlink" title="2、ES6 Symbol"></a>2、ES6 Symbol</h3><ul>
+<li><p>概述</p>
+<p>  Symbol 数据类型是一个原始数据类型</p>
+<p>  Symbol 是一种特殊的、不可变的数据类型，可以作为对象属性的标识符使用</p>
+<p>  Symbol 对象是一个 symbol primitive data type 的隐式对象包装器</p>
+</li>
+<li><p>语法格式</p>
+<p>  Symbol([description]) // description 是可选的 字符串</p>
+<p>  Symbol 的描述，可用于调试(便于区分 Symbol 值)但不能访问 Symbol 本身</p>
+<ul>
+<li><p>Number</p>
+<p>  const b = Number(10); // 10<br>  const b = 10; // 简写</p>
+</li>
+<li><p>Symbol</p>
+<p>  const name = Symbol();<br>  const name1 = Symbol(‘sym1’);<br>  console.log(name, name1) // Symbol() Symbol(sym1)</p>
+</li>
+</ul>
+</li>
+<li><p>Symbol 转码 需要 babel 及 babel-polyfill</p>
+</li>
+</ul>
+<p>babel默认只转换新的JavaScript句法（syntax），而不转换新的API，比如 Iterator、Generator、Set、Maps、Proxy、Reflect、Symbol、Promise 等全局对象，以及一些定义在全局对象上的方法（比如Object.assign）都不会转码。如果想让这个方法运行，必须使用 babel-polyfill，为当前环境提供一个垫片。</p>
+<ul>
+<li><p>Symbol 特点</p>
+<ul>
+<li><p>1、Symbol 不能使用 new</p>
+<figure class="highlight plain"><figcaption><span>name </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 2、每个从 Symbol() 返回的 symbol 值都是唯一的</span><br><span class="line"></span><br><span class="line">一个 symbol 值能作为对象属性的标识符</span><br><span class="line"></span><br><span class="line">Symbol(&quot;foo&quot;) 不会强制字符串 “foo” 成为一个 symbol类型</span><br><span class="line"></span><br><span class="line">它每次都会创建一个新的 symbol类型：</span><br><span class="line"></span><br><span class="line">```javascript</span><br><span class="line">Symbol(&quot;foo&quot;) === Symbol(&quot;foo&quot;); // false</span><br><span class="line">Symbol.for(&apos;foo&apos;) === Symbol.for(&apos;foo&apos;); // true</span><br></pre></td></tr></table></figure>
+<p>Symbol.for() 与 Symbol() 这两种写法，都会生成新的 Symbol</p>
+<p>它们的区别是，前者会被登记在全局环境中供搜索，后者不会</p>
+<p>Symbol.for() 不会每次调用就返回一个新的 Symbol 类型的值，而是会先检查给定的 key 是否已经存在，如果不存在才会新建一个值，比如，如果你调用 Symbol.for(“cat”) 30 次，每次都会返回同一个 Symbol 值，但是调用 Symbol(“cat”)30 次，会返回 30 个不同的 Symbol 值</p>
+</li>
+<li><p>3、可以使用 <code>Object.defineProperty()</code> 和 <code>Object.defineProperties()</code> 方法</p>
+<p>在一个对象上定义新的属性</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设置对象属性只读。</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj, name, &#123;<span class="attr">writable</span>: <span class="literal">false</span>&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(props, <span class="string">'key'</span>, &#123;</span><br><span class="line">    get: warnAboutAccessingKey,</span><br><span class="line">    configurable: <span class="literal">true</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>4、全局共享</p>
+<p>Symbol 在 js 文件中定义的 Symbol，并不能在其他文件直接共享</p>
+<p>要创建跨文件可用的 symbol，甚至跨域（每个都有它自己的全局作用域），<br>使用 Symbol.for() 方法和  Symbol.keyFor() 方法从全局的 symbol 注册表中设置和取得。</p>
+<p>Symbol.for() // 只有一个参数</p>
+<p>Symbol.keyFor() // 只有一个参数，返回的是key</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> name = <span class="built_in">Symbol</span>.for(<span class="string">'000'</span>);</span><br><span class="line"><span class="keyword">let</span> name1 = <span class="built_in">Symbol</span>.for(<span class="string">'111'</span>);</span><br><span class="line"><span class="keyword">let</span> name2 = <span class="built_in">Symbol</span>.for(<span class="string">'222'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Symbol</span>.keyFor(name)); <span class="comment">// 000</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Symbol</span>.keyFor(name1)); <span class="comment">// 111</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Symbol</span>.keyFor(name2)); <span class="comment">// 222</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>5、Symbol 不支持类型强制转换</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a); <span class="comment">// number</span></span><br><span class="line"><span class="built_in">console</span>.log(a + <span class="string">' haha'</span>) <span class="comment">// '1haha'</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Symbol</span> 不支持强制转换</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> a = <span class="built_in">Symbol</span>(<span class="string">'a'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a);</span><br><span class="line"><span class="built_in">console</span>.log(a + <span class="string">' haha'</span>); <span class="comment">// Cannot convert a Symbol value to a string</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>6、Symbol 检索</p>
+<p>Symbol 作为属性名，该属性不会出现在 <code>for...in</code>、<code>for...of</code> 循环中</p>
+<p>也不会被 <code>Object.keys()</code>、<code>Object.getOwnPropertyNames()</code>、<code>JSON.stringify()</code> 返回</p>
+<p>但是，它也不是私有属性，有一个 ES6 新增的方法 <code>Object.getOwnPropertySymbols</code> 方法</p>
+<p>可以获取指定对象的所有 Symbol 属性名</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="built_in">Symbol</span>(<span class="string">'a'</span>);</span><br><span class="line"><span class="keyword">let</span> b = <span class="built_in">Symbol</span>(<span class="string">'b'</span>);</span><br><span class="line"><span class="keyword">let</span> obj = &#123; [a]: <span class="string">'123'</span>, [b]: <span class="number">45</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> value <span class="keyword">of</span> <span class="built_in">Object</span>.getOwnPropertySymbols(obj)) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(obj[value]); <span class="comment">// "123" 45</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>7、Object.getOwnPropertySymbols</p>
+<p>使用 Object.getOwnPropertyNames 方法得不到Symbol属性名，需要使用 <code>Object.getOwnPropertySymbols</code> 方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> foo = <span class="built_in">Symbol</span>(<span class="string">"foo"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj, foo, &#123;</span><br><span class="line">    value: <span class="string">"foobar"</span>,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">in</span> obj) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i); <span class="comment">// 无输出</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertyNames(obj); <span class="comment">// []</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertySymbols(obj); <span class="comment">// [Symbol(foo)]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>8、Reflect.ownKeys</p>
+<p>还有一个上面提到的 Reflect.ownKeys 方法可以返回所有类型的键名,包括常规键名和 Symbol 键名</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123; [<span class="built_in">Symbol</span>(<span class="string">'my_key'</span>)]: <span class="number">1</span>, <span class="attr">enum</span>: <span class="number">2</span>, <span class="attr">nonEnum</span>: <span class="number">3</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Reflect</span>.ownKeys(obj); <span class="comment">// ["enum", "nonEnum", Symbol(my_key)]</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>9、typeof 运算符</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="built_in">Symbol</span>(<span class="string">'foo'</span>) === <span class="string">'symbol'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>10、在所有使用可计算属性名的地方，都能使用 Symbol 类型。比如在对象中的key</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> name = <span class="built_in">Symbol</span>(<span class="string">'name'</span>);</span><br><span class="line"><span class="keyword">const</span> obj = &#123; [name]: <span class="string">"haha"</span> &#125;</span><br><span class="line"><span class="built_in">console</span>.log(obj[name]); <span class="comment">// haha</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>11、Symbol 包装器对象作为属性的键</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sym = <span class="built_in">Symbol</span>(<span class="string">'foo'</span>);</span><br><span class="line"><span class="keyword">var</span> obj = &#123;[sym]: <span class="number">1</span>&#125;;</span><br><span class="line">obj[sym]; <span class="comment">// 1</span></span><br><span class="line">obj[<span class="built_in">Object</span>(sym)]; <span class="comment">// still 1</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>实例： 消除魔术字符串</p>
+<ul>
+<li><p>消除魔术字符串，消除强耦合</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getArea</span>(<span class="params">shape, options</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> area = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">switch</span> (shape) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">'Triangle'</span>: <span class="comment">// 魔术字符串</span></span><br><span class="line">        area = <span class="number">.5</span> * options.width * options.height;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">        <span class="comment">/* ... more code ... */</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> area;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getArea(<span class="string">'Triangle'</span>, &#123; <span class="attr">width</span>: <span class="number">100</span>, <span class="attr">height</span>: <span class="number">100</span> &#125;); <span class="comment">// 魔术字符串</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>定义一个变量</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> shapeType = &#123;</span><br><span class="line">    triangle: <span class="string">'Triangle'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getArea</span>(<span class="params">shape, options</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> area = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">switch</span> (shape) &#123;</span><br><span class="line">        <span class="keyword">case</span> shapeType.triangle:</span><br><span class="line">        area = <span class="number">.5</span> * options.width * options.height;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> area;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getArea(shapeType.triangle, &#123; <span class="attr">width</span>: <span class="number">100</span>, <span class="attr">height</span>: <span class="number">100</span> &#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Symbol 值</p>
+<p>如果仔细分析，可以发现 shapeType.triangle 等于哪个值并不重要</p>
+<p>只要确保不会跟其他 shapeType 属性的值冲突即可</p>
+<p>因此，这里就很适合改用 Symbol 值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> shapeType = &#123;</span><br><span class="line">    triangle: <span class="built_in">Symbol</span>()</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3、参考链接"><a href="#3、参考链接" class="headerlink" title="3、参考链接"></a>3、参考链接</h3><ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Symbol" target="_blank" rel="noopener">developer - Symbol</a></li>
+<li><a href="http://es6.ruanyifeng.com/?search=new+Set&amp;x=0&amp;y=0#docs/class" target="_blank" rel="noopener">Es6 基本用法</a></li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        </p><p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="Git 原理分析总结">
+  <meta property="og:description" content="">
+  <meta property="og:site_name" content="Hexo">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="http://yoursite.com">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>Hexo</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">Git 原理分析总结</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/<your-github-username>">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:<your-email-address>">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By John Doe</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2018-12-08</span>
+            <span class="time">18:34:02</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/工具/">工具</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/git/">#git</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <p>Git 原理分析总结，从如何初始化 git 到保存对象，提交及推送文件及修改的东西…<br><a id="more"></a></p>
+<h2 id="一、初始化"><a href="#一、初始化" class="headerlink" title="一、初始化"></a>一、初始化</h2><ul>
+<li><p>首先，让我们创建一个项目目录，并进入该目录。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir git-demo-project</span><br><span class="line">$ cd git-demo-project</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>我们打算对该项目进行版本管理，第一件事就是使用git init命令，进行初始化</p>
+<p>  git init命令只做一件事，就是在项目根目录下创建一个.git子目录，用来保存版本信息</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>.git内部还有一些子目录</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ ls .git</span><br><span class="line"></span><br><span class="line">HEAD</span><br><span class="line">branches/</span><br><span class="line">config</span><br><span class="line">description</span><br><span class="line">hooks/</span><br><span class="line">index</span><br><span class="line">info/</span><br><span class="line">objects/</span><br><span class="line">refs/</span><br></pre></td></tr></table></figure>
+<p>  该目录下有可能还有其他文件，但这是一个全新的 git init 生成的库，所以默认情况下这些就是你能看到的结构。<br>  新版本的 Git 不再使用 branches 目录<br>  description 文件仅供 GitWeb 程序使用<br>  config 文件包含了项目特有的配置选项<br>  info 目录保存了一份不希望在 .gitignore 文件中管理的忽略模式 (ignored patterns) 的全局可执行文件。<br>  hooks 目录保存了第七章详细介绍了的客户端或服务端钩子脚本。<br>  HEAD 及 index 文件，objects 及 refs 目录，这些是 Git 的核心部分。</p>
+<pre><code>objects 目录存储所有数据内容
+refs 目录存储指向数据 (分支) 的提交对象的指针
+HEAD 文件指向当前分支，index 文件保存了暂存区域信息
+</code></pre></li>
+</ul>
+<h2 id="二、保存对象"><a href="#二、保存对象" class="headerlink" title="二、保存对象"></a>二、保存对象</h2><ul>
+<li><p>新建一个空文件test.txt。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ touch test.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>然后，把这个文件加入 Git 仓库，也就是为test.txt的当前内容创建一个副本。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git hash-object -w test.txt</span><br><span class="line"></span><br><span class="line">e69de29bb2d1d6434b8b29ae775ad8c2e48c5391</span><br></pre></td></tr></table></figure>
+<p>  上面代码中，git hash-object 命令把 test.txt 的当前内容压缩成二进制文件，存入 Git。<br>  压缩后的二进制文件，称为一个 Git 对象，保存在.git/objects目录。</p>
+<p>  这个命令还会计算当前内容的 SHA1 哈希值（长度40的字符串），作为该对象的文件名。下面看一下这个新生成的 Git 对象文件。</p>
+</li>
+<li><p>.git/objects下面多了一个子目录，目录名是哈希值的前2个字符，该子目录下面有一个文件，文件名是哈希值的后38个字符。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ ls -R .git/objects</span><br><span class="line"></span><br><span class="line">.git/objects/e6:</span><br><span class="line">9de29bb2d1d6434b8b29ae775ad8c2e48c5391</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>下面输出的文件内容，都是一些二进制字符。test.txt虽是一个空文件，但是由于二进制对象里面还保存一些元数据。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat .git/objects/e6/9de29bb2d1d6434b8b29ae775ad8c2e48c5391</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果想看该文件原始的文本内容，要用git cat-file命令，因为原始文件是空文件，所以什么也看不到</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git cat-file -p e69de29bb2d1d6434b8b29ae775ad8c2e48c5391</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>现在向test.txt写入一些内容。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ echo &apos;hello world&apos; &gt; test.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>因为文件内容已经改变，需要将它再次保存成 Git 对象。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git hash-object -w test.txt</span><br><span class="line"></span><br><span class="line">3b18e512dba79e4c8300dd08aeb37f8e728b8dad</span><br></pre></td></tr></table></figure>
+<p>  上面代码可以看到，随着内容改变，test.txt的哈希值已经变了。同时，新文件.git/objects/3b/18e512dba79e4c8300dd08aeb37f8e728b8dad也已经生成了。现在可以看到文件内容了。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git cat-file -p 3b18e512dba79e4c8300dd08aeb37f8e728b8dad</span><br><span class="line"></span><br><span class="line">hello world</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="三、暂存区"><a href="#三、暂存区" class="headerlink" title="三、暂存区"></a>三、暂存区</h2><pre><code>文件保存成二进制对象以后，还需要通知 Git 哪些文件发生了变动。
+所有变动的文件，Git 都记录在一个区域，叫做&quot;暂存区&quot;（英文叫做 index 或者 stage）。
+等到变动告一段落，再统一把暂存区里面的文件写入正式的版本历史。
+</code></pre><ul>
+<li><p>git update-index命令用于在暂存区记录一个发生变动的文件。</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git update-index --add --cacheinfo 100644 \</span><br><span class="line">3b18e512dba79e4c8300dd08aeb37f8e728b8dad test.txt</span><br></pre></td></tr></table></figure>
+<p> 上面命令向暂存区写入文件名test.txt、二进制对象名（哈希值）和文件权限。</p>
+</li>
+<li><p>git ls-files命令可以显示暂存区当前的内容。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git ls-files --stage</span><br><span class="line"></span><br><span class="line">100644 3b18e512dba79e4c8300dd08aeb37f8e728b8dad 0   test.txt</span><br></pre></td></tr></table></figure>
+<p>  上面代码表示，暂存区现在只有一个文件test.txt，以及它的二进制对象名和权限。<br>  知道了二进制对象名，就可以在.git/objects子目录里面读出这个文件的内容。</p>
+</li>
+<li><p>git status命令会产生更可读的结果。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line"></span><br><span class="line">要提交的变更：</span><br><span class="line">    新文件：   test.txt</span><br><span class="line">上面代码表示，暂存区里面只有一个新文件test.txt，等待写入历史。</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="四、git-add-命令"><a href="#四、git-add-命令" class="headerlink" title="四、git add 命令"></a>四、git add 命令</h2><pre><code>上面两步（保存对象和更新暂存区），如果每个文件都做一遍，那是很麻烦的。
+Git 提供了 git add 命令简化操作。
+</code></pre><ul>
+<li>$ git add –all(git add *)<br>上面命令相当于，对当前项目所有变动的文件，执行前面的两步操作。</li>
+</ul>
+<h2 id="五、commit-的概念"><a href="#五、commit-的概念" class="headerlink" title="五、commit 的概念"></a>五、commit 的概念</h2><pre><code>暂存区保留本次变动的文件信息，等到修改了差不多了，就要把这些信息写入历史，这就相当于生成了当前项目的一个快照（snapshot）。
+
+项目的历史就是由不同时点的快照构成。Git 可以将项目恢复到任意一个快照。快照在 Git 里面有一个专门名词，叫做 commit，生成快照又称为完成一次提交。
+
+下文所有提到&quot;快照&quot;的地方，指的就是 commit。
+</code></pre><h2 id="六、完成提交"><a href="#六、完成提交" class="headerlink" title="六、完成提交"></a>六、完成提交</h2><ul>
+<li><p>首先，设置一下用户名和 Email，保存快照的时候，会记录是谁提交的。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config user.name &quot;用户名&quot; </span><br><span class="line">$ git config user.email &quot;Email 地址&quot;</span><br></pre></td></tr></table></figure>
+<p>  接下来，要保存当前的目录结构。前面保存对象的时候，只是保存单个文件，并没有记录文件之间的目录关系（哪个文件在哪里）。</p>
+</li>
+<li><p>git write-tree 命令用来将当前的目录结构，生成一个 Git 对象。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git write-tree</span><br><span class="line"></span><br><span class="line">c3b8bb102afeca86037d5b5dd89ceeb0090eae9d</span><br></pre></td></tr></table></figure>
+<p>  上面代码中，目录结构也是作为二进制对象保存的，也保存在.git/objects目录里面，对象名就是哈希值。</p>
+<p>  让我们看一下这个文件的内容。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git cat-file -p c3b8bb102afeca86037d5b5dd89ceeb0090eae9d</span><br><span class="line"></span><br><span class="line">100644 blob 3b18e512dba79e4c8300dd08aeb37f8e728b8dad    test.txt</span><br></pre></td></tr></table></figure>
+<p>  可以看到，当前的目录里面只有一个test.txt文件。</p>
+<p>  所谓快照，就是保存当前的目录结构，以及每个文件对应的二进制对象。<br>  上一个操作，目录结构已经保存好了，现在需要将这个目录结构与一些元数据一起写入版本历史。</p>
+<p>  git commit-tree 命令用于将目录树对象写入版本历史。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ echo &quot;first commit&quot; | git commit-tree c3b8bb102afeca86037d5b5dd89ceeb0090eae9d</span><br><span class="line"></span><br><span class="line">c9053865e9dff393fd2f7a92a18f9bd7f2caa7fa</span><br></pre></td></tr></table></figure>
+<p>  上面代码中，提交的时候需要有提交说明，echo “first commit”就是给出提交说明。<br>  然后，git commit-tree命令将元数据和目录树，一起生成一个 Git 对象。</p>
+<p>  现在，看一下这个对象的内容。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git cat-file -p c9053865e9dff393fd2f7a92a18f9bd7f2caa7fa</span><br><span class="line"></span><br><span class="line">tree c3b8bb102afeca86037d5b5dd89ceeb0090eae9d</span><br><span class="line">author ruanyf  1538889134 +0800</span><br><span class="line">committer ruanyf  1538889134 +0800</span><br><span class="line"></span><br><span class="line">first commit</span><br></pre></td></tr></table></figure>
+<p>  上面代码中，输出结果的第一行是本次快照对应的目录树对象（tree），第二行和第三行是作者和提交人信息，最后是提交说明。</p>
+</li>
+<li><p>git log 命令也可以用来查看某个快照信息。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ git log --stat c9053865e9dff393fd2f7a92a18f9bd7f2caa7fa</span><br><span class="line"></span><br><span class="line">commit c9053865e9dff393fd2f7a92a18f9bd7f2caa7fa</span><br><span class="line">Author: ruanyf </span><br><span class="line">Date:   Sun Oct 7 13:12:14 2018 +0800</span><br><span class="line"></span><br><span class="line">    first commit</span><br><span class="line"></span><br><span class="line">test.txt | 1 +</span><br><span class="line">1 file changed, 1 insertion(+)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="七、git-commit-命令"><a href="#七、git-commit-命令" class="headerlink" title="七、git commit 命令"></a>七、git commit 命令</h2><ul>
+<li><p>Git 提供了git commit命令，简化提交操作。保存进暂存区以后，<br>  只要git commit一个命令，就同时提交目录结构和说明，生成快照。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m &quot;first commit&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>此外，还有两个命令也很有用。</li>
+</ul>
+<ul>
+<li><p>git checkout 命令用于切换到某个快照。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout c9053865e9dff393fd2f7a92a18f9bd7f2caa7fa</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>git show 命令用于展示某个快照的所有代码变动。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git show c9053865e9dff393fd2f7a92a18f9bd7f2caa7fa</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="八、branch-的概念"><a href="#八、branch-的概念" class="headerlink" title="八、branch 的概念"></a>八、branch 的概念</h2><p>到了这一步，还没完。如果这时用git log命令查看整个版本历史，你看不到新生成的快照。<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git log</span><br></pre></td></tr></table></figure></p>
+<p>上面命令没有任何输出，这是为什么呢？快照明明已经写入历史了。</p>
+<p>原来git log命令只显示当前分支的变动，虽然我们前面已经提交了快照，但是还没有记录这个快照属于哪个分支。</p>
+<p>所谓分支（branch）就是指向某个快照的指针，分支名就是指针名。哈希值是无法记忆的，分支使得用户可以为快照起别名。而且，分支会自动更新，如果当前分支有新的快照，指针就会自动指向它。比如，master 分支就是有一个叫做 master 指针，它指向的快照就是 master 分支的当前快照。</p>
+<p>用户可以对任意快照新建指针。比如，新建一个 fix-typo 分支，就是创建一个叫做 fix-typo 的指针，指向某个快照。所以，Git 新建分支特别容易，成本极低。</p>
+<p>Git 有一个特殊指针HEAD， 总是指向当前分支的最近一次快照。另外，Git 还提供简写方式，HEAD^指向 HEAD的前一个快照（父节点），HEAD~6则是HEAD之前的第6个快照。</p>
+<p>每一个分支指针都是一个文本文件，保存在.git/refs/heads/目录，该文件的内容就是它所指向的快照的二进制对象名（哈希值）。</p>
+<h2 id="九、更新分支"><a href="#九、更新分支" class="headerlink" title="九、更新分支"></a>九、更新分支</h2><ul>
+<li><p>下面演示更新分支是怎么回事。首先，修改一下test.txt。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ echo &quot;hello world again&quot; &gt; test.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>然后，保存二进制对象。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git hash-object -w test.txt</span><br><span class="line"></span><br><span class="line">c90c5155ccd6661aed956510f5bd57828eec9ddb</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>接着，将这个对象写入暂存区，并保存目录结构。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git update-index test.txt</span><br><span class="line">$ git write-tree</span><br><span class="line"></span><br><span class="line">1552fd52bc14497c11313aa91547255c95728f37</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>最后，提交目录结构，生成一个快照。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ echo &quot;second commit&quot; | git commit-tree 1552fd52bc14497c11313aa91547255c95728f37 -p c9053865e9dff393fd2f7a92a18f9bd7f2caa7fa</span><br><span class="line"></span><br><span class="line">785f188674ef3c6ddc5b516307884e1d551f53ca</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>上面代码中，git commit-tree的-p参数用来指定父节点，也就是本次快照所基于的快照。</p>
+<p>现在，我们把本次快照的哈希值，写入.git/refs/heads/master文件，这样就使得master指针指向这个快照。<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ echo 785f188674ef3c6ddc5b516307884e1d551f53ca &gt; .git/refs/heads/master</span><br></pre></td></tr></table></figure></p>
+<p>现在，git log就可以看到两个快照了。<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ git log</span><br><span class="line"></span><br><span class="line">commit 785f188674ef3c6ddc5b516307884e1d551f53ca (HEAD -&gt; master)</span><br><span class="line">Author: ruanyf </span><br><span class="line">Date:   Sun Oct 7 13:38:00 2018 +0800</span><br><span class="line"></span><br><span class="line">    second commit</span><br><span class="line"></span><br><span class="line">commit c9053865e9dff393fd2f7a92a18f9bd7f2caa7fa</span><br><span class="line">Author: ruanyf </span><br><span class="line">Date:   Sun Oct 7 13:12:14 2018 +0800</span><br><span class="line"></span><br><span class="line">    first commit</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>git log的运行过程是这样的：</p>
+<ul>
+<li>查找HEAD指针对应的分支，本例是master</li>
+<li>找到master指针指向的快照，本例是785f188674ef3c6ddc5b516307884e1d551f53ca</li>
+<li>找到父节点（前一个快照）c9053865e9dff393fd2f7a92a18f9bd7f2caa7fa</li>
+<li>以此类推，显示当前分支的所有快照</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>最后，补充一点。前面说过，分支指针是动态的。原因在于，下面三个命令会自动改写分支指针。</p>
+<ul>
+<li>git commit：当前分支指针移向新创建的快照。</li>
+<li>git pull：当前分支与远程分支合并后，指针指向新创建的快照。</li>
+<li>git reset [commit_sha]：当前分支指针重置为指定快照。</li>
+</ul>
+</li>
+</ul>
+<h2 id="十、注意-–-解决命令行出错"><a href="#十、注意-–-解决命令行出错" class="headerlink" title="十、注意 – 解决命令行出错"></a>十、注意 – 解决命令行出错</h2><ul>
+<li><p>出错日志</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">warning: LF will be replaced by CRLF in test.txt.</span><br><span class="line">The file will have its original line endings in your working directory.</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>出错原因</p>
+<p>  路径中存在 / 的符号转义问题，false 就是不转换符号,默认是true，<br>  相当于把路径的 / 符号进行转义</p>
+</li>
+<li><p>解决方法</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.autocrlf false</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="十一、参考链接"><a href="#十一、参考链接" class="headerlink" title="十一、参考链接"></a>十一、参考链接</h2><ul>
+<li><a href="http://www.ruanyifeng.com/blog/2018/10/git-internals.html" target="_blank" rel="noopener">阮一峰网站</a></li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        </p><p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
