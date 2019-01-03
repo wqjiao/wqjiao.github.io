@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="wqjiao">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="React 汇总">
+  <meta property="og:description" content="">
+  <meta property="og:site_name" content="wqjiao&#39;s blogs">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="http://yoursite.com">
+  
+    <link rel="alternate" href="/atom.xml" title="wqjiao&#39;s blogs" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>wqjiao's blogs</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">React 汇总</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/wqjiao/wqjiao.github.io">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:<your-email-address>">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By wqjiao</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2019-01-03</span>
+            <span class="time">20:28:42</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/web-前端/">web 前端</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/Javascript/">#Javascript</a> <a class="tag" href="/tags/React/">#React</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <p>React 生命周期函数、Redux 状态管理、React 中的条件渲染、React 存储数据至localStorage – store.js…<br><a id="more"></a></p>
+<h2 id="React-生命周期函数"><a href="#React-生命周期函数" class="headerlink" title="React 生命周期函数"></a>React 生命周期函数</h2><p>  组件的生命周期分成三个状态</p>
+<ul>
+<li><p>生命周期</p>
+<p>  Mounting 已插入真实 DOM</p>
+<p>  Updating 正在被重新渲染</p>
+<p>  Unmounting 已移出真实 DOM</p>
+</li>
+<li><p>生命周期钩子</p>
+</li>
+</ul>
+<p>React 为每个状态都提供了两种处理函数，will 函数在进入状态之前调用，did 函数在进入状态之后调用，三种状态共计五种处理函数。</p>
+<pre><code>componentWillMount()
+
+componentDidMount()
+
+componentWillUpdate(object nextProps, object nextState)
+
+componentDidUpdate(object prevProps, object prevState)
+
+componentWillUnmount()
+</code></pre><ul>
+<li><p>此外，React 还提供两种特殊状态的处理函数</p>
+<p>  componentWillReceiveProps(object nextProps) 已加载组件收到新的参数时调用</p>
+<p>  shouldComponentUpdate(object nextProps, object nextState) 组件判断是否重新渲染时调用</p>
+</li>
+<li><p>总结</p>
+<p>  组件的数据来源，通常是通过 Ajax 请求从服务器获取，可以使用 componentDidMount 方法设置 Ajax 请求，等到请求成功，再用 this.setState 方法重新渲染 UI</p>
+<p>  componentWillReceiveProps 在组件接收到一个新的 prop (更新后)时被调用。这个方法在初始化 render 时不会被调用，但在组件内的 props/redux 数据发生变化时执行，可用在异步请求数据时，若数据未及时请求到，可在这里获取值或者赋值</p>
+</li>
+<li><p>生命周期图解</p>
+<p>  <img src="./img/life cycle.png" alt=""></p>
+</li>
+<li><p>参考网址：</p>
+<p>  <a href="https://react.docschina.org/docs/state-and-lifecycle.html" target="_blank" rel="noopener">React 中文</a></p>
+</li>
+</ul>
+<h2 id="Redux-状态管理"><a href="#Redux-状态管理" class="headerlink" title="Redux 状态管理"></a>Redux 状态管理</h2><ul>
+<li><p>redux 组成有 5 个</p>
+<p>  createStore 创建仓库，接受reducer作为参数</p>
+<p>  bindActionCreator 绑定store.dispatch和action 的关系</p>
+<p>  combineReducers 合并多个reducers</p>
+<p>  applyMiddleware  洋葱模型的中间件,介于dispatch和action之间，重写dispatch</p>
+<p>  compose  整合多个中间件</p>
+</li>
+<li><p>在 redux 中存储数据，需先定义变量进行赋值，保证后面返回的是全新的 state</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">export default function statisticReducer(state = initState, action) &#123;</span><br><span class="line">    switch (action.type) &#123;</span><br><span class="line">        case &apos;updateFinanceQueryOptions&apos;:</span><br><span class="line">            let newState = JSON.parse(JSON.stringify(state));</span><br><span class="line">            newState.queryOptions[action.data.key] = action.data[&apos;value&apos;]</span><br><span class="line">            return newState;</span><br><span class="line">        default:</span><br><span class="line">            return state;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="React-中的条件渲染"><a href="#React-中的条件渲染" class="headerlink" title="React 中的条件渲染"></a>React 中的条件渲染</h2><ul>
+<li><p>有以下几种方式：</p>
+<p>  if 语句</p>
+<p>  三元操作符(ternary operator)</p>
+<p>  逻辑 &amp;&amp; 操作符</p>
+<p>  switch.. case.. 语句</p>
+<p>  枚举(enums)</p>
+<p>  多层条件渲染(multi-level conditional reandering)</p>
+<p>  使用高阶组件</p>
+</li>
+<li><p>1、if语句</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果data不存在则不进行渲染</span></span><br><span class="line"><span class="keyword">if</span> (!data) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果 data 存在且为空，这返回对应反馈</span></span><br><span class="line"><span class="comment">// if (!data.length) &#123;</span></span><br><span class="line"><span class="comment">//     return &lt;p&gt;data is empty&lt;/p&gt;</span></span><br><span class="line"><span class="comment">// &#125; else &#123;</span></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">            data.map(<span class="function"><span class="keyword">function</span>(<span class="params">item, index</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> (</span><br><span class="line">                    &lt;li key=&#123;index&#125;&gt;&#123;item&#125;&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">                )</span></span><br><span class="line"><span class="regexp">            &#125;)</span></span><br><span class="line"><span class="regexp">        &lt;/u</span>l&gt;</span><br><span class="line">    )</span><br><span class="line"><span class="comment">// &#125;</span></span><br></pre></td></tr></table></figure>
+<p>  注意：一个组件如果return null,将不会被渲染出来。如果你想给用户一些反馈，使用if…else</p>
+</li>
+<li><p>2、三元操作符</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &#123; isEmpty</span><br><span class="line">            ? <span class="string">'This is empty!'</span></span><br><span class="line">            : &#123;data&#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">)</span></span><br></pre></td></tr></table></figure>
+<p>  注意： 使用三元运算符来代替上面的if…else… 条件渲染，三元运算符使条件渲染更加的简洁，内联中使用。</p>
+</li>
+<li><p>3、逻辑 &amp;&amp; 操作符</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &#123; isLoading &amp;&amp; &lt;div&gt;Loading。。。&lt;/div&gt; &#125;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">)</span></span><br></pre></td></tr></table></figure>
+<p>  注意：如果当前不符合条件不进行渲染时，使用逻辑 &amp;&amp; 操作符更加简洁。</p>
+</li>
+<li><p>4、switch.. case.. 语句</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Notification</span>(<span class="params">&#123; text, state &#125;</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">switch</span> (state) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">'info'</span>:</span><br><span class="line">            <span class="keyword">return</span> &lt;Info text=&#123;text&#125; /&gt;;</span><br><span class="line">            break;</span><br><span class="line">        case 'warning':</span><br><span class="line">            return &lt;Warning text=&#123;text&#125; /&gt;;</span><br><span class="line">            break;</span><br><span class="line">        case 'info':</span><br><span class="line">            return &lt;Info text=&#123;text&#125; /&gt;;</span><br><span class="line">            break;</span><br><span class="line">        default:</span><br><span class="line">            return null;</span><br><span class="line">            break;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  另外一种将条件渲染结果内联在switch…case中的方法是，使用立即调用函数：</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Notification</span>(<span class="params">&#123; text, state &#125;</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &#123;</span><br><span class="line">                (<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                    <span class="keyword">switch</span> (state) &#123;</span><br><span class="line">                        <span class="keyword">case</span> <span class="string">'info'</span>:</span><br><span class="line">                            <span class="keyword">return</span> &lt;Info text=&#123;text&#125; /&gt;;</span><br><span class="line">                            break;</span><br><span class="line">                        case 'warning':</span><br><span class="line">                            return &lt;Warning text=&#123;text&#125; /&gt;;</span><br><span class="line">                            break;</span><br><span class="line">                        case 'info':</span><br><span class="line">                            return &lt;Info text=&#123;text&#125; /&gt;;</span><br><span class="line">                            break;</span><br><span class="line">                        default:</span><br><span class="line">                            return null;</span><br><span class="line">                            break;</span><br><span class="line">                    &#125;</span><br><span class="line">            &#125;)()</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;/div&gt;  </span><br><span class="line">    );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意：<br>  Notification 组件根据输入状态可能渲染Error,Warning,Info三种不同的组件。使用switch…case进行多种条件渲染。</p>
+<p>  switch…case语句永远要加上default情况，因为React组件要么返回元素，要么返回null。</p>
+<p>  如果组件依据 state 属性 渲染时，最后添加上 React.PropTypes,即上面的组件后面添加：</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Notification.propTypes = &#123;</span><br><span class="line">    text: React.PropTypes.string,</span><br><span class="line">    state: React.PropTypes.oneOf([<span class="string">'info'</span>, <span class="string">'warning'</span>, <span class="string">'error'</span>])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>5、枚举(enums)</p>
+<ul>
+<li><p>在javascript中，对象的键值对可以用作枚举：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ENUM = &#123;</span><br><span class="line">    a: <span class="string">'1'</span>,</span><br><span class="line">    b: <span class="string">'2'</span>,</span><br><span class="line">    c: <span class="string">'3'</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>枚举是多种条件渲染中很好的一种方式，上面的 Notification 组件可以写为：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Notification</span>(<span class="params">&#123; text, state &#125;</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &#123;</span><br><span class="line">                &#123;</span><br><span class="line">                    info: &lt;Info text=&#123;text&#125; /&gt;,</span><br><span class="line">                    warning: &lt;Warning text=&#123;text&#125; /&gt;,</span><br><span class="line">                    error: &lt;Error text=&#123;text&#125; /&gt;</span><br><span class="line">                &#125;[state]</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的 state 属性用于取回对象中的值，这比switch…case可读性更强。</p>
+</li>
+<li><p>因为对象的值依赖 text 属性，所以我们必须使用内联对象。如果我们不需要text属性，我们可以使用外部静态枚举：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> NOTIFICATION_STATES = &#123;</span><br><span class="line">    info: &lt;Infor /&gt;,</span><br><span class="line">    warning: &lt;Warning /&gt;,</span><br><span class="line">    error: &lt;Error /&gt;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">function Notification(&#123; state &#125;) &#123;</span><br><span class="line">    return (</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &#123;NOTIFICATION_STATES[state]&#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果我们需要text属性，我们可以使用函数取回对象的值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> getSpecificNotification = <span class="function">(<span class="params">text</span>) =&gt;</span> (&#123;</span><br><span class="line">    info: &lt;Info text=&#123;text&#125; /&gt;,</span><br><span class="line">    warning: &lt;Warning text=&#123;text&#125; /&gt;,</span><br><span class="line">    error: &lt;Error text=&#123;text&#125; /&gt;,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">function Notification(&#123; state, text &#125;) &#123;</span><br><span class="line">    return (</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &#123;</span><br><span class="line">                getSpecificNotification(text)[state]</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;/div&gt;  </span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对象用作枚举，使用场景很灵活，下面例子：</p>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>function FooBarOrFooOrBar({ isFoo, isBar }) {
+
+    const key = `${isFoo}-${isBar}`;
+
+    return (
+        &lt;div&gt;
+            {
+                {
+                    [&apos;true-true&apos;]: &lt;FooBar /&gt;,
+                    [&apos;true-false&apos;]: &lt;Foo /&gt;,
+                    [&apos;false-true&apos;]: &lt;Bar /&gt;,
+                    [&apos;false-false&apos;]: null,
+                }[key]
+            }
+        &lt;/div&gt;
+    );
+}
+FooBarOrFooOrBar.propTypes = {
+    isFoo: React.PropTypes.boolean.isRequired,
+    isBar: React.PropTypes.boolean.isRequired
+}
+
+注意： 多种条件渲染最好的方式是枚举。
+</code></pre><ul>
+<li><p>6、多层条件渲染<br>  嵌套条件选择渲染，参考一下例子：</p>
+<p>  List组件可能显示一个list,或者一个empty text提示，或者什么都没有。</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">List</span>(<span class="params">&#123; list &#125;</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> isNull = !list;</span><br><span class="line">    <span class="keyword">const</span> isEmpty = !isNull &amp;&amp; !list.length;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">        &#123; isNull</span><br><span class="line">            ? <span class="literal">null</span></span><br><span class="line">            : ( isEmpty</span><br><span class="line">                ? &lt;p&gt;Sorry, the list is empty&lt;/p&gt;</span><br><span class="line">                : &lt;div&gt;&#123;list.map(item =&gt; &lt;ListItem item=&#123;item&#125; /&gt;)&#125;&lt;/div&gt;</span><br><span class="line">            )</span><br><span class="line">        &#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<pre><code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 实例</span></span><br><span class="line">&lt;List list=&#123;<span class="literal">null</span>&#125; /&gt; <span class="comment">// &lt;div&gt;&lt;/div&gt;</span></span><br><span class="line">&lt;List list=&#123;[]&#125; /&gt; <span class="comment">// &lt;div&gt;&lt;p&gt;Sorry, the list is empty&lt;/p&gt;&lt;/div&gt;</span></span><br><span class="line">&lt;List list=&#123;[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]&#125; /&gt; <span class="comment">// &lt;div&gt;&lt;div&gt;a&lt;/div&gt;&lt;div&gt;b&lt;/div&gt;&lt;div&gt;c&lt;/div&gt;&lt;/div&gt;</span></span><br></pre></td></tr></table></figure>
+
+但是最好保持嵌套的层数最小化，这样代码可读性更强。可以将组件划分成更小的组件的方式
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">List</span>(<span class="params">&#123; list &#125;</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> isList = list &amp;&amp; list.length;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &#123; isList</span><br><span class="line">                ? &lt;div&gt;&#123;list.map(item =&gt; &lt;ListItem item=&#123;item&#125; /&gt;)&#125;&lt;/div&gt;</span><br><span class="line">                : &lt;NoList isNull=&#123;!list&#125; isEmpty=&#123;list &amp;&amp; !list.length&#125; /&gt;</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">function NoList(&#123; isNull, isEmpty &#125;) &#123;</span><br><span class="line">    return (!isNull &amp;&amp; isEmpty) &amp;&amp; &lt;p&gt;Sorry, the list is empty&lt;/p&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><ul>
+<li><p>7、使用高阶组件<br>  HOCs 在React中很适合条件渲染。HOCs的一种使用方式就是改变组件的外观。</p>
+<p>  例如使用高阶组件来展示一个加载显示器或者一个想要的组件：</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">withLoadingIndicator</span>(<span class="params">Component</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">EnhancedComponent</span>(<span class="params">&#123; isLoading, ...props &#125;</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!isLoading) &#123;</span><br><span class="line">            <span class="keyword">return</span> &lt;Component &#123; ...props &#125; /&gt;;</span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">        return &lt;div&gt;&lt;p&gt;Loading...&lt;/p&gt;&lt;/div&gt;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 使用</span><br><span class="line">const ListWithLoadingIndicator = withLoadingIndicator(List);</span><br><span class="line"></span><br><span class="line">&lt;ListWithLoadingIndicator</span><br><span class="line">    isLoading=&#123;props.isLoading&#125;</span><br><span class="line">    list=&#123;props.list&#125;</span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure>
+<p>  这个示例中，List组件能关注渲染list上，而不必担心loading状态，另外，HOCs可以屏蔽list为null或empty的情况。</p>
+</li>
+<li><p>总结</p>
+<p>  if-else</p>
+<pre><code>最简单的条件渲染 
+适用于新手 
+使用if,从渲染方法中返回null提前退出函数
+</code></pre><p>  三元操作符 </p>
+<pre><code>比if-else更好，优先使用 
+比if-else更加简洁 
+逻辑 ‘&amp;&amp;’ 操作符 
+不返回元素就返回null时使用
+</code></pre><p>  switch…case </p>
+<pre><code>比较冗长 
+可以通过立即调用函数内联使用 
+使用枚举的方式代替这种方式更好
+</code></pre><p>  枚举(enums) </p>
+<pre><code>使用于不同的状态使用 
+超过一种条件选择时使用
+</code></pre><p>  多层次条件选择渲染</p>
+<pre><code>避免使用这种方式对可读性的影响 
+将组件划分为更小的组件，小组件自身带有条件选择 
+偏向于使用高阶组件(HOCs) 
+</code></pre><p>  HOCs</p>
+<pre><code>使用高阶组件而屏蔽条件渲染 
+组件能关注主要的逻辑目的
+</code></pre></li>
+</ul>
+<h2 id="React-存储数据至localStorage-–-store-js"><a href="#React-存储数据至localStorage-–-store-js" class="headerlink" title="React 存储数据至localStorage – store.js"></a>React 存储数据至localStorage – store.js</h2><ul>
+<li><p>作用：<br>  本地存储localstorage的封装，提供简单的API，没有依赖，压缩只有 2.48kb(gzipped: 1.07kb);</p>
+</li>
+<li><p>安装：<br>  npm install storejs</p>
+</li>
+<li><p>使用：<br>  store(‘id’, text); // 向localStorage中存储id数据<br>  store(‘id’); // 获取localStorage中的id数据</p>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        </p><p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
