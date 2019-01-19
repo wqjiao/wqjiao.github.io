@@ -100,7 +100,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2018-12-08</span>
-            <span class="time">23:11:16</span>
+            <span class="time">11:09:48</span>
           </span>
           
           <!--  Categories  -->
@@ -128,16 +128,10 @@
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const a = &#123; value : 0 &#125;;</span><br><span class="line">a.valueOf = function() &#123;</span><br><span class="line">    return this.value += 1;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">console.log(a == 1 &amp;&amp; a == 2 &amp;&amp; a == 3); // true</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<pre><code>注意：
-    宽松相等 == 会先将左右两两边的值转化成相同的原始类型，然后再去比较他们是否相等。
-    在转化之后( == 一边或两边都需要转化)，最后的相等匹配会像 === 符号一样去执行判断。
-    宽松相等是可逆的，对于任何值 A 与 B，通常 A == B 与 B == A 具有相同的表现(除了转换的顺序不同)。
-
-    ToPrimitive(input, PreferredType?)
-
-可选参数 PreferredType 可以指定最终转化的类型，它可以是 Number 类型或 String 类型，
-这依赖于 ToPrimitive() 方法执行的结果返回的是 Number 类型或 String 类型
-</code></pre><ul>
+<p>注意：<br>    宽松相等 == 会先将左右两两边的值转化成相同的原始类型，然后再去比较他们是否相等。<br>    在转化之后( == 一边或两边都需要转化)，最后的相等匹配会像 === 符号一样去执行判断。<br>    宽松相等是可逆的，对于任何值 A 与 B，通常 A == B 与 B == A 具有相同的表现(除了转换的顺序不同)。</p>
+<pre><code>ToPrimitive(input, PreferredType?)
+</code></pre><p>可选参数 PreferredType 可以指定最终转化的类型，它可以是 Number 类型或 String 类型，<br>这依赖于 ToPrimitive() 方法执行的结果返回的是 Number 类型或 String 类型</p>
+<ul>
 <li><p>严格相等</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var value = 0; //window.value</span><br><span class="line">Object.defineProperty(window, &apos;a&apos;, &#123;</span><br><span class="line">    get: function() &#123;</span><br><span class="line">        return this.value += 1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">console.log(a===1 &amp;&amp; a===2 &amp;&amp; a===3) // true</span><br></pre></td></tr></table></figure>
 </li>
@@ -177,9 +171,8 @@
 <li><p>2、在 onClick 时使用 bind 绑定 this</p>
 </li>
 </ul>
-<p>Function.prototype.bind 来为事件处理函数传递参数</p>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">handleClick() &#123;</span><br><span class="line">    alert(&apos;我点击了按钮&apos;);</span><br><span class="line">&#125;</span><br><span class="line">...</span><br><span class="line">&lt;button onClick=&#123;this.handleClick.bind(this)&#125;&gt;按钮&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 传参 -- 该方法 点击 时才会执行 --&gt;</span><br><span class="line">&lt;button onClick=&#123;this.handleClick.bind(this)&#125;&gt;按钮&lt;/button&gt;</span><br></pre></td></tr></table></figure>
-</code></pre><ul>
+<p>Function.prototype.bind 来为事件处理函数传递参数<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">handleClick() &#123;</span><br><span class="line">    alert(&apos;我点击了按钮&apos;);</span><br><span class="line">&#125;</span><br><span class="line">...</span><br><span class="line">&lt;button onClick=&#123;this.handleClick.bind(this)&#125;&gt;按钮&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 传参 -- 该方法 点击 时才会执行 --&gt;</span><br><span class="line">&lt;button onClick=&#123;this.handleClick.bind(this)&#125;&gt;按钮&lt;/button&gt;</span><br></pre></td></tr></table></figure></p>
+<ul>
 <li><p>3、在构造函数中使用 bind 绑定上下文</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">constructor(props) &#123;</span><br><span class="line">    super(props);</span><br><span class="line">    this.handleClick = this.handleClick.bind(this);</span><br><span class="line">&#125;</span><br><span class="line">...</span><br><span class="line">handleClick() &#123;</span><br><span class="line">    alert(&apos;我点击了按钮&apos;);</span><br><span class="line">&#125;</span><br><span class="line">...</span><br><span class="line">&lt;button onClick=&#123;this.handleClick&#125;&gt;按钮&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 传参 -- 该方法在 render 时会直接被执行 --&gt;</span><br><span class="line">&lt;button onClick=&#123;this.handleClick(data)&#125;&gt;按钮&lt;/button&gt;</span><br></pre></td></tr></table></figure>
 </li>
@@ -250,8 +243,8 @@ window.onresize = function() {
 }
 </code></pre></li>
 </ul>
-<pre><code>当浏览器窗口大小发生改变时，只会输出&apos;操作2&apos;
-</code></pre><ul>
+<p>当浏览器窗口大小发生改变时，只会输出’操作2’</p>
+<ul>
 <li><p>$(window).resize</p>
 <ul>
 <li><p>作用</p>
@@ -339,17 +332,11 @@ window.onresize = function() {
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var new_array = arr.map(callback(currentValue[, index [, array]]) &#123;</span><br><span class="line">    //返回new_array的元素</span><br><span class="line">&#125; [, thisArg ])</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>参数</p>
-<p>  callback</p>
-<pre><code>产生新数组元素的函数，带有三个参数：
-
-currentValue
-    当前元素在数组中处理。
-index 可选的
-    数组中正在处理的当前元素的索引。
-array 可选的
-    该阵列map被召唤。
-</code></pre><p>  thisArg 可选的</p>
-<pre><code>this 执行时要使用的值 callback。
+<p>  callback<br>  产生新数组元素的函数，带有三个参数：</p>
+<pre><code>currentValue 当前元素在数组中处理。
+index 可选的 数组中正在处理的当前元素的索引。
+array 可选的 该阵列map被召唤。
+thisArg 可选的 this 执行时要使用的值 callback。
 </code></pre></li>
 <li><p>返回值</p>
 <p>  一个新数组，每个元素都是回调函数的结果。</p>
@@ -372,11 +359,11 @@ array 可选的
 <p>  注意：这意味着 arrayLength 空插槽的数组，而不是具有实际未定义值的插槽</p>
 <p>  该数组实际上不包含任何值，甚至不包含undefined值 - 它只是一个 length 属性。</p>
 <p>  当您将具有 length 属性的项扩展到数组中时，例如[…{ length: 4 }]，扩展语法访问每个索引并在新数组中设置该索引处的值</p>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const arr1 = [];</span><br><span class="line">arr1.length = 4;</span><br><span class="line">// 该数组中不包含任何的index索引值</span><br><span class="line">console.log(&apos;1&apos; in arr1);</span><br><span class="line"></span><br><span class="line">const arr2 = [...arr1];</span><br><span class="line">console.log(arr2);</span><br><span class="line">console.log(&apos;2&apos; in arr2);</span><br></pre></td></tr></table></figure>
-</code></pre><p>  并且 .map 只映射属性实际存在于要映射的数组中的属性/值。</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const arr1 = [];</span><br><span class="line">arr1.length = 4;</span><br><span class="line">// 该数组中不包含任何的index索引值</span><br><span class="line">console.log(&apos;1&apos; in arr1);</span><br><span class="line"></span><br><span class="line">const arr2 = [...arr1];</span><br><span class="line">console.log(arr2);</span><br><span class="line">console.log(&apos;2&apos; in arr2);</span><br></pre></td></tr></table></figure>
+<p>  并且 .map 只映射属性实际存在于要映射的数组中的属性/值。</p>
 <p>  使用数组构造函数令人困惑。我建议使用 Array.from，从头开始创建数组时 - 你可以传递一个带有 length 属性的对象，以及一个映射函数</p>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const arr = Array.from(</span><br><span class="line">    &#123; length: 2 &#125;,</span><br><span class="line">    () =&gt; &apos;foo&apos;</span><br><span class="line">);</span><br><span class="line">console.log(arr);</span><br></pre></td></tr></table></figure>
-</code></pre></li>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const arr = Array.from(</span><br><span class="line">    &#123; length: 2 &#125;,</span><br><span class="line">    () =&gt; &apos;foo&apos;</span><br><span class="line">);</span><br><span class="line">console.log(arr);</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>2、数组元素未分配。仅对已分配值的数组索引（包括undefined）调用 callback</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var array1 = Array(2);</span><br><span class="line">array1[0] = undefined;</span><br><span class="line"></span><br><span class="line">// pass a function to map</span><br><span class="line">const map1 = array1.map(x =&gt; x * 2);</span><br><span class="line"></span><br><span class="line">console.log(array1); // [undefined, empty]</span><br><span class="line">console.log(map1); // [NaN, empty]</span><br></pre></td></tr></table></figure>
 </li>
