@@ -8,10 +8,10 @@
   <meta name="description" content="">
   <meta name="author" content="wqjiao">
   <!-- Open Graph Data -->
-  <meta property="og:title" content="wqjiao&#39;s blogs">
+  <meta property="og:title" content="Js 对象及数据类型">
   <meta property="og:description" content="">
   <meta property="og:site_name" content="wqjiao&#39;s blogs">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
   <meta property="og:image" content="http://yoursite.com">
   
     <link rel="alternate" href="/atom.xml" title="wqjiao&#39;s blogs" type="application/atom+xml">
@@ -43,7 +43,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-title with-background-image">
-          <p class="title">无标题文章</p>
+          <p class="title">Js 对象及数据类型</p>
           <p class="subtitle"></p>
         </div>
         <div class="site-menu with-background-image">
@@ -99,16 +99,31 @@
           
           <!-- Date -->
           <span class="date-time info">On
-            <span class="date">2019-01-03</span>
-            <span class="time">11:19:26</span>
+            <span class="date">2019-01-02</span>
+            <span class="time">11:20:23</span>
           </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/web-前端/">web 前端</a>
+</span>
           
         </div>
         <!-- Tags -->
         
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/Javascript/">#Javascript</a> <a class="tag" href="/tags/Symbol/">#Symbol</a>
+
+
+          </div>
+        
         <!-- Post Main Content -->
         <div class="post-content">
-          <h2 id="一、js-判断对象是否为空"><a href="#一、js-判断对象是否为空" class="headerlink" title="一、js 判断对象是否为空"></a>一、js 判断对象是否为空</h2><h3 id="1、将-json-对象转化为-json-字符串，再判断该字符串是否为-“-”"><a href="#1、将-json-对象转化为-json-字符串，再判断该字符串是否为-“-”" class="headerlink" title="1、将 json 对象转化为 json 字符串，再判断该字符串是否为 “{}”"></a>1、将 json 对象转化为 json 字符串，再判断该字符串是否为 “{}”</h3><pre><code>var data = {};
+          <p>总结 Js 对象及数据类型：1、js 判断对象是否为空的 5 种方式；2、js遍历对象的  4 种方式；3、js 遍历数组的 5 种方式；4、原始数据类型及ES6 Symbol 数据类型…<br><a id="more"></a></p>
+<h2 id="一、js-判断对象是否为空"><a href="#一、js-判断对象是否为空" class="headerlink" title="一、js 判断对象是否为空"></a>一、js 判断对象是否为空</h2><h3 id="1、将-json-对象转化为-json-字符串，再判断该字符串是否为-“-”"><a href="#1、将-json-对象转化为-json-字符串，再判断该字符串是否为-“-”" class="headerlink" title="1、将 json 对象转化为 json 字符串，再判断该字符串是否为 “{}”"></a>1、将 json 对象转化为 json 字符串，再判断该字符串是否为 “{}”</h3><pre><code>var data = {};
 var b = (JSON.stringify(data) == &quot;{}&quot;);
 alert(b); // true
 </code></pre><p>注意： 忽略转换 undefined、function、Symbol 属性</p>
