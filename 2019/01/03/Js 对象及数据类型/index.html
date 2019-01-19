@@ -8,10 +8,10 @@
   <meta name="description" content="">
   <meta name="author" content="wqjiao">
   <!-- Open Graph Data -->
-  <meta property="og:title" content="Js 对象及数据类型">
+  <meta property="og:title" content="wqjiao&#39;s blogs">
   <meta property="og:description" content="">
   <meta property="og:site_name" content="wqjiao&#39;s blogs">
-  <meta property="og:type" content="article">
+  <meta property="og:type" content="website">
   <meta property="og:image" content="http://yoursite.com">
   
     <link rel="alternate" href="/atom.xml" title="wqjiao&#39;s blogs" type="application/atom+xml">
@@ -43,7 +43,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-title with-background-image">
-          <p class="title">Js 对象及数据类型</p>
+          <p class="title">无标题文章</p>
           <p class="subtitle"></p>
         </div>
         <div class="site-menu with-background-image">
@@ -99,31 +99,16 @@
           
           <!-- Date -->
           <span class="date-time info">On
-            <span class="date">2019-01-02</span>
-            <span class="time">11:11:44</span>
+            <span class="date">2019-01-03</span>
+            <span class="time">11:17:52</span>
           </span>
-          
-          <!--  Categories  -->
-            <span class="categories info">Under 
-
-<a href="/categories/web-前端/">web 前端</a>
-</span>
           
         </div>
         <!-- Tags -->
         
-          <div class="post-tags text-muted">
-            Tags: 
-
-<a class="tag" href="/tags/Javascript/">#Javascript</a> <a class="tag" href="/tags/Symbol/">#Symbol</a>
-
-
-          </div>
-        
         <!-- Post Main Content -->
         <div class="post-content">
-          <p>总结 Js 对象及数据类型：1、js 判断对象是否为空的 5 种方式；2、js遍历对象的  4 种方式；3、js 遍历数组的 5 种方式；4、原始数据类型及ES6 Symbol 数据类型…<br><a id="more"></a></p>
-<h2 id="一、js-判断对象是否为空"><a href="#一、js-判断对象是否为空" class="headerlink" title="一、js 判断对象是否为空"></a>一、js 判断对象是否为空</h2><h3 id="1、将-json-对象转化为-json-字符串，再判断该字符串是否为-“-”"><a href="#1、将-json-对象转化为-json-字符串，再判断该字符串是否为-“-”" class="headerlink" title="1、将 json 对象转化为 json 字符串，再判断该字符串是否为 “{}”"></a>1、将 json 对象转化为 json 字符串，再判断该字符串是否为 “{}”</h3><pre><code>var data = {};
+          <h2 id="一、js-判断对象是否为空"><a href="#一、js-判断对象是否为空" class="headerlink" title="一、js 判断对象是否为空"></a>一、js 判断对象是否为空</h2><h3 id="1、将-json-对象转化为-json-字符串，再判断该字符串是否为-“-”"><a href="#1、将-json-对象转化为-json-字符串，再判断该字符串是否为-“-”" class="headerlink" title="1、将 json 对象转化为 json 字符串，再判断该字符串是否为 “{}”"></a>1、将 json 对象转化为 json 字符串，再判断该字符串是否为 “{}”</h3><pre><code>var data = {};
 var b = (JSON.stringify(data) == &quot;{}&quot;);
 alert(b); // true
 </code></pre><p>注意： 忽略转换 undefined、function、Symbol 属性</p>
@@ -173,7 +158,7 @@ Object.keys(obj).forEach((key) =&gt; {
 Reflect.ownKeys(obj).forEach(function(key) {
     console.log(key, obj[key]);
 });
-</code></pre><h2 id="三、js-遍历数组"><a href="#三、js-遍历数组" class="headerlink" title="三、js 遍历数组"></a>三、js 遍历数组</h2><h3 id="1、for"><a href="#1、for" class="headerlink" title="1、for"></a>1、for</h3><pre><code>var arr = [1, 2, 3];
+</code></pre><h2 id="三、js-数组遍历"><a href="#三、js-数组遍历" class="headerlink" title="三、js 数组遍历"></a>三、js 数组遍历</h2><h3 id="1、for"><a href="#1、for" class="headerlink" title="1、for"></a>1、for</h3><pre><code>var arr = [1, 2, 3];
 
 for (var i = 0; i &lt; arr.length; i ++) {
     console.log(i, arr[i]);
@@ -195,18 +180,65 @@ for (var i in arr) {
 for (var value of arr) {
     console.log(value);
 }
-</code></pre><h3 id="5、数组-对象数组中获取-id"><a href="#5、数组-对象数组中获取-id" class="headerlink" title="5、数组/对象数组中获取 id"></a>5、数组/对象数组中获取 id</h3><pre><code>let arr = [{
-    id: 0,
-    text: &apos;a&apos;
-}, {
-    id: 1,
-    text: &apos;b&apos;
-}];
-
-let str = arr.map( (item) =&gt; {
-    return [item.id]; // 字符串、数组、对象
-});
-</code></pre><h2 id="四、数据类型"><a href="#四、数据类型" class="headerlink" title="四、数据类型"></a>四、数据类型</h2><h3 id="1、原始数据类型"><a href="#1、原始数据类型" class="headerlink" title="1、原始数据类型"></a>1、原始数据类型</h3><pre><code>null 空值
+</code></pre><h3 id="5、数组-对象数组中获取-id"><a href="#5、数组-对象数组中获取-id" class="headerlink" title="5、数组/对象数组中获取 id"></a>5、数组/对象数组中获取 id</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [&#123;</span><br><span class="line">    id: <span class="number">0</span>,</span><br><span class="line">    text: <span class="string">'a'</span></span><br><span class="line">&#125;, &#123;</span><br><span class="line">    id: <span class="number">1</span>,</span><br><span class="line">    text: <span class="string">'b'</span></span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line"><span class="comment">// map()/filer()</span></span><br><span class="line"><span class="keyword">let</span> str = arr.map( <span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> [item.id]; <span class="comment">// 字符串、数组、对象</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="四、js-删除数组中某一项或几项"><a href="#四、js-删除数组中某一项或几项" class="headerlink" title="四、js 删除数组中某一项或几项"></a>四、js 删除数组中某一项或几项</h2><h3 id="splice"><a href="#splice" class="headerlink" title="splice"></a>splice</h3><p>替换/删除/添加数，该方法会改变原始数组</p>
+<p>splice(index, len, [item]);</p>
+<p>index: 数组开始下标<br>len: 替换/删除的长度<br>item: 替换的值，删除操作的话 item 为空</p>
+<ul>
+<li>删除 – item 不设置</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>];</span><br><span class="line"><span class="comment">// 删除起始下标为1，长度为1的一个值，len设置的1，如果为0，则数组不变</span></span><br><span class="line">arr.splice(<span class="number">1</span>, <span class="number">1</span>); <span class="comment">// ['a','c','d'] </span></span><br><span class="line"><span class="comment">// 删除起始下标为 1，长度为 2 的一个值，len 设置的 2</span></span><br><span class="line">arr.splice(<span class="number">1</span>, <span class="number">2</span>); <span class="comment">// ['a','d']</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>替换 – item 为替换的值</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>];</span><br><span class="line"><span class="comment">// 替换起始下标为 1，长度为 1 的一个值为 ‘ttt’，len 设置的 1</span></span><br><span class="line">arr.splice(<span class="number">1</span>, <span class="number">1</span>, <span class="string">'ttt'</span>); <span class="comment">// ['a','ttt','c','d']</span></span><br><span class="line"><span class="comment">// 替换起始下标为1，长度为2的两个值为‘ttt’，len设置的1</span></span><br><span class="line">arr.splice(<span class="number">1</span>, <span class="number">2</span>, <span class="string">'ttt'</span>); <span class="comment">// ['a','ttt','d']</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>添加 – len 设置为 0，item 为添加的值</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>];</span><br><span class="line"><span class="comment">// 表示在下标为 1 处添加一项 ‘ttt’</span></span><br><span class="line">arr.splice(<span class="number">1</span>, <span class="number">0</span>, <span class="string">'ttt'</span>); <span class="comment">// ['a','ttt','b','c','d']</span></span><br></pre></td></tr></table></figure>
+<h3 id="delete"><a href="#delete" class="headerlink" title="delete"></a>delete</h3><p>delete 删除掉数组中的元素后，会把该下标出的值置为undefined,数组的长度不会变，优势：原数组的索引也保持不变，此时再遍历数组元素，会跳过其中 undefined 的元素</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (index <span class="keyword">in</span> arr) &#123;</span><br><span class="line">    <span class="built_in">document</span>.write(<span class="string">'arr['</span> + index + <span class="string">']='</span>+arr[index]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 中间出现两个逗号，数组长度不变，有一项为 undefined</span></span><br><span class="line"><span class="keyword">delete</span> arr[<span class="number">1</span>]  <span class="comment">//['a', ,'c','d']</span></span><br></pre></td></tr></table></figure>
+<h2 id="五、js-字符串截取"><a href="#五、js-字符串截取" class="headerlink" title="五、js 字符串截取"></a>五、js 字符串截取</h2><p>string str = “123abc456”;<br>int i = 3;</p>
+<h3 id="1、取字符串的前-i-个字符"><a href="#1、取字符串的前-i-个字符" class="headerlink" title="1、取字符串的前 i 个字符"></a>1、取字符串的前 i 个字符</h3><p>str=str.Substring(0,i); // or  str=str.Remove(i,str.Length-i); </p>
+<h3 id="2、去掉字符串的前i个字符："><a href="#2、去掉字符串的前i个字符：" class="headerlink" title="2、去掉字符串的前i个字符："></a>2、去掉字符串的前i个字符：</h3><p>str=str.Remove(0,i);  // or str=str.Substring(i); </p>
+<h3 id="3、从右边开始取i个字符："><a href="#3、从右边开始取i个字符：" class="headerlink" title="3、从右边开始取i个字符："></a>3、从右边开始取i个字符：</h3><p>str=str.Substring(str.Length-i); // or str=str.Remove(0,str.Length-i);</p>
+<h3 id="4、从右边开始去掉i个字符："><a href="#4、从右边开始去掉i个字符：" class="headerlink" title="4、从右边开始去掉i个字符："></a>4、从右边开始去掉i个字符：</h3><p>str=str.Substring(0,str.Length-i); // or str=str.Remove(str.Length-i,i);</p>
+<h3 id="5、判断字符串中是否有”abc”-有则去掉之"><a href="#5、判断字符串中是否有”abc”-有则去掉之" class="headerlink" title="5、判断字符串中是否有”abc” 有则去掉之"></a>5、判断字符串中是否有”abc” 有则去掉之</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">string str = <span class="string">"123abc456"</span>;</span><br><span class="line">string a=<span class="string">"abc"</span>;</span><br><span class="line">Regex r = <span class="keyword">new</span>  Regex(a); </span><br><span class="line">Match m = r.Match(str);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (m.Success) &#123;</span><br><span class="line">    <span class="comment">//绿色部分与紫色部分取一种即可。</span></span><br><span class="line">    str=str.Replace(a,<span class="string">""</span>);</span><br><span class="line">    Response.Write(str);   </span><br><span class="line">    string str1, str2;</span><br><span class="line">    str1=str.Substring(<span class="number">0</span>, m.Index);</span><br><span class="line">    str2=str.Substring(m.Index + a.Length, str.Length - a.Length - m.Index);</span><br><span class="line">    Response.Write(str1 + str2); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="6、如果字符串中有”abc”则替换成”ABC”"><a href="#6、如果字符串中有”abc”则替换成”ABC”" class="headerlink" title="6、如果字符串中有”abc”则替换成”ABC”"></a>6、如果字符串中有”abc”则替换成”ABC”</h3><p>   ·str=str.Replace(“abc”,”ABC”);</p>
+<h3 id="7、截取指定字符区间"><a href="#7、截取指定字符区间" class="headerlink" title="7、截取指定字符区间"></a>7、截取指定字符区间</h3><p>string str=”adcdef”;</p>
+<p>int indexStart = str.IndexOf(“d”);</p>
+<p>int endIndex =str.IndexOf(“e”);</p>
+<p>string toStr = str.SubString(indexStart, endIndex - indexStart);</p>
+<h3 id="8、c-截取字符串最后一个字符的问题"><a href="#8、c-截取字符串最后一个字符的问题" class="headerlink" title="8、c# 截取字符串最后一个字符的问题!"></a>8、c# 截取字符串最后一个字符的问题!</h3><p>str1.Substring(str1.LastIndexOf(“,”)+1)</p>
+<h2 id="六、判断字符串中是否包含某个子字符串"><a href="#六、判断字符串中是否包含某个子字符串" class="headerlink" title="六、判断字符串中是否包含某个子字符串"></a>六、判断字符串中是否包含某个子字符串</h2><ul>
+<li>ES6 <code>includes</code></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> string = <span class="string">"foo"</span>,</span><br><span class="line">    substring = <span class="string">"oo"</span>;</span><br><span class="line">string.includes(substring);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>ES5 and older <code>indexof</code></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> string = <span class="string">"foo"</span>,</span><br><span class="line">    substring = <span class="string">"oo"</span>;</span><br><span class="line">string.indexOf(substring) !== <span class="number">-1</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>search</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> string = <span class="string">"foo"</span>,</span><br><span class="line">    expr = <span class="regexp">/oo/</span>;</span><br><span class="line">string.search(expr);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>lodash includes</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> string = <span class="string">"foo"</span>,</span><br><span class="line">    substring = <span class="string">"oo"</span>;</span><br><span class="line">_.includes(string, substring);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>RegExp</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> string = <span class="string">"foo"</span>,</span><br><span class="line">    expr = <span class="regexp">/oo/</span>;  <span class="comment">// no quotes here</span></span><br><span class="line">expr.test(string);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Match</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> string = <span class="string">"foo"</span>,</span><br><span class="line">    expr = <span class="regexp">/oo/</span>;</span><br><span class="line">string.match(expr);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>参考链接</li>
+</ul>
+<p><a href="https://stackoverflow.com/questions/1789945/how-to-check-whether-a-string-contains-a-substring-in-javascript/1789952#1789952" target="_blank" rel="noopener">stackoverflow</a></p>
+<h2 id="七、数据类型"><a href="#七、数据类型" class="headerlink" title="七、数据类型"></a>七、数据类型</h2><h3 id="1、原始数据类型"><a href="#1、原始数据类型" class="headerlink" title="1、原始数据类型"></a>1、原始数据类型</h3><pre><code>null 空值
 
 undefined 变量未初始化
 
